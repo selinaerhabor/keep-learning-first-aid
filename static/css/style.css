@@ -1,0 +1,39 @@
+body{
+    overflow-x: hidden;
+}
+
+/*---------------------------------------------------------------Media Rules*/
+
+
+
+
+
+/*---------------------------------------------------------------Navigation*/
+
+.logo{
+    height: 150px;
+}
+
+
+.nav-pages{
+    background-color: #2f4f4f;
+}
+
+.nav-tab{
+    color: #f0ffff;
+    font-weight: bold;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.nav-tab:hover {
+    background-color: #cfe2e2;
+    color: #2f4f4f;
+}
+
+.nav-top{
+    color: #2F4F4F;
+    font-weight: bold;
+}
