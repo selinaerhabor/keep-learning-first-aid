@@ -21,7 +21,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # See https://docs.djangoproject.com/en/1.11/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = '@15qj*r=bp82w9d=tmva^ydaf$r7^$j$zmbpb+ojblp7jc$xu7'
+SECRET_KEY = os.environ.get('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
@@ -91,7 +91,7 @@ WSGI_APPLICATION = 'keeplearningfirstaid.wsgi.application'
 #   }
 #}
 
-DATABASES = {'default':dj_database_url.parse("postgres://endslnxslvvdtx:9f08eea4bbc5c193eec6a57be8db99d0841f29d9cf563de065dabe5f0038e8e5@ec2-79-125-4-72.eu-west-1.compute.amazonaws.com:5432/d58rebi2bejqjv")}
+DATABASES = {'default':dj_database_url.parse(os.environ.get('DATABASE_URL'))}
 
 
 # Password validation
