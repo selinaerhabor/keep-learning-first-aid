@@ -26,7 +26,8 @@ SECRET_KEY = '@15qj*r=bp82w9d=tmva^ydaf$r7^$j$zmbpb+ojblp7jc$xu7'
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME')]
+ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
+                'https://keeplearningfirstaid.herokuapp.com/']
 
 
 # Application definition
