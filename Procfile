@@ -1,1 +1,1 @@
-web: gunicorn keep-learning-first-aid.wsgi:application
+web: gunicorn keeplearningfirstaid.wsgi:application
