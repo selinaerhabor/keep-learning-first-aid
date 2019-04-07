@@ -11,6 +11,7 @@ https://docs.djangoproject.com/en/1.11/ref/settings/
 """
 
 import os
+import dj_database_url
 
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 BASE_DIR = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -37,12 +38,16 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'accounts',
     'home',
-    'learningforkidsquiz',
+    'tipsoftheweek',
     'products',
-    'tipsoftheweek'
 ]
+
+#    'accounts',
+#    'learningforkidsquiz',
+#    'products',
+#    'tipsoftheweek'
+
 
 MIDDLEWARE = [
     'django.middleware.security.SecurityMiddleware',
@@ -59,7 +64,7 @@ ROOT_URLCONF = 'keeplearningfirstaid.urls'
 TEMPLATES = [
     {
         'BACKEND': 'django.template.backends.django.DjangoTemplates',
-        'DIRS': [],
+        'DIRS': [os.path.join(BASE_DIR, 'templates')],
         'APP_DIRS': True,
         'OPTIONS': {
             'context_processors': [
@@ -78,12 +83,14 @@ WSGI_APPLICATION = 'keeplearningfirstaid.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.11/ref/settings/#databases
 
-DATABASES = {
-    'default': {
-        'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
-    }
-}
+#DATABASES = {
+#   'default': {
+#       'ENGINE': 'django.db.backends.sqlite3',
+#       'NAME': os.path.join(BASE_DIR, 'db.sqlite3'),
+#   }
+#}
+
+DATABASES = {'default':dj_database_url.parse("postgres://endslnxslvvdtx:9f08eea4bbc5c193eec6a57be8db99d0841f29d9cf563de065dabe5f0038e8e5@ec2-79-125-4-72.eu-west-1.compute.amazonaws.com:5432/d58rebi2bejqjv")}
 
 
 # Password validation
@@ -123,3 +130,7 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.11/howto/static-files/
 
 STATIC_URL = '/static/'
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+    ]
+
