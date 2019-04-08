@@ -17,12 +17,11 @@ body{
 
 
 .nav-pages{
-    background-color: #2f4f4f;
+    background-image: linear-gradient(#194d33,#001a09,#194d33);
 }
 
 .nav-tab{
     color: #f0ffff;
-    font-weight: bold;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
     -o-transition: all 0.5s;
@@ -30,12 +29,21 @@ body{
 }
 
 .nav-tab:hover {
-    background-color: #cfe2e2;
-    color: #2f4f4f;
+    background-image: linear-gradient(#b3ffb3,#ccffcc,#b3ffb3);
+    color: #194d33;
+    font-weight: bold;
 }
 
 .nav-top{
-    color: #2f4f4f;
+    color: #194d33;
+    -webkit-transition: all 0.5s;
+    -moz-transition: all 0.5s;
+    -o-transition: all 0.5s;
+    transition: all 0.5s;
+}
+
+.nav-top:hover {
+    color: #001a09;
     font-weight: bold;
 }
 
