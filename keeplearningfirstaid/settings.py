@@ -40,11 +40,11 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'home',
+    'accounts',
     'tipsoftheweek',
     'products',
 ]
 
-#    'accounts',
 #    'learningforkidsquiz',
 #    'products',
 #    'tipsoftheweek'
@@ -135,3 +135,4 @@ STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static')
     ]
 
+MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
