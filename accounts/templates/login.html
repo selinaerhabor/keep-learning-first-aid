@@ -1,27 +1,12 @@
 {% extends 'base.html' %}
 {% load static %}
+{% block page_title %}Account Login | Keep Learning First Aid{% endblock %}
 {% block document %}
-  <title>Login | Keep Learning First Aid</title>
-    <div class="row">
-        <div class="col-12">
-            <h2>Create An Account!</h2>
-        </div>
-    </div>
+    <h4 class="mx-auto">Sign In</h4>
     <hr>
-    <h4>Register</h4>
-    <form>
-        <div class="form-row">
-            <div class="col-3 offset-3">
-              <input type="text" class="form-control" placeholder="First name" required/>
-            </div>
-            <div class="col-3">
-              <input type="text" class="form-control" placeholder="Last name" required/>
-            </div>
-        </div>
-        <div class="form-row">
-            <div class="col-3 offset-3">
-              <input type="email" class="form-control" placeholder="Email" required/>
-            </div>
-        </div>
+    <form method ="POST">
+      {% csrf_token %}
+      {{ account_form.as_p }}
+      <button method="POST">Submit</button>
     </form>
 {% endblock %} 

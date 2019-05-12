@@ -1,7 +1,6 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
-
-# Create your views here.
+from accounts.forms import UserAccountForm, UserRegistrationForm
 
 #Home Page
 def index(request):
@@ -15,4 +14,29 @@ def logout(request):
     
 #For Log in Tab
 def login(request):
-    return render(request,'login.html')
+    if request.method == "POST":
+        account_form = UserAccountForm(request.POST)
+        if account_form.is_valid():
+            user = auth.authenticate(username=request.POST['username'],
+                                    password=request.POST['password'])
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have successfully logged in!")
+            else:
+                account_form.add_error(None, "Your username or password is incorrect")
+    else:
+        account_form = UserAccountForm()
+    return render(request, 'login.html', {"account_form": account_form})
+
+#For Register Tab
+def registration(request):
+    registration_form = UserRegistrationForm()
+    return render(request, 'registration.html',
+    {"registration_form": registration_form})
+    
+#For Profile
+def profile(request):
+    profile = AccountProfile()
+    return render(request, 'profile.html',
+    {"account_profile": account_profile})
+    
