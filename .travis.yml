@@ -2,3 +2,5 @@ language: python
 python: 
     - "3.4.3"
 install: "pip install -r requirement.txt"
+script:
+- ./manage.py test
