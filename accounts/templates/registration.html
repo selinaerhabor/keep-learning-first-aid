@@ -2,11 +2,14 @@
 {% block page_title %}Registration | Keep Learning First Aid{% endblock %} 
 {% block page_heading %}Create An Account!{% endblock %} 
 {% block document %}
-<h2>Register</h2>
-<p>If you already have an account, you can <a href="{% url 'login' %}">sign in</a></p>
-  <form method ="POST">
-    {% csrf_token %} 
-    {{ registration_form.as_p }}
-    <button type="submit">Register</button>
-  </form>
+  <div class="jumbotron">
+    <h2>Register</h2>
+    <hr>
+    <p>If you already have an account, you can <a href="{% url 'login' %}">sign in</a></p>
+    <form method ="POST">
+      {% csrf_token %} 
+      {{ registration_form.as_p }}
+      <button type="submit">Register</button>
+    </form>
+  </div>
 {% endblock %}

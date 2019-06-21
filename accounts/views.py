@@ -35,8 +35,8 @@ def registration(request):
     {"registration_form": registration_form})
     
 #For Profile
-def profile(request):
-    profile = AccountProfile()
+def user_profile(request):
+    user_profile = AccountProfile()
     return render(request, 'profile.html',
     {"account_profile": account_profile})
     

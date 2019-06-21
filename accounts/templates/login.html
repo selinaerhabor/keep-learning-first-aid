@@ -2,6 +2,7 @@
 {% load static %}
 {% block page_title %}Account Login | Keep Learning First Aid{% endblock %}
 {% block document %}
+  <div class="jumbotron">
     <h4 class="mx-auto">Sign In</h4>
     <hr>
     <form method ="POST">
@@ -9,4 +10,5 @@
       {{ account_form.as_p }}
       <button method="POST">Submit</button>
     </form>
+  </div>
 {% endblock %} 
