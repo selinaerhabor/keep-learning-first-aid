@@ -16,13 +16,24 @@ Including another URLconf
 from django.conf.urls import url, include
 from django.contrib import admin
 from accounts.views import index
+from tipsoftheweek.views import tipsoftheweek
+from learningforkids.views import learningforkids, quiz
+from learningforadults.views import learningforadults
+from products.views import sale
 from accounts import urls as accounts_urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', index, name="index"),
-    url(r'^accounts/', include(accounts_urls))
+    url(r'^accounts/', include(accounts_urls)),
+    # url(r'^cart/', include('cart.urls')),
+    url(r'^$', tipsoftheweek, name="tipsoftheweek"),
+    url(r'^$', learningforkids, name="learningforkids"),
+    url(r'^$', quiz, name="quiz"),
+    url(r'^$', learningforadults, name="learningforadults"),
+    # url(r'^$', faqs, name="faqs"),
+    url(r'^$', sale, name="sale"),
 ]
 
 
