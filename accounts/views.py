@@ -2,9 +2,6 @@ from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from accounts.forms import UserAccountForm, UserRegistrationForm
 
-#Home Page
-def index(request):
-    return render(request, 'index.html')
     
 #For Log out Tab
 def logout(request):
