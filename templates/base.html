@@ -13,9 +13,11 @@
     <title>{% block page_title %}{% endblock %}</title>
 </head>
 <body>
+  
+  <!--Header Navigation Bar-->
   <header>
     <nav class="navbar navbar-light">
-      <a class="navbar-brand" href="{% url 'index' %}">
+      <a class="navbar-brand" href="{% url 'home' %}">
         <img class="logo" src="{% static 'images/logo.jpg' %}" alt="Logo">
       </a>
       {% if messages %}
@@ -67,33 +69,12 @@
       </ul>
     </nav>
   </header>
-  <nav class="nav-pages">
-    <ul class="nav justify-content-center">
-      <li class="nav-item">
-        <a class="nav-link nav-tab active" href="{% url 'index' %}">Home</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-tab" href="{% url 'tipsoftheweek' %}">First Aid Tips of the Week</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-tab" href="#">FAQs</a>
-      </li>
-      <li class="nav-item">
-        <a class="nav-link nav-tab" href="#">Sale</a>
-      </li>
-    </ul>
-  </nav>
   
   <!--Main Body-->
   {% block document %}{% endblock %}
   <!--/Main Body-->
   
+  <!--Footer-->
   <footer>
     <div class="card text-center">
       <div class="card-body">

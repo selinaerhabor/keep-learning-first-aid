@@ -1,0 +1,30 @@
+{% extends 'base.html' %}
+{% block page_title %}FAQs | KLFA{% endblock %}
+{% load static %}
+{% block document %}
+  <!--Page Navigation Bar-->
+  <header>
+    <nav class="nav-pages">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+            <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-tab" href="{% url 'tipsoftheweek' %}">First Aid Tips of the Week</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-tab active" href="{% url 'faqs' %}">FAQs</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link nav-tab" href="{% url 'sale' %}">Sale</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+{% endblock %}

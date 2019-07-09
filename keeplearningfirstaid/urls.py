@@ -15,25 +15,24 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from accounts.views import index
+from home.views import home, faqs
 from tipsoftheweek.views import tipsoftheweek
-from learningforkids.views import learningforkids, quiz
+from learningforkids.views import learningforkids
 from learningforadults.views import learningforadults
 from products.views import sale
 from accounts import urls as accounts_urls
+# from learningforkids import urls as learningforkids_urls
 
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^$', index, name="index"),
+    url(r'^$', home, name="home"),
     url(r'^accounts/', include(accounts_urls)),
     # url(r'^cart/', include('cart.urls')),
-    url(r'^$', tipsoftheweek, name="tipsoftheweek"),
-    url(r'^$', learningforkids, name="learningforkids"),
-    url(r'^$', quiz, name="quiz"),
-    url(r'^$', learningforadults, name="learningforadults"),
-    # url(r'^$', faqs, name="faqs"),
-    url(r'^$', sale, name="sale"),
+    url(r'^tipsoftheweek/$', tipsoftheweek, name="tipsoftheweek"),
+    url(r'^learningforkids/$', learningforkids, name="learningforkids"),
+    # url(r'^learningforkids/', include(learningforkids_urls)),
+    url(r'^learningforadults/$', learningforadults, name="learningforadults"),
+    url(r'^faqs/$', faqs, name="faqs"),
+    url(r'^sale/$', sale, name="sale"),
 ]
-
-

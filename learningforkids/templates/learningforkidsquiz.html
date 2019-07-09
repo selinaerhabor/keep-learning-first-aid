@@ -1,9 +1,7 @@
 {% extends 'base.html' %}
-{% block page_title %}Sale | KLFA{% endblock %}
+{% block page_title %}Kids Quiz | KLFA{% endblock %}
 {% load static %}
 {% block document %}
-
-    <!--Navigation Bar-->
     <header>
         <nav class="nav-pages">
             <ul class="nav justify-content-center">
@@ -14,7 +12,7 @@
                     <a class="nav-link nav-tab" href="{% url 'tipsoftheweek' %}">First Aid Tips of the Week</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
+                    <a class="nav-link nav-tab active" href="{% url 'learningforkids' %}">Learning for Kids</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
@@ -23,7 +21,7 @@
                     <a class="nav-link nav-tab" href="{% url 'faqs' %}">FAQs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-tab active" href="{% url 'sale' %}">Sale</a>
+                    <a class="nav-link nav-tab" href="{% url 'sale' %}">Sale</a>
                 </li>
             </ul>
         </nav>
