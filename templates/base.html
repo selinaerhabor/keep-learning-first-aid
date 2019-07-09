@@ -1,5 +1,4 @@
 {% load static %}
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -74,13 +73,13 @@
         <a class="nav-link nav-tab active" href="{% url 'index' %}">Home</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-tab" href="#">First Aid Tips of the Week</a>
+        <a class="nav-link nav-tab" href="{% url 'tipsoftheweek' %}">First Aid Tips of the Week</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-tab" href="#">Learning for Kids</a>
+        <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
       </li>
       <li class="nav-item">
-        <a class="nav-link nav-tab" href="#">Learning for Adults</a>
+        <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
       </li>
       <li class="nav-item">
         <a class="nav-link nav-tab" href="#">FAQs</a>
