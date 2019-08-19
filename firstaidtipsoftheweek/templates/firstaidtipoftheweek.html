@@ -1,0 +1,48 @@
+{% extends 'base.html' %}
+{% block page_title %}First Aid Tips of the Week | KLFA{% endblock %}
+{% load static %}
+{% block document %}
+  <header>
+    <nav class="nav-pages">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab active" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tips of the Week</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'faqs' %}">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'sale' %}">Sale</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <section class="container-fluid">
+    <div class="row justify-content-center">
+      <div class="col-xs-12">
+        <div class="card-body text-center">
+          <h3 class="mx-auto">First Aid Tips of the Week</h3>
+          <div class="row">
+            <div class="col-s12">
+              <canvas id="firstAidTip" width="600" height="200" class="img-fluid" style="border:1px solid #000000;">
+              {% for firstaidtip in firstaidtips %} 
+                {{firstaidtip.title}}
+                {{firstaidtip.tip}}
+              {% endfor %}
+              </canvas>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+{% endblock %}
