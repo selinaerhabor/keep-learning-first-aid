@@ -153,16 +153,16 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % 'keeplearningfirstaid'
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-STATIC_URL = '/static/'
+STATIC_URL = os.environ.get('STATIC_URL')
 STATICFILES_DIRS = [
-    os.path.join(BASE_DIR, 'static')
+    os.path.join(BASE_DIR, 'STATIC_URL')
 ]
 STATIC_ROOT = os.path.join(BASE_DIR, 'staticfiles')
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
 
-MEDIA_URL = '/media/'
-MEDIA_ROOT = os.path.join(BASE_DIR, 'media')
+MEDIA_URL = os.environ.get('MEDIA_URL')
+MEDIA_ROOT = os.path.join(BASE_DIR, 'MEDIA_URL')
 
 MESSAGE_STORAGE = 'django.contrib.messages.storage.session.SessionStorage'
