@@ -35,8 +35,8 @@
             <div class="col-s12">
               <canvas id="firstAidTip" width="600" height="200" class="img-fluid" style="border:1px solid #000000;">
               {% for firstaidtip in firstaidtips %} 
-                {{firstaidtip.title}}
-                {{firstaidtip.tip}}
+                <h3>{{firstaidtip.title}}</h3>
+                <p>{{firstaidtip.tip}}</p>
               {% endfor %}
               </canvas>
             </div>
