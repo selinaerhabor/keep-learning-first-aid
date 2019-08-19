@@ -30,15 +30,15 @@
     <div class="row justify-content-center">
       <div class="col-xs-12">
         <div class="card-body text-center">
-          <h3 class="mx-auto">First Aid Tips of the Week</h3>
+          <h2 class="mx-auto">First Aid Tips of the Week</h2>
           <div class="row">
-            <div class="col-s12">
-              <canvas id="firstAidTip" width="600" height="200" class="img-fluid" style="border:1px solid #000000;">
+            <div class="col-6 mx-auto">
+              <div id="firstAidTip" width="400" class="img-fluid" style="border:1px solid #000000;">
               {% for firstaidtip in firstaidtips %} 
-                <h3>{{firstaidtip.title}}</h3>
+                <h4>{{firstaidtip.title}}</h4>
                 <p>{{firstaidtip.tip}}</p>
               {% endfor %}
-              </canvas>
+              </div>
             </div>
           </div>
         </div>
