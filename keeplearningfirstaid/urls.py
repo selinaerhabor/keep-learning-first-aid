@@ -17,14 +17,13 @@ from django.conf.urls import url, include
 from django.contrib import admin
 from home.views import home, faqs
 from firstaidtipsoftheweek.views import firstaidtipsoftheweek
-from learningforkids.views import learningforkids
+from learningforkids.views import learningforkids, learningforkidsquiz
 from learningforadults.views import learningforadults
-from accounts import urls as accounts_urls
-from learningforkids import urls as learningforkids_urls
+from accounts import urls
 from products.views import sale
-from products import urls as urls_products
-from cart import urls as urls_cart
-from search import urls as urls_search
+from products import urls
+from cart import urls
+from search import urls
 from django.views import static
 from .settings import MEDIA_ROOT
 
@@ -32,15 +31,16 @@ from .settings import MEDIA_ROOT
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
     url(r'^$', home, name="home"),
-    url(r'^accounts/', include(accounts_urls)),
+    url(r'^accounts/', include('accounts.urls')),
     url(r'^firstaidtipsoftheweek/$', firstaidtipsoftheweek, name="firstaidtipsoftheweek"),
-    # url(r'^learningforkids/$', learningforkids, name="learningforkids"),
-    url(r'^learningforkids/', include(learningforkids_urls)),
+    url(r'^learningforkids/$', learningforkids, name="learningforkids"),
+    url(r'^learningforkidsquiz/$', learningforkidsquiz, name="learningforkidsquiz"),
+    # url(r'^learningforkids/', include('learningforkids.urls')),
     url(r'^learningforadults/$', learningforadults, name="learningforadults"),
     url(r'^faqs/$', faqs, name="faqs"),
     url(r'^sale/$', sale, name="sale"),
-    url(r'^sale/', include(urls_products)),
-    url(r'^cart/', include(urls_cart)),
-    url(r'^cart/', include(urls_search)),
+    url(r'^sale/', include('products.urls')),
+    url(r'^cart/', include('cart.urls')),
+    url(r'^cart/', include('search.urls')),
     url(r'^media/(?P<path>.*)$', static.serve, {'document_root': MEDIA_ROOT})
 ]
