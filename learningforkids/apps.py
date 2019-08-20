@@ -6,3 +6,4 @@ from django.apps import AppConfig
 
 class LearningforkidsConfig(AppConfig):
     name = 'learningforkids'
+
