@@ -1,7 +1,7 @@
 {% load static %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
+  <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -9,16 +9,17 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <title>{% block page_title %}{% endblock %}</title>
-</head>
-<body>
+  </head>
+  <body>
   
   <!--Header Navigation Bar-->
   <header>
     <nav class="navbar navbar-light">
       <a class="navbar-brand" href="{% url 'home' %}">
-        <img class="logo" src="{% static 'images/logo.jpg' %}" alt="Logo">
+        <img class="logo" src="{% static 'images/logo.jpg' %}" alt="KLFA Logo">
       </a>
       {% if messages %}
       <div class="col-4">
@@ -61,9 +62,13 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-top" href="#">
-              <i class="fas fa-shopping-cart"></i>
+          <a class="nav-link nav-top" href="">
+            <!--{% url 'view_cart' %}-->
+            <i class="fas fa-shopping-cart"></i>
               Basket
+            {% if product_count > 0 %}
+              <label class="badge badge-warning">{{ product_count }}</label>
+            {% endif %}
           </a>
         </li>
       </ul>
@@ -72,7 +77,6 @@
   
   <!--Main Body-->
   {% block document %}{% endblock %}
-  <!--/Main Body-->
   
   <!--Footer-->
   <footer class="footerBackground">
@@ -80,12 +84,14 @@
       <div class="card-body">
         <h5 class="card-title">Subscribe to our newsletter to receive the best deals on our learning products!</h5>
         <input type="text" name="Email" class="mx-auto email-input" placeholder="Email" required><input type="submit" id="subscribe_submit">
-        <p class="card-text padding-top"><a href="#">Privacy Policy</a></p>
-        <p class="card-text"><a href="#">Terms & Conditions</a></p>
-        <p class="card-text padding-btm"><a href="#">Contact Us</a></p>
-        <h6 class="card-title mx-auto"><b>Follow Us</b></h6>
-        <a href="https://twitter.com/teamklfa" target="_blank"><i class="fab fa-twitter"></i></a>
-        <a href="https://www.instagram.com/team_klfa/" target="_blank"><i class="fab fa-instagram"></i></a>
+        <div class="col s6 m6 left">
+          <p class="card-text padding-top"><a href="#">Privacy Policy</a></p>
+          <p class="card-text"><a href="#">Terms & Conditions</a></p>
+          <p class="card-text padding-btm"><a href="#">Contact Us</a></p>
+        </div>
+          <h6 class="card-title mx-auto"><b>Follow Us</b></h6>
+          <a href="https://twitter.com/teamklfa" target="_blank"><i class="fab fa-twitter"></i></a>
+          <a href="https://www.instagram.com/team_klfa/" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
       <div class="card-footer">
         KLFA Keep Learning First Aid
@@ -93,13 +99,14 @@
     </div>
   </footer>
   
+  <!--Modals-->
+  <!--Add Modals for Privacy policy, Terms & conditions, Contact Us here-->
+  
   <!--Scripts-->
   <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script>
-    $('#myCarousel').on('slide.bs.carousel', function () {
-    });
-  </script>
+  <script src="{% static 'js/custom.js' %}"></script>
+  
   </body>
 </html>
