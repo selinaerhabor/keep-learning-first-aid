@@ -18,7 +18,7 @@ from django.contrib import admin
 from home.views import home, faqs
 from firstaidtipsoftheweek.views import firstaidtipsoftheweek
 from learningforkids.views import learningforkids, learningforkidsquiz
-from learningforadults.views import learningforadults
+from learningforadults.views import learningforadults, learningforadultsquiz
 from accounts import urls
 from products.views import sale
 from products import urls
@@ -37,6 +37,7 @@ urlpatterns = [
     url(r'^learningforkidsquiz/$', learningforkidsquiz, name="learningforkidsquiz"),
     # url(r'^learningforkids/', include('learningforkids.urls')),
     url(r'^learningforadults/$', learningforadults, name="learningforadults"),
+    url(r'^learningforadultsquiz/$', learningforadultsquiz, name="learningforadultsquiz"),
     url(r'^faqs/$', faqs, name="faqs"),
     url(r'^sale/$', sale, name="sale"),
     url(r'^sale/', include('products.urls')),
