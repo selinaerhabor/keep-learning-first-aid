@@ -2,7 +2,6 @@
 {% block page_title %}Learning For Adults | Keep Learning First Aid{% endblock %}
 {% load static %}
 {% block document %}
-
     <!--Navigation Bar-->
     <header>
         <nav class="nav-pages">
@@ -28,4 +27,58 @@
             </ul>
         </nav>
     </header>
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-12">
+          <div class="text-center">
+            <div class="card-body">
+              <h3 class="mx-auto">Learning For Adults</h3>
+              <div class="row">
+                <div class="col-12 card-deck">
+                  <div class="card">
+                    <img class="card-img-top" src="..." alt="Adults KLFA Product 1">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text"></p>
+                      <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img class="card-img-top" src="..." alt="Adults KLFA Product 2">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text"></p>
+                      <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img class="card-img-top" src="..." alt="Adults KLFA Product 3">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text"></p>
+                      <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                  </div>
+                  <div class="card">
+                    <img class="card-img-top" src="..." alt="Adults KLFA Product 4">
+                    <div class="card-body">
+                      <h5 class="card-title"></h5>
+                      <p class="card-text"></p>
+                      <p class="card-text"><small class="text-muted"></small></p>
+                    </div>
+                  </div>  
+                </div>
+              </div>
+            </div>
+            <a class="btn btn-success" href="">Shop Now</a>
+            <div class="row">
+              <!-- Begin Quiz trigger modal -->
+              <div class="col s12 quiz-btn">
+                <a class="btn btn-info" href="{% url 'learningforadultsquiz' %}">Adults Test</a>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
 {% endblock %}
