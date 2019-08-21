@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block page_title %}Sale | KLFA{% endblock %}
+{% block page_title %}Products | KLFA{% endblock %}
 {% load static %}
 {% block document %}
 
@@ -23,7 +23,7 @@
                     <a class="nav-link nav-tab" href="{% url 'faqs' %}">FAQs</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-tab active" href="{% url 'sale' %}">Sale</a>
+                    <a class="nav-link nav-tab active" href="{% url 'sale' %}">Products</a>
                 </li>
             </ul>
         </nav>
@@ -32,7 +32,7 @@
     <section class="container">
         <div class="row row-flex">
             <div class="col-12 mx-auto">
-                <h2>Sale</h2>
+                <h1>Products</h1>
             </div>
             {% for product in products %}
                 <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-default">
@@ -41,7 +41,7 @@
                         <h3>{{ product.name }}</h3>
                         <img src="{{ MEDIA_URL }}{{ product.image }}" height="200" alt="KLFA Product">
                         <p class="product-description">{{ product.description }}</p>
-                        <p>{{ product.price }}</p>
+                        <p>£{{ product.price }}</p>
                         <form method="POST" action="{% url 'add_to_cart' product.id %}">
                             {% csrf_token %}
                             <div class="input-group">

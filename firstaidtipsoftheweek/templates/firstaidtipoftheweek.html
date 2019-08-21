@@ -1,5 +1,5 @@
 {% extends 'base.html' %}
-{% block page_title %}First Aid Tips of the Week | KLFA{% endblock %}
+{% block page_title %}First Aid Tip of the Week | KLFA{% endblock %}
 {% load static %}
 {% block document %}
   <header>
@@ -21,7 +21,7 @@
           <a class="nav-link nav-tab" href="{% url 'faqs' %}">FAQs</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-tab" href="{% url 'sale' %}">Sale</a>
+          <a class="nav-link nav-tab" href="{% url 'sale' %}">Products</a>
         </li>
       </ul>
     </nav>
@@ -30,7 +30,7 @@
     <div class="row justify-content-center">
       <div class="col-xs-12">
         <div class="card-body text-center">
-          <h2 class="mx-auto">First Aid Tips of the Week</h2>
+          <h1 class="mx-auto">First Aid Tip of the Week</h1>
           <div class="row">
             <div class="col-6 mx-auto">
               <div id="firstAidTip" width="400" class="img-fluid" style="border:1px solid #000000;">

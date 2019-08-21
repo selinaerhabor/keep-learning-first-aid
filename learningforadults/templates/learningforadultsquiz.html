@@ -29,20 +29,31 @@
     <div class="container">
         <div class="row">
             <div class="col-12">
-                <h1 class="mx-auto">Learning For Kids Quiz</h1>
+                <h1 class="mx-auto">Learning For Adults Quiz</h1>
                 
                 <!--Quiz Questions-->
+                <div class="row">
+                            <div class="col-12">
                 <ol>
                     {% for aq in adultsquestions %}
                         <li>{{ aq.question }}</li>
-                        <a class="btn btn-light">{{ aq.answer_a }}</a>
-                        <a class="btn btn-light">{{ aq.answer_b }}</a>
-                        <a class="btn btn-light">{{ aq.answer_c }}</a>
-                        <a class="btn btn-light">{{ aq.answer_d }}</a>
+                        
+                            <p>A. {{ aq.answer_a }}</p>
+                            <p>B. {{ aq.answer_b }}</p>
+                            <p>C. {{ aq.answer_c }}</p>
+                            <p>D. {{ aq.answer_d }}</p>
+                            
+                            <a class="btn btn-light">A</a>
+                            <a class="btn btn-light">B</a>
+                            <a class="btn btn-light">C</a>
+                            <a class="btn btn-light">D</a>
+                            
                         <p class="hidden" style="display:none;">Correct Answer: {{ aq.correct_answer }}</p>
                         <p class="hidden" style="display:none;">{{ aq.solution }}</p>
                     {% endfor %}
                 </ol>
+                </div>
+              </div>
             </div>
         </div>
     </div>
