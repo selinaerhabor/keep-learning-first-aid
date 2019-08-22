@@ -5,6 +5,7 @@ from django.utils import timezone
 
 #First Aid Tip Model
 class Firstaidtip(models.Model):
+    post_id = models.CharField(max_length=200, default='')
     title = models.CharField(max_length=200, default='')
     tip = models.TextField()
     published_date = models.DateTimeField(blank = True, null = True, default = timezone.now)
