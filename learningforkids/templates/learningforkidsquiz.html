@@ -9,7 +9,7 @@
                     <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tips of the Week</a>
+                    <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-tab active" href="{% url 'learningforkids' %}">Learning for Kids</a>
@@ -34,15 +34,35 @@
                 <!--Quiz Questions-->
                 <ol>
                     {% for kq in kidsquestions %}
-                        <li>{{ kq.question }}</li>
-                        <a class="btn btn-light">{{ kq.answer_a }}</a>
-                        <a class="btn btn-light">{{ kq.answer_b }}</a>
-                        <a class="btn btn-light">{{ kq.answer_c }}</a>
-                        <p class="hidden" style="display:none;">Correct Answer: {{ kq.correct_answer }}</p>
-                        <p class="hidden" style="display:none;">{{ kq.solution }}</p>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <li>{{ kq.question }}</li>
+                            <img src="{{ MEDIA_URL }}{{ kq.image }}" width="150">
+                            <p id="a">A. {{ kq.answer_a }}</p>
+                            <p id="b">B. {{ kq.answer_b }}</p>
+                            <p id="c">C. {{ kq.answer_c }}</p>
+                            
+                            <a class="btn btn-light">A</a>
+                            <a class="btn btn-light">B</a>
+                            <a class="btn btn-light">C</a>
+                            
+                            {{ feedback }}
+                            <p id="correct_answer" class="hidden" style="display:none;">Correct Answer: {{ kq.correct_answer }}</p>
+                            <p id="answer_explained" class="hidden" style="display:none;">{{ kq.solution }}</p>
+                        </div>
+                    </div>
                     {% endfor %}
                 </ol>
+                
             </div>
         </div>
     </div>
 {% endblock %}
+<script>
+    $("#a").click(function(){
+        document.getElementById("#correct_answer").display (500);
+        document.getElementById("#answer_explained").show(500);
+    });
+    
+    
+</script>

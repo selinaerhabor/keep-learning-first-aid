@@ -9,7 +9,7 @@
           <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-tab active" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tips of the Week</a>
+          <a class="nav-link nav-tab active" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
         </li>
         <li class="nav-item">
           <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
@@ -36,7 +36,7 @@
               <div id="firstAidTip" width="500" class="img-fluid" style="background-color: #F5FFFA; border:1px solid #000000; padding: 40px; ">
               {% for firstaidtip in firstaidtips %} 
                 <img src="{% static 'images/question_mark.png' %}" height="150"/>
-                <h4>{{ firstaidtip.title }}</h4>
+                <h4>{{ firstaidtip.title }}...</h4>
                 <p>{{ firstaidtip.tip }}</p>
                 <small>{{ firstaidtip.published_date }}</small>
               {% endfor %}

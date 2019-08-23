@@ -5,13 +5,13 @@
 
   <!--Page Navigation Bar-->
   <header>
-    <nav class="nav-pages">
+    <nav class="nav-pages" id="navbarNav">
       <ul class="nav justify-content-center">
         <li class="nav-item">
             <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
         </li>
         <li class="nav-item">
-            <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tips of the Week</a>
+            <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
         </li>
         <li class="nav-item">
             <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
@@ -29,53 +29,122 @@
     </nav>
   </header>
   
-  <section class="container-fluid">
+  <section class="container-fluid" style="background-color: #F5FFFA;">
     <div class="row justify-content-center">
-      <div class="col-xs-12 text-center">
+      <div class="col-xs-12 col-md-10 text-center">
         <h1 class="padding-top">Frequently Asked Questions</h1>
-        <div id="accordion">
-          <div class="card">
-            <div class="card-header" id="headingOne">
-              <h5 class="">
-                <button class="btn btn-link" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        <div id="accordion" style="margin-top: 40px; margin-bottom: 40px;">
+          <div class="card col-xs-12">
+            <a class="card-header btn btn-link" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: #00ace6; color: #fff;">
+              <h5>
                   What is KLFA?
-                </button>
               </h5>
-            </div>
-            <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
-              <div class="card-body">
-                KLFA stands for Keep Learning First Aid. We are UK based providers of First Aid learning and training material. 
-                Since we were founded in 2016, we are now offering a range of products from CPR Manikins to First Aid Manual books for all 
-                ages in order to equip people with the skills and confidence needed to provide first aid in emergency situations.
-              </div>
+            </a>
+          </div>
+          <div id="collapseOne" aria-labelledby="headingOne" data-parent="#accordion">
+            <div class="card-body">
+              KLFA stands for Keep Learning First Aid. We are UK based providers of First Aid learning and training material. 
+              Since we were founded in 2016, we are now offering a range of products from CPR Manikins to First Aid Manual books for all 
+              ages in order to equip people with the skills and confidence needed to provide first aid in emergency situations.
             </div>
           </div>
           <div class="card">
-            <div class="card-header" id="headingTwo">
-              <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
-                  Can I buy First Aid kits from Keep Learning First Aid?
-                </button>
+            <a class="card-header btn btn-link" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
+              <h5>
+                Can I buy First Aid kits from here?
               </h5>
-            </div>
-            <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
+            </a>
+          </div>
+          <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="card-body">
-                We do have a small collection of First Aid Kits available for purchase from our <a href="">online store</a>. However, in the case of an emergency, please call 999 immediately. If you live outside the UK, in the case of an emergency, please call your emergency services immediately.
+                We do have a small collection of First Aid Kits available, check out our <a href="{% url 'sale' %}">Products</a>. 
+                However, in the case of an emergency, please call 999 immediately. If you live outside the UK, in the case of an emergency, 
+                please call your emergency services immediately.
               </div>
+            </div>
+          <div class="card">
+            <a class="card-header btn btn-link collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
+              <h5>
+                How long is a First Aid Course?
+              </h5>
+            </a>
+          </div>
+          <div id="collapseThree" class="collapse show" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+            <div class="card-body">
+              <p>Our 1 Day Emergency First Aid at Work Course lasts approximately 6 hours.</p>
+              <p>Our 2 day First Aid Re-qualification course last approximately 12 hours and is covered over two days.</p>
+              <p>The 3 Day First Aid course is an 18-hour long course spread over three days. We do however run a condensed 
+              version of this course. Please give us a call to find out more information.</p>
+              <p>The Annual First Aid refresher course is a 3-hour long course.</p>
+              <p>The Fire Marshal Training course is a 3-hour long course.</p>
             </div>
           </div>
           <div class="card">
-            <div class="card-header" id="headingThree">
-              <h5 class="mb-0">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
-                  Collapsible Group Item #3
-                </button>
+            <a class="card-header btn btn-link collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
+              <h5>
+                Why are the prices of your products cheaper than others?
               </h5>
+            </a>
+          </div>
+          <div id="collapseFour" class="collapse show" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+            <div class="card-body">
+              One of our most frequently asked questions is why exactly Keep Learning First Aid products are much cheaper compared to the rest of our competitors. 
+              This is a simple one, our oldest competitors at St John’s Ambulance and British Red Cross operate as registered charities. 
+              Being a limited company, KLFA Group can afford to be as competitive as possible, which means passing great savings onto 
+              our customers! We believe that life-saving skill training should not cost an arm and a leg and we aim to beat any written quote. 
             </div>
-            <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
-              <div class="card-body">
-                Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus terry richardson ad squid. 3 wolf moon officia aute, non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt laborum eiusmod. Brunch 3 wolf moon tempor, sunt aliqua put a bird on it squid single-origin coffee nulla assumenda shoreditch et. Nihil anim keffiyeh helvetica, craft beer labore wes anderson cred nesciunt sapiente ea proident. Ad vegan excepteur butcher vice lomo. Leggings occaecat craft beer farm-to-table, raw denim aesthetic synth nesciunt you probably haven't heard of them accusamus labore sustainable VHS.
-              </div>
+          </div>
+          <div class="card">
+            <a class="card-header btn btn-link collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
+              <h5>
+                What time does the course start and finish?
+              </h5>
+            </a>
+          </div>
+          <div id="collapseFive" class="collapse show" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+            <div class="card-body">
+              All courses start at 10 am sharp and finish at approximately 17:00. 
+            </div>
+          </div>
+          <div class="card">
+            <a class="card-header btn btn-link collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
+              <h5>
+                What happens if I fail that exam?
+              </h5>
+            </a>
+          </div>
+          <div id="collapseSix" class="collapse show" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+            <div class="card-body">
+              At the end of First Aid courses, you must complete a multiple-choice question paper. If you fail this, you will have 
+              one opportunity to retake. If failed a second time, you will need to book and sit the course again, giving you 2 more 
+              opportunities to retake.
+            </div>
+          </div>
+          <div class="card">
+            <a class="card-header btn btn-link collapsed" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
+              <h5>
+                I bought the wrong course, what do I do?
+              </h5>
+            </a>
+          </div>
+          <div id="collapseSeven" class="collapse show" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+            <div class="card-body">
+              If you realised you have booked on to a course that is not most suited to you and you wish to change this, 
+              please call the KLFA Group office on +44(0)321 6788 9012 where a member of our team will be happy to help with your request. 
+              We recommend you do this shortly after purchase.
+            </div>
+          </div>
+          <div class="card">
+            <a class="card-header btn btn-link collapsed" id="headingEight" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
+              <h5>
+                English is my second language; will I be OK?
+              </h5>
+            </a>
+          </div>
+          <div id="collapseEight" class="collapse show" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+            <div class="card-body">
+              In an emergency situation, you will need to communicate with the emergency services, therefore First Aid courses 
+              must be completed in English.
             </div>
           </div>
         </div>
