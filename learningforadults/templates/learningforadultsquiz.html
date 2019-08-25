@@ -26,34 +26,23 @@
             </ul>
         </nav>
     </header>
-    <div class="container-fluid" style="background-color: #e5ffec;">
+    <div class="container-fluid bg">
         <div class="row">
             <div class="col-12">
-                <h1 class="mx-auto">Learning For Adults Quiz</h1>
+                <h1 class="text-center padding-top">Learning For Adults Quiz</h1>
+                <hr>
+                <p class="text-center">Please select one of the options below (A, B, C or D) for each question.</p>
                 
-                <!--Quiz Questions-->
+                <!--Quiz Body-->
                 <div class="row">
-                            <div class="col-12">
-                <ol>
-                    {% for aq in adultsquestions %}
-                        <li>{{ aq.question }}</li>
-                        
-                            <p>A. {{ aq.answer_a }}</p>
-                            <p>B. {{ aq.answer_b }}</p>
-                            <p>C. {{ aq.answer_c }}</p>
-                            <p>D. {{ aq.answer_d }}</p>
-                            
-                            <a class="btn btn-light">A</a>
-                            <a class="btn btn-light">B</a>
-                            <a class="btn btn-light">C</a>
-                            <a class="btn btn-light">D</a>
-                            
-                        <p class="hidden" style="display:none;">Correct Answer: {{ aq.correct_answer }}</p>
-                        <p class="hidden" style="display:none;">{{ aq.solution }}</p>
-                    {% endfor %}
-                </ol>
+                    <div class="col-12">
+                        <div id="quizBody"></div>
+                        <button class="btn btn-success margin" id="submitAnswers">Submit</button>
+                        <div id="userScore" class=""></div>
+                        <p id="userFeedback" class=""></p>
+                    </div>
                 </div>
-              </div>
+                
             </div>
         </div>
     </div>

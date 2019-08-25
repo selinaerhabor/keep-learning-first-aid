@@ -28,12 +28,14 @@
         </nav>
     </header>
     
-    <div class="container-fluid" style="background-color: #e5ffec;">
+    <div class="container-fluid bg">
       <div class="row">
         <div class="col-12">
           <div class="text-center">
             <div class="card-body">
               <h1 class="mx-auto">Learning For Adults</h1>
+              <hr>
+              <p>Save Lives. First Aid is for everyone, everywhere.</p>
               <div class="row">
                 <div class="col-12 card-deck">
                   <div class="card">
@@ -71,11 +73,11 @@
                 </div>
               </div>
             </div>
-            <a class="btn btn-success" href="">Shop Now</a>
+            <a class="btn btn-success" href="{% url 'sale' %}">Shop Now</a>
             <div class="row">
               <!-- Begin Quiz trigger modal -->
               <div class="col s12 quiz-btn">
-                <a class="btn btn-info" href="{% url 'learningforadultsquiz' %}">Adults Test</a>
+                <a class="btn btn-info" href="{% url 'learningforadultsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Adults test your knowledge">Begin Test</a>
               </div>
             </div>
           </div>
