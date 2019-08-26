@@ -56,8 +56,6 @@ $(document).ready(function(){
     },
     {
         question: "4. Which is the correct ratio of chest compressions to rescue breaths for use in CPR of an adult casualty?",
-        
-        image: "{% static 'images/chestcompressionsandrescuebreaths.jpg' %}",
 
         answerChoices: {
             A: "2 compressions : 30 rescue breaths",
@@ -184,7 +182,7 @@ $(document).ready(function(){
         },
         correctAnswer: 'D',
         
-        solution: "The correct answer is D. Superficial burns-A first-degree burn is also called a superficial burn or wound. It's an injury that affects the first layer of your skin. First-degree burns are one of the mildest forms of skin injuries, and they usually don't require medical treatment. Partial-thickness burns are more serious than superficial (first-degree) burns because a deeper layer of skin is burned. They are more painful and they can get infected more easily. Full thickness burns destroy both layers of skin-(epidermis and dermis) and may penetrate more deeply into underlying structures. These burns have a dense white, waxy or even charred appearance."
+        solution: "The correct answer is D. Superficial burns - A first-degree burn is also called a superficial burn or wound. It's an injury that affects the first layer of your skin. First-degree burns are one of the mildest forms of skin injuries, and they usually don't require medical treatment. Partial-thickness burns are more serious than superficial (first-degree) burns because a deeper layer of skin is burned. They are more painful and they can get infected more easily. Full thickness burns destroy both layers of skin-(epidermis and dermis) and may penetrate more deeply into underlying structures. These burns have a dense white, waxy or even charred appearance."
     },
     {
         question: "14. What is a faint?",
@@ -240,26 +238,27 @@ $(document).ready(function(){
             var answerChoices;
             var letter;
             
-            for(var i=0; i < questions.length; i++){
+            for(var i=0; i < questions.length; i++) {
                 
                 answerChoices = [];
     
                 /* Adds a HTML Radio button for all answer choices (4) for each question, rendering each
                 answer choice on a separate line for better User Experience*/
-                for(letter in questions[i].answerChoices){
+                for(letter in questions[i].answerChoices) {
     
                     answerChoices.push(
                         '<div>' + '<input type="radio" name="question'+i+'" value="'+letter+'">'+ ' ' + letter + ': '
                         + questions[i].answerChoices[letter] + '</div>'
                     );
                 }
-    
-                // Loads questions with their answer choices and solutions(but hidden)
-                quizLoad.push(
-                    '<h4 class="padding-top">' + questions[i].question + '</h4>' + '<img src="' + questions[i].image + '" alt="quiz image">' 
-                    + '<div class="answerChoices">' + answerChoices.join('') + '</div>' + '<div class="solution hide">' 
-                    + questions[i].solution + '</div>'
-                );
+                
+                    
+                    quizLoad.push(
+                    '<h4 class="padding-top">' + questions[i].question + '</h4>' + '<div class="answerChoices">' 
+                    + answerChoices.join('') + '</div>' + '<div class="solution hide">' + questions[i].solution + '</div>'
+                    );
+                
+         
             }
     
             // Displays quiz on HTML page
