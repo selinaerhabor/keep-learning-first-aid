@@ -2,27 +2,39 @@
 <!DOCTYPE html>
 <html lang="en">
   <head>
+    <!--Meta data-->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <!--Brand Logo-->
     <link rel="icon" href="{% static 'images/logo.jpg' %}">
+    <!--Styles-->
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Poppins">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.8.1/css/all.css" integrity="sha384-50oBUHEmvpQ+1lW4y57PTFmhCaXp0ML5d60M1M7uH2+nqUivzIebhndOJK28anvf" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.7.2/animate.min.css">
+    <!--Scripts-->
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <!--Custom CSS-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
+    <!--Title-->
     <title>{% block page_title %}{% endblock %}</title>
   </head>
   <body>
   
-  <!--Header Navigation Bar-->
+  <!--HEADER NAVIGATION BAR-->
   <header>
-    <nav class="navbar navbar-light">
-      <a class="navbar-brand" href="{% url 'home' %}">
-        <img class="logo" src="{% static 'images/logo.jpg' %}" alt="KLFA Logo">
-      </a>
+  <nav class="navbar navbar-expand-lg">
+    <a class="navbar-brand" href="{% url 'home' %}">
+      <img class="logo" src="{% static 'images/logo.jpg' %}" alt="KLFA Logo">
+    </a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
       {% if messages %}
-      <div class="col-4">
+      <div class="col-m4" id="navbarNav">
         <div class="alert alert-warning alert-dismissible fade show" role="alert">
           <button type="button" class="close" data-dismiss="alert" aria-label="Close">
             <span aria-hidden="true">&times;</span>
@@ -33,6 +45,7 @@
         </div>
       </div>
       {% endif %}
+      <div class="collapse navbar-collapse" id="navbarNav">
       <ul class="nav justify-content-end">
         {% if user.is_authenticated %}
         <li class="nav-item">
@@ -62,51 +75,116 @@
           </a>
         </li>
         <li class="nav-item">
-          <a class="nav-link nav-top" href="">
-            <!--{% url 'view_cart' %}-->
+          <a class="nav-link nav-top" href="{% url 'view_cart' %}">
             <i class="fas fa-shopping-cart"></i>
               Cart
             {% if product_count > 0 %}
               <label class="badge badge-warning">{{ product_count }}</label>
+            {% else %}
+              <label class="badge badge-warning">0</label>
             {% endif %}
           </a>
         </li>
       </ul>
+      </div>
     </nav>
   </header>
   
-  <!--Main Body-->
-  {% block document %}{% endblock %}
+  <!--MAIN BODY-->
+  {% block document %}
   
-  <!--Footer-->
+  <!--MODALS-->
+  <!--Privacy Policy-->
+  <div class="modal fade" id="privacyPolicy" tabindex="-1" role="dialog" aria-labelledby="privacyPolicy" aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">×</span>
+          </button>
+          <h4 class="modal-title" id="privacyPolicy">Our Privacy Policy:</h4>
+        </div>
+        <div class="modal-body">
+          <p><small>Effective from January 23, 2018</small></p>
+          <div>
+            <h4>1. By law you have the right to: </h4>
+            <ol> 
+              <ul>Request access to your personal information.  This enables you to receive a copy of the personal information we hold about you and to check that we are lawfully processing it.   </ul>
+               
+              <ul> Request correction of the personal information we hold about you.  This enables you to have any incomplete or inaccurate information we hold about you corrected.    </ul>     
+               
+              <ul> Request erasure of your personal information.  This enables you to ask us to delete or remove personal information where there is no good reason for us to continue processing it.  You also have the right to ask us to delete or remove your personal information where you have exercised your right to object to processing (see below). </ul>
+               
+              <ul> Object to processing of your personal information where we are relying on a legitimate interest (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground.  You also have the right to object where we are processing your personal information for direct marketing purposes. </ul>
+               
+              <ul> Request the restriction of processing of your personal information.  This enables you to ask us to suspend the processing of personal information about you, for example if you want us to establish its accuracy or the reason for process it. </ul>    
+               
+              <ul> Request the transfer of your personal information to another party. </ul>
+            </ol>
+            <p> If you want to review, verify, correct or request erasure of your personal information, object to the processing of 
+            your personal data, or request that we transfer a copy of your personal information to another party, please send a written 
+            request to our Data Protection Officer by email- data-protection@klfa.uk or by post- marked for the attention of the Data 
+            Protection Officer at KLFA Group, 1-5 Wellister Road, United Kingdom. </p>
+            <p> We will ask you for information to confirm your identity and, where applicable, to help us search for your personal 
+            information.  Except in rare cases, we will respond to you within 30 days after we have received any request (including any 
+            identification documents requested).</p>
+          </div>
+          <div>
+            <h4>2. We use your Information in the following ways:</h4>
+            <p> (a) To ensure that content from the website is presented in the most effective manner for you and your computer;(b) to notify you about any changes to our service;
+              (c) in accordance with your authorisation as expressed when you subscribe to any online service provided by us or when you correspond with us.
+            </p>
+          </div>
+          <div>
+          <h4> 2.1. In limited circumstances we may pass your Information to other third party organisations:</h4> 
+          <p>
+            (a) If we buy or sell any business or assets in which case we may disclose your Information to the seller or buyer of such business or assets;(b) if we are under a duty to disclose or share your Information to comply with any legal obligation or in order to enforce or apply our terms and conditions and other agreements or protect the rights, property, or safety of our customers, or others. This includes exchanging information with other companies and organisations for fraud protection and credit risk reduction; and
+            (c) with your consent (for example when you subscribe to receive updates from our third party partners).
+          </p>
+          </div>
+          <div>
+            <h4> 3. Use of Cookies </h4>
+            <p>To make full use of the online shopping and personalised features on Keep Learning First Aid (KLFA) websites, 
+            your computer, tablet or mobile phone will need to accept cookies, as we can only provide you with certain personalised 
+            features of this website by using them.</p>
+            <p>Our cookies don't store sensitive information such as your name, address or payment details: they simply hold the 'key' 
+            that, once you're signed in, is associated with this information. </p>
+            <p>You can restrict, block or delete cookies from Keep Learning First Aid at any time through your browser. 
+            Each browser is different, so check the 'Help' menu of your particular browser (or your mobile phone's handset manual) to 
+            learn how to change your cookie preferences.</p>
+            <p>More information about cookies and how to control how they are set can be found at www.allaboutcookies.org</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <!--Terms & Conditions (T & Cs)--> 
+  
+  
+  <!--Contact Us-->
+  {% endblock %}
+  
+  <!--FOOTER-->
   <footer class="footerBackground">
     <div class="text-center">
       <div class="card-body">
         <h5 class="card-title">Subscribe to our newsletter to receive the best deals on our learning products!</h5>
-        <input type="text" name="Email" class="mx-auto email-input" placeholder="Email" required><input type="submit" id="subscribe_submit">
-        <div class="col s6 m6 left">
-          <p class="card-text padding-top"><a href="#">Privacy Policy</a></p>
-          <p class="card-text"><a href="#">Terms & Conditions</a></p>
-          <p class="card-text padding-btm"><a href="#">Contact Us</a></p>
+        <input type="email" name="email" class="mx-auto email-input" placeholder="Email" class="validate" required/>
+        <button id="subscribe_submit">Submit</button>
+        <div class="col s12" style="padding: 20px;">
+          <span class="card-text footer-link" style="padding: 20px;"><a href="#privacyPolicy">Privacy Policy</a></span>
+          <span class="card-text footer-link" style="padding: 20px;"><a href="#">Terms & Conditions</a></span>
+          <span class="card-text footer-link" style="padding: 20px;"><a href="#">Contact Us</a></span>
         </div>
-          <h6 class="card-title mx-auto"><b>Follow Us</b></h6>
-          <a href="https://twitter.com/teamklfa" target="_blank"><i class="fab fa-twitter"></i></a>
-          <a href="https://www.instagram.com/team_klfa/" target="_blank"><i class="fab fa-instagram"></i></a>
       </div>
-      <div class="card-footer">
-        KLFA Keep Learning First Aid
-      </div>
+        <h6 class="card-title mx-auto"><b>Follow Us</b></h6>
+        <a href="https://twitter.com/teamklfa" target="_blank"><i class="fab fa-twitter"></i></a>
+        <a href="https://www.instagram.com/team_klfa/" target="_blank"><i class="fab fa-instagram"></i></a>
+    </div>
+    <div class="card-footer">
+      KLFA Keep Learning First Aid
     </div>
   </footer>
-  
-  <!--Modals-->
-  <!--Add Modals for Privacy policy, Terms & conditions, Contact Us here-->
-  
-  <!--Scripts-->
-  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
-  <script src="{% static 'js/custom.js' %}"></script>
-  
   </body>
 </html>

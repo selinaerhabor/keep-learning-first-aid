@@ -26,7 +26,7 @@
             </ul>
         </nav>
     </header>
-    <div class="container-fluid bg" style="background-color: #e5ffec;">
+    <div class="container-fluid bg">
       <div class="row">
         <div class="col-12">
           <div class="text-center">
@@ -72,9 +72,9 @@
             </div>
             <a class="btn btn-success" href="{% url 'products' %}">Shop Now</a>
             <div class="row">
-              <!-- Begin Quiz trigger modal -->
+              <!-- Button redirects users to Kids First Aid quiz -->
               <div class="col s12 quiz-btn">
-                <a class="btn btn-info" href="{% url 'learningforkidsquiz' %}">Kids Test</a>
+                <a class="btn btn-info" href="{% url 'learningforkidsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Kids test your knowledge">Kids Quiz</a>
               </div>
             </div>
           </div>

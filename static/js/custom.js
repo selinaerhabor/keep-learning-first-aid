@@ -11,7 +11,7 @@ $(document).ready(function(){
     });
     
      
-/*------------------------------------------------------LEARNING FOR KIDS QUIZ*/
+/*------------------------------------------------------LEARNING FOR ADULTS QUIZ*/
     
     // Adults First Aid Questions
     var adultsQuiz = [
@@ -30,7 +30,7 @@ $(document).ready(function(){
     },
     {
         question: "2. You are a lone first aider and have an unconscious non-breathing adult, what should you do first?",
-
+        
         answerChoices: {
             A: "Start CPR with 30 chest compressions.",
             B: "Give five initial rescue breaths.",
@@ -56,6 +56,8 @@ $(document).ready(function(){
     },
     {
         question: "4. Which is the correct ratio of chest compressions to rescue breaths for use in CPR of an adult casualty?",
+        
+        image: "{% static 'images/chestcompressionsandrescuebreaths.jpg' %}",
 
         answerChoices: {
             A: "2 compressions : 30 rescue breaths",
@@ -254,8 +256,9 @@ $(document).ready(function(){
     
                 // Loads questions with their answer choices and solutions(but hidden)
                 quizLoad.push(
-                    '<h4 class="padding-top">' + questions[i].question + '</h4>' + '<div class="answerChoices">' 
-                    + answerChoices.join('') + '</div>' + '<div class="solution hide">' + questions[i].solution + '</div>'
+                    '<h4 class="padding-top">' + questions[i].question + '</h4>' + '<img src="' + questions[i].image + '" alt="quiz image">' 
+                    + '<div class="answerChoices">' + answerChoices.join('') + '</div>' + '<div class="solution hide">' 
+                    + questions[i].solution + '</div>'
                 );
             }
     
@@ -335,6 +338,5 @@ $(document).ready(function(){
         };
     
     }
-        
-   
+
 });

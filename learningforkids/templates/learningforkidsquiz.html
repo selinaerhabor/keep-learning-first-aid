@@ -26,43 +26,24 @@
             </ul>
         </nav>
     </header>
-    <div class="container-fluid" style="background-color: #e5ffec;">
+    <div class="container-fluid bg">
         <div class="row">
             <div class="col-12">
-                <h1 class="mx-auto">Learning For Kids Quiz</h1>
+                <h1 class="text-center padding-top">Learning For Kids Quiz</h1>
+                <hr>
+                <p class="text-center">Please select one of the options below (A, B or C) for each question.</p>
                 
-                <!--Quiz Questions-->
-                <ol>
-                    {% for kq in kidsquestions %}
-                    <div class="row">
-                        <div class="col-md-6">
-                            <li>{{ kq.question }}</li>
-                            <img src="{{ MEDIA_URL }}{{ kq.image }}" width="150">
-                            <p id="a">A. {{ kq.answer_a }}</p>
-                            <p id="b">B. {{ kq.answer_b }}</p>
-                            <p id="c">C. {{ kq.answer_c }}</p>
-                            
-                            <a class="btn btn-light">A</a>
-                            <a class="btn btn-light">B</a>
-                            <a class="btn btn-light">C</a>
-                            
-                            {{ feedback }}
-                            <p id="correct_answer" class="hidden" style="display:none;">Correct Answer: {{ kq.correct_answer }}</p>
-                            <p id="answer_explained" class="hidden" style="display:none;">{{ kq.solution }}</p>
-                        </div>
+                <!--Kids Quiz Body-->
+                <div class="row">
+                    <div class="col-12">
+                        <div id="kidsQuizBody"></div>
+                        <button class="btn btn-success margin" id="kidsSubmitAnswers">Submit</button>
+                        <div id="kidsUserScore"></div>
+                        <p id="kidsUserFeedback"></p>
                     </div>
-                    {% endfor %}
-                </ol>
-                
+                </div>
             </div>
         </div>
     </div>
+    <script src="{% static 'js/kidsQuiz.js' %}"></script>
 {% endblock %}
-<script>
-    $("#a").click(function(){
-        document.getElementById("#correct_answer").display (500);
-        document.getElementById("#answer_explained").show(500);
-    });
-    
-    
-</script>
