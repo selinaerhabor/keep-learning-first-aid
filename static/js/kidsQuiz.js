@@ -7,7 +7,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "1. What phone number should you call in an emergency?",
         
-        image: "/static/images/telephone.png",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Telephone.png",
 
         kidsAnswerChoices: {
             A: "0800",
@@ -21,7 +21,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "2. Who can give first aid treatment?",
         
-        image: "",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Kids_to_Adults.jpg",
         
         kidsAnswerChoices: {
             A: "Only ambulance staff",
@@ -35,7 +35,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "3. If someone is choking, how can you help?",
         
-        image: "",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Choking.jpg",
 
         kidsAnswerChoices: {
             A: "Hit them on the back",
@@ -49,7 +49,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "4. What is the best thing to put on a burn at first?",
         
-        image: "",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Burn.jpg",
 
         kidsAnswerChoices: {
             A: "Warm running water",
@@ -63,7 +63,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "5. Pressing on the wound is the treatment for what?",
         
-        image: "",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Pressing_Wound.jpg",
 
         kidsAnswerChoices: {
             A: "A broken bone",
@@ -77,7 +77,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "6. 'Which of these is the best way to treat a nose bleed?",
         
-        image: "",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Nose_Bleed.jpg",
 
         kidsAnswerChoices: {
             A: "Lean head forward, pinch soft part of the nose",
@@ -91,7 +91,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "7. Why might someone use an inhaler?",
         
-        image: "",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Inhaler.jpg",
 
         kidsAnswerChoices: {
             A: "They get nosebleeds a lot",
@@ -105,7 +105,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "8. If you find someone collapsed on the floor, what should you do first?",
         
-        image: "",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Collapsed.jpg",
 
         kidsAnswerChoices: {
             A: "Put my jacket over them to keep them warm",
@@ -119,7 +119,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "9. How would you help an unconscious person who is breathing?",
         
-        image: "",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Unconscious_Person.jpg",
 
         kidsAnswerChoices: {
             A: "Sit them up and make sure their head is facing forward",
@@ -133,7 +133,7 @@ $(document).ready(function(){
     {
         kidsQuestion: "10. What is the best way to help a person with a broken leg?",
         
-        image: "",
+        image: "https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/Broken_Leg.jpg",
 
         kidsAnswerChoices: {
             A: "Press on it",
@@ -188,7 +188,7 @@ $(document).ready(function(){
     
                 // Loads questions with their answer choices and solutions(but hidden)
                 kidsQuizLoad.push(
-                    '<h4 class="padding-top">' + kidsQuestions[i].kidsQuestion + '</h4>' 
+                    '<h4 class="padding-top">' + kidsQuestions[i].kidsQuestion + '</h4>' + '<img src="' + kidsQuestions[i].image + '" height=150 alt="quiz image">' 
                     + '<div class="kidsAnswerChoices">' + kidsAnswerChoices.join('') + '</div>' + '<div class="kidsSolution hide">' 
                     + kidsQuestions[i].kidsSolution + '</div>'
                 );
