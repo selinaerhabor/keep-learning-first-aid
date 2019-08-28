@@ -35,50 +35,31 @@
             <h1 class="mx-auto">Learning For Adults</h1>
             <hr>
             <p>Save Lives. First Aid is for everyone, everywhere.</p>
+            
+            <!-- Button redirects users to Adults First Aid quiz -->
+            <div class="center">
+              <a class="btn btn-info quiz-btn animated heartBeat" href="{% url 'learningforadultsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Adults test your knowledge">Begin Test</a>
+            </div>
+          
             <div class="row">
               <div class="col-12 card-deck">
-                <div class="card">
-                  <img class="card-img-top" src="..." alt="Adults KLFA Product 1">
-                  <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
-                    <p class="card-text"><small class="text-muted"></small></p>
+                {% for products in products %}
+                  <div class="card featured-card">
+                    <div class="card-body">
+                    <h5 class="card-title">{{ products.category }}</h5>
+                    <a href="">
+                      <img class="card-img-top" src="{{ MEDIA_URL }}{{ products.image }}" alt="KLFA Product">
+                    </a>
+                      <p class="card-text name">{{ products.name }}</p>
+                      <p class="card-text price"><small class="text-muted">£{{ products.price }}</small></p>
+                    </div>
                   </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="..." alt="Adults KLFA Product 2">
-                  <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
-                    <p class="card-text"><small class="text-muted"></small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="..." alt="Adults KLFA Product 3">
-                  <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
-                    <p class="card-text"><small class="text-muted"></small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="..." alt="Adults KLFA Product 4">
-                  <div class="card-body">
-                    <h5 class="card-title"></h5>
-                    <p class="card-text"></p>
-                    <p class="card-text"><small class="text-muted"></small></p>
-                  </div>
-                </div>  
+                {% endfor %}
               </div>
             </div>
           </div>
-          <a class="btn btn-success" href="{% url 'sale' %}">Shop Now</a>
-          <div class="row">
-            <!-- Button redirects users to Adults First Aid quiz -->
-            <div class="col s12 quiz-btn">
-              <a class="btn btn-info" href="{% url 'learningforadultsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Adults test your knowledge">Begin Test</a>
-            </div>
-          </div>
+          <a class="btn btn-success shop-now" href="{% url 'sale' %}">Shop Now</a>
+          
         </div>
       </div>
     </div>
