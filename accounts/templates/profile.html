@@ -2,7 +2,56 @@
 {% block page_title %}{{ user }}'s Profile{% endblock %} 
 {% block page_heading %}{{ user }}'s Profile{% endblock %} 
 {% block document %}
-    <p>{{ profile.email }}</p>
-    <li><a class="btn btn-info" href="{{ url 'password_reset' }}">Change Password</a></li>
-    <li><a class="nav-link nav-top" href="{% url 'logout' %}">Log out</a></li>
+  <header>
+    <nav class="nav-pages">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'faqs' %}">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'sale' %}">Products</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container-field bg">
+    <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-6 mx-auto">
+        <div class="jumbotron text-center">
+          <h4>My Account</h4>
+          <hr>
+          <p>Not {{ user.username }}? <a href="{% url 'login' %}">Sign In</a></p>
+          <div class="text-center">
+            <p class="big-icon"><i class="fas fa-user-circle"></i> {{ user.username }}</p>
+            <p><b>Email:</b> {{ user.email }}</p>
+            <p>
+              <a href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="View Your Cart">
+                <i class="fas fa-shopping-cart enlarge-icon"></i>
+                {% if product_count > 0 %}
+                  <label class="badge badge-success">{{ product_count }}</label>
+                {% else %}
+                  <label class="badge badge-success">0</label>
+                {% endif %}
+              </a>
+            </p>
+            <p><a class="btn btn-info" href="{% url 'password_reset' %}">Reset Password</a></p>
+            <p><a class="btn btn-info" href="{% url 'logout' %}">Log out</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+        
 {% endblock %}
