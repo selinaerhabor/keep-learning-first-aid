@@ -27,147 +27,37 @@
         </nav>
     </header>
     <div class="container-fluid bg">
-      <div class="row">
-        <div class="col-12">
-          <div class="text-center">
-            <div class="card-body">
-              <h1 class="mx-auto">Learning For Kids</h1>
-              <p>You are never too young to learn first aid!</p>
-              <div class="row">
-                <div class="col-12 card-deck">
-                  <div class="card">
-                    <img class="card-img-top" src="..." alt="Kids KLFA Product 1">
-                    <div class="card-body">
-                      <h5 class="card-title"></h5>
-                      <p class="card-text"></p>
-                      <p class="card-text"><small class="text-muted"></small></p>
+      <div class="text-center">
+        <div class="card-body">
+          <h1 class="mx-auto">Learning For Kids</h1>
+          <hr>
+          <p>You are never too young to learn first aid!</p>
+          <img class="mx-auto kids-image" src="https://keeplearningfirstaid.s3.eu-west-2.amazonaws.com/media/images/learningforkids.jpg" height="150" alt="Kids">
+
+          <!-- Button redirects users to Kids First Aid quiz -->
+          <div class="center">
+            <a class="btn btn-info quiz-btn animated heartBeat" href="{% url 'learningforkidsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Kids test your knowledge">Kids Quiz</a>
+          </div>
+        
+          <!--Featured First Aid Learning Products for Kids-->
+          <div class="row">
+                <div class="mx-auto card-deck">
+                  {% for products in products %}
+                    <div class="card featured-card">
+                      <div class="card-body">
+                      <h5 class="card-title">{{ products.category }}</h5>
+                      <a href="">
+                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ products.image }}" alt="KLFA Product">
+                      </a>
+                        <p class="card-text name">{{ products.name }}</p>
+                        <p class="card-text price"><small class="text-muted">£{{ products.price }}</small></p>
+                      </div>
                     </div>
-                  </div>
-                  <div class="card">
-                    <img class="card-img-top" src="..." alt="Kids KLFA Product 2">
-                    <div class="card-body">
-                      <h5 class="card-title"></h5>
-                      <p class="card-text"></p>
-                      <p class="card-text"><small class="text-muted"></small></p>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img class="card-img-top" src="..." alt="Kids KLFA Product 3">
-                    <div class="card-body">
-                      <h5 class="card-title"></h5>
-                      <p class="card-text"></p>
-                      <p class="card-text"><small class="text-muted"></small></p>
-                    </div>
-                  </div>
-                  <div class="card">
-                    <img class="card-img-top" src="..." alt="Kids KLFA Product 4">
-                    <div class="card-body">
-                      <h5 class="card-title"></h5>
-                      <p class="card-text"></p>
-                      <p class="card-text"><small class="text-muted"></small></p>
-                    </div>
-                  </div>  
+                  {% endfor %}
                 </div>
               </div>
-            </div>
-            <a class="btn btn-success" href="{% url 'products' %}">Shop Now</a>
-            <div class="row">
-              <!-- Button redirects users to Kids First Aid quiz -->
-              <div class="col s12 quiz-btn">
-                <a class="btn btn-info" href="{% url 'learningforkidsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Kids test your knowledge">Kids Quiz</a>
-              </div>
-            </div>
-          </div>
         </div>
+        <a class="btn btn-success shop-now" href="{% url 'sale' %}">Shop Now</a>
       </div>
     </div>
-    
-    <!-- Kids Quiz Modal -->
-        <div class="modal fade" id="kidsQuizModal" tabindex="-1" role="dialog" aria-labelledby="kidsQuizModalLabel" aria-hidden="true">
-          <div class="modal-dialog" role="document">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="kidsQuizModalLabel">Learning For Kids Quiz</h5>
-              </div>
-              <div class="modal-body">
-                <ol>
-                  <li>What phone number should you call in an emergency?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)0800</span>
-                    <span class="mx-auto">(b)100</span>
-                    <span class="mx-auto">(c)999</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input0">
-                  <li>Who can give first aid treatment?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)Only ambulance staff</span>
-                    <span class="mx-auto">(b)Only adults</span>
-                    <span class="mx-auto">(c)Adults and children</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input1">
-                  <li>If someone is choking, how can you help?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)Hit them on the back</span>
-                    <span class="mx-auto">(b)Lean them backwards</span>
-                    <span class="mx-auto">(c)Lie them on their side</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input2">
-                  <li>What is the best thing to put on a burn at first?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)Warm running water</span>
-                    <span class="mx-auto">(b)Cold running water</span>
-                    <span class="mx-auto">(c)Kitchen film</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input3">
-                  <li>Pressing on the wound is the treatment for what?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)A broken bone</span>
-                    <span class="mx-auto">(b)A bad bleed</span>
-                    <span class="mx-auto">(c)A bee sting</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input4">
-                  <li>Which of these is the best way to treat a nose bleed?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)Lean head forward, pinch soft part of the nose</span>
-                    <span class="mx-auto">(b)Lean head forward, pinch hard part of the nose</span>
-                    <span class="mx-auto">(c)Lean head backwards, pinch soft part of the nose</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input5">
-                  <li>Why might someone use an inhaler?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)They get nosebleeds a lot</span>
-                    <span class="mx-auto">(b)They have asthma</span>
-                    <span class="mx-auto">(c)They fall over often</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input6">
-                  <li>If you find someone collapsed on the floor, what should you do first?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)Put my jacket over them to keep them warm</span>
-                    <span class="mx-auto">(b)Check if they are breathing</span>
-                    <span class="mx-auto">(c)Run off to find an adult</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input7">
-                  <li>How would you help an unconscious person who is breathing?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)Sit them up and make sure their head is facing forward</span>
-                    <span class="mx-auto">(b)Turn them on their side, with their head back</span>
-                    <span class="mx-auto">(c)Turn them on their side, with their head forward</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input8">
-                  <li>What is the best way to help a person with a broken leg?</li>
-                  <div class="col s12">
-                    <span class="mx-auto">(a)Press on it</span>
-                    <span class="mx-auto">(b)Pour cold water on it</span>
-                    <span class="mx-auto">(c)Keep it still and support it</span>
-                  </div>
-                  <input type="text" class="form-control" maxlength="1" size="1" placeholder="Enter a, b or c" id="input9">
-                </ol>
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-dismiss="modal">Exit</button>
-                <button type="button" class="btn btn-primary" onclick="checkAnswer();">Submit</button>
-              </div>
-            </div>
-          </div>
-        </div>
 {% endblock %}
