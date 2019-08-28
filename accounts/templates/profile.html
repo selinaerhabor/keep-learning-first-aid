@@ -3,4 +3,6 @@
 {% block page_heading %}{{ user }}'s Profile{% endblock %} 
 {% block document %}
     <p>{{ profile.email }}</p>
+    <li><a class="btn btn-info" href="{{ url 'password_reset' }}">Change Password</a></li>
+    <li><a class="nav-link nav-top" href="{% url 'logout' %}">Log out</a></li>
 {% endblock %}

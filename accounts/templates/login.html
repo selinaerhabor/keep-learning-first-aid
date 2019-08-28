@@ -1,14 +1,44 @@
 {% extends 'base.html' %}
 {% load static %}
-{% block page_title %}Account Login | Keep Learning First Aid{% endblock %}
+{% block page_title %}Sign In | Keep Learning First Aid{% endblock %}
 {% block document %}
-  <div class="jumbotron">
-    <h4 class="mx-auto">Sign In</h4>
-    <hr>
-    <form method ="POST">
-      {% csrf_token %}
-      {{ account_form.as_p }}
-      <button method="POST">Submit</button>
-    </form>
+  <header>
+    <nav class="nav-pages">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'faqs' %}">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'sale' %}">Products</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container-field bg">
+    <div class="row">
+      <div class="col-xs-8 col-sm-8 col-md-6 mx-auto">
+        <div class="jumbotron text-center">
+          <h4 class="mx-auto">Sign In</h4>
+          <hr>
+          <form method ="POST">
+            {% csrf_token %}
+            {{ account_form.as_p }}
+            <button method="POST" class="btn btn-success">Submit</button>
+          </form>
+        </div>
+      </div>
+    </div>
   </div>
 {% endblock %} 

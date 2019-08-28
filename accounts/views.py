@@ -1,6 +1,7 @@
 from django.shortcuts import render, redirect, reverse
 from django.contrib import auth, messages
 from accounts.forms import UserAccountForm, UserRegistrationForm
+from django.contrib.auth.views import password_reset, password_reset_done, password_reset_confirm, password_reset_complete
 
     
 #For Log out Tab
@@ -32,8 +33,6 @@ def registration(request):
     {"registration_form": registration_form})
     
 #For Profile
-def user_profile(request):
-    user_profile = AccountProfile()
-    return render(request, 'profile.html',
-    {"account_profile": account_profile})
+def profile(request):
+    return render(request, 'profile.html')
     
