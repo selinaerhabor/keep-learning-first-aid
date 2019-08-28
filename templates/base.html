@@ -26,60 +26,110 @@
   
   <!--HEADER NAVIGATION BAR-->
   <header>
-  <nav class="navbar navbar-expand-lg">
-    <a class="navbar-brand" href="{% url 'home' %}">
-      <img class="logo" src="{% static 'images/logo.jpg' %}" alt="KLFA Logo">
-    </a>
-    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-      <span class="navbar-toggler-icon"></span>
-    </button>
-      {% if messages %}
-      <div class="col-m4" id="navbarNav">
-        <div class="alert alert-warning alert-dismissible fade show" role="alert">
-          <button type="button" class="close" data-dismiss="alert" aria-label="Close">
-            <span aria-hidden="true">&times;</span>
-          </button>
-          {% for message in messages %}
-            {{ message }}
-          {% endfor %}
-        </div>
-      </div>
-      {% endif %}
-      <div class="collapse navbar-collapse d-flex justify-content-end" id="navbarNav">
-      <ul class="nav justify-content-end">
-        {% if user.is_authenticated %}
-        <li class="nav-item">
-          <a class="nav-link nav-top" href="{% url 'profile' %}">
+    <nav class="navbar navbar-expand-lg">
+      <div class="row">
+        <div class="col-xs-12">
+          <a class="navbar-brand" href="{% url 'home' %}">
+            <img class="logo" src="{% static 'images/logo.jpg' %}" alt="KLFA Logo">
+          </a>
+          <ul class="nav justify-content-center mx-auto ">
+          {% if user.is_authenticated %}
+          <!--My Account - Smaller screen view-->
+          <li class="nav-item d-inline d-sm-none">
+            <a class="nav-link nav-top" href="{% url 'profile' %}">
+              <i class="fas fa-user-circle enlarge-icon"></i>
+            </a>
+          </li>
+          {% else %}
+          <!--Registration/Sign In Button - Smaller screen view-->
+          <li class="nav-item d-inline d-sm-none">
+            <a class="nav-link nav-top" href="{% url 'registration' %}">
               <i class="fas fa-user-circle"></i>
-              My Account
-          </a>
-        </li>
-        {% else %}
-        <li class="nav-item">
-          <a class="nav-link nav-top" href="{% url 'registration' %}">
-              <i class="fas fa-user-circle"></i>
-              Register/Log In
-          </a>
-        </li>
-        {% endif %}
-        <li class="nav-item">
-          <a class="nav-link nav-top" href="#">
-              <i class="fas fa-search"></i>
-              Search
-          </a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link nav-top" href="{% url 'view_cart' %}">
-            <i class="fas fa-shopping-cart"></i>
-              Cart
+            </a>
+          </li>
+          {% endif %}
+          <!--Search Button - Smaller screen view-->
+          <li class="nav-item d-inline d-sm-none">
+            <a class="nav-link nav-top" href="#displaySearchBar" data-toggle="collapse" href="#displaySearchBar" role="button" aria-expanded="false" aria-controls="displaySearchBar">
+              <i class="fas fa-search enlarge-icon"></i>
+            </a>
+          </li>
+          <!--Cart Button - Smaller screen view-->
+          <li class="nav-item d-inline d-sm-none">
+            <a class="nav-link nav-top" href="{% url 'view_cart' %}">
+              <i class="fas fa-shopping-cart enlarge-icon"></i>
             {% if product_count > 0 %}
               <label class="badge badge-success">{{ product_count }}</label>
             {% else %}
               <label class="badge badge-success">0</label>
             {% endif %}
-          </a>
-        </li>
-      </ul>
+            </a>
+          </li>
+        </ul>
+        </div>
+      </div>
+      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+      </button>
+      {% if messages %}
+        <div class="col-m4" id="navbarNav">
+          <div class="alert alert-warning alert-dismissible fade show" role="alert">
+            <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+              <span aria-hidden="true">&times;</span>
+            </button>
+            {% for message in messages %}
+              {{ message }}
+            {% endfor %}
+          </div>
+        </div>
+      {% endif %}
+      <div class="collapse navbar-collapse d-flex justify-content-end" id="nav">
+        <ul class="nav justify-content-end">
+          <!--Controls display of Search Bar when toggle search button is pressed-->
+          <div class="col">
+            <div class="collapse multi-collapse" id="displaySearchBar">
+              <input type="text" name="q"/>
+              <a class="btn"><i class="fas fa-search"></i></a>
+            </div>
+          </div>
+          {% if user.is_authenticated %}
+          <!--My Account-->
+          <li class="nav-item d-none d-sm-inline">
+            <a class="nav-link nav-top" href="{% url 'profile' %}">
+              <i class="fas fa-user-circle"></i>
+              My Account
+            </a>
+          </li>
+          {% else %}
+          <!--Registration/Sign In Button-->
+          <li class="nav-item d-none d-sm-inline">
+            <a class="nav-link nav-top" href="{% url 'registration' %}">
+              <i class="fas fa-user-circle"></i>
+              Register/Log In
+            </a>
+          </li>
+          {% endif %}
+          <!--Search Button-->
+          <li class="nav-item d-none d-sm-inline">
+            <a class="nav-link nav-top" href="#displaySearchBar" data-toggle="collapse" href="#displaySearchBar" role="button" aria-expanded="false" aria-controls="displaySearchBar">
+              <i class="fas fa-search"></i>
+              Search
+            </a>
+          </li>
+          <!--Cart Button-->
+          <li class="nav-item d-none d-sm-inline">
+            <a class="nav-link nav-top" href="{% url 'view_cart' %}">
+              <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
+              {% if product_count > 0 %}
+                <label class="badge badge-success">{{ product_count }}</label>
+              {% else %}
+                <label class="badge badge-success">0</label>
+              {% endif %}
+            </a>
+          </li>
+        </ul>
+        
       </div>
     </nav>
   </header>
@@ -166,10 +216,11 @@
         <h5 class="card-title">Subscribe to our newsletter to receive the best deals on our learning products!</h5>
         <input type="email" name="email" class="mx-auto email-input" placeholder="Email" class="validate" required/>
         <button id="subscribe_submit">Submit</button>
-        <div class="col s12" style="padding: 20px;">
-          <span class="card-text footer-link" style="padding: 20px;"><a href="#privacyPolicy">Privacy Policy</a></span>
-          <span class="card-text footer-link" style="padding: 20px;"><a href="#">Terms & Conditions</a></span>
-          <span class="card-text footer-link" style="padding: 20px;"><a href="#">Contact Us</a></span>
+        <div class="col-xs-12 links">
+          <span class="card-text footer-link"><a href="#privacyPolicy">Privacy Policy</a></span>
+          <span class="card-text footer-link d-none d-sm-inline"><a href="#">Terms & Conditions</a></span>
+          <span class="card-text footer-link d-inline d-sm-none"><a href="#">T & Cs</a></span>
+          <span class="card-text footer-link"><a href="#">Contact Us</a></span>
         </div>
         <h6 class="card-title mx-auto"><b>Follow Us</b></h6>
         <a href="https://twitter.com/teamklfa" target="_blank"><i class="fab fa-twitter"></i></a>
