@@ -8,7 +8,7 @@ from django.contrib.auth.views import password_reset, password_reset_done, passw
 def logout(request):
     auth.logout(request)
     messages.success(request, 'You have successfully logged out')
-    return redirect(reverse('index'))
+    return render(request, 'index.html')
     
 #For Log in Tab
 def login(request):
@@ -20,6 +20,7 @@ def login(request):
             if user:
                 auth.login(user=user, request=request)
                 messages.success(request, "You have successfully logged in!")
+                return render(request, 'index.html')
             else:
                 account_form.add_error(None, "Your username or password is incorrect")
     else:
