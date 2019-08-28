@@ -29,14 +29,16 @@
     </nav>
   </header>
   
-  <section class="container-fluid bg" style="background-color: #e5ffec;">
-    <div class="row justify-content-center">
-      <div class="col-xs-12 col-md-10 text-center">
-        <h1 class="padding-top">Frequently Asked Questions</h1>
-        <div id="accordion" style="margin-top: 40px; margin-bottom: 40px;">
-          <div class="card col-xs-12">
+  <section class="container-fluid bg">
+    <h1 class="padding-top text-center">Frequently Asked Questions</h1>
+    <hr>
+    <div class="row">
+      <div class="col-xs-12 col-sm-10 col-md-10 mx-auto">
+      <div class="text-center">
+        <div id="accordion">
+          <div class="card">
             <a class="card-header btn btn-link" id="headingOne" data-toggle="collapse" data-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne" style="background-color: #00ace6; color: #fff;">
-              <h5>
+              <h5 class="panel">
                   What is KLFA?
               </h5>
             </a>
@@ -50,12 +52,12 @@
           </div>
           <div class="card">
             <a class="card-header btn btn-link" id="headingTwo" data-toggle="collapse" data-target="#collapseTwo" aria-expanded="true" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
-              <h5>
+              <h5 class="panel">
                 Can I buy First Aid kits from here?
               </h5>
             </a>
           </div>
-          <div id="collapseTwo" class="collapse show" aria-labelledby="headingTwo" data-parent="#accordion">
+          <div id="collapseTwo" class="collapse" aria-labelledby="headingTwo" data-parent="#accordion">
               <div class="card-body">
                 We do have a small collection of First Aid Kits available, check out our <a href="{% url 'sale' %}">Products</a>. 
                 However, in the case of an emergency, please call 999 immediately. If you live outside the UK, in the case of an emergency, 
@@ -64,12 +66,12 @@
             </div>
           <div class="card">
             <a class="card-header btn btn-link collapsed" id="headingThree" data-toggle="collapse" data-target="#collapseThree" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
-              <h5>
+              <h5 class="panel">
                 How long is a First Aid Course?
               </h5>
             </a>
           </div>
-          <div id="collapseThree" class="collapse show" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
+          <div id="collapseThree" class="collapse" aria-labelledby="headingThree" data-parent="#accordion">
             <div class="card-body">
               <p>Our 1 Day Emergency First Aid at Work Course lasts approximately 6 hours.</p>
               <p>Our 2 day First Aid Re-qualification course last approximately 12 hours and is covered over two days.</p>
@@ -81,12 +83,12 @@
           </div>
           <div class="card">
             <a class="card-header btn btn-link collapsed" id="headingFour" data-toggle="collapse" data-target="#collapseFour" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
-              <h5>
+              <h5 class="panel">
                 Why are the prices of your products cheaper than others?
               </h5>
             </a>
           </div>
-          <div id="collapseFour" class="collapse show" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
+          <div id="collapseFour" class="collapse" aria-labelledby="headingFour" data-parent="#accordion">
             <div class="card-body">
               One of our most frequently asked questions is why exactly Keep Learning First Aid products are much cheaper compared to the rest of our competitors. 
               This is a simple one, our oldest competitors at St John’s Ambulance and British Red Cross operate as registered charities. 
@@ -96,24 +98,24 @@
           </div>
           <div class="card">
             <a class="card-header btn btn-link collapsed" id="headingFive" data-toggle="collapse" data-target="#collapseFive" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
-              <h5>
+              <h5 class="panel">
                 What time does the course start and finish?
               </h5>
             </a>
           </div>
-          <div id="collapseFive" class="collapse show" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
+          <div id="collapseFive" class="collapse" aria-labelledby="headingFive" data-parent="#accordion">
             <div class="card-body">
               All courses start at 10 am sharp and finish at approximately 17:00. 
             </div>
           </div>
           <div class="card">
             <a class="card-header btn btn-link collapsed" id="headingSix" data-toggle="collapse" data-target="#collapseSix" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
-              <h5>
+              <h5 class="panel">
                 What happens if I fail that exam?
               </h5>
             </a>
           </div>
-          <div id="collapseSix" class="collapse show" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
+          <div id="collapseSix" class="collapse" aria-labelledby="headingSix" data-parent="#accordion">
             <div class="card-body">
               At the end of First Aid courses, you must complete a multiple-choice question paper. If you fail this, you will have 
               one opportunity to retake. If failed a second time, you will need to book and sit the course again, giving you 2 more 
@@ -122,12 +124,12 @@
           </div>
           <div class="card">
             <a class="card-header btn btn-link collapsed" id="headingSeven" data-toggle="collapse" data-target="#collapseSeven" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
-              <h5>
+              <h5 class="panel">
                 I bought the wrong course, what do I do?
               </h5>
             </a>
           </div>
-          <div id="collapseSeven" class="collapse show" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
+          <div id="collapseSeven" class="collapse" aria-labelledby="headingSeven" data-parent="#accordion">
             <div class="card-body">
               If you realised you have booked on to a course that is not most suited to you and you wish to change this, 
               please call the KLFA Group office on +44(0)321 6788 9012 where a member of our team will be happy to help with your request. 
@@ -136,18 +138,19 @@
           </div>
           <div class="card">
             <a class="card-header btn btn-link collapsed" id="headingEight" data-toggle="collapse" data-target="#collapseEight" aria-expanded="false" aria-controls="collapseTwo" style="background-color: #00ace6; color: #fff;">
-              <h5>
+              <h5 class="panel">
                 English is my second language; will I be OK?
               </h5>
             </a>
           </div>
-          <div id="collapseEight" class="collapse show" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
+          <div id="collapseEight" class="collapse" aria-labelledby="headingEight" data-parent="#accordion">
             <div class="card-body">
               In an emergency situation, you will need to communicate with the emergency services, therefore First Aid courses 
               must be completed in English.
             </div>
           </div>
         </div>
+      </div>
       </div>
     </div>
   </section>

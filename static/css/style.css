@@ -1,8 +1,25 @@
-body{
+body {
     overflow-x: hidden;
     font-family: 'Poppins';
 }
 
+/*Web page background colour*/
+.bg {
+    background-color: #e5ffec;
+}
+
+.padding-top {
+    padding-top: 20px;
+}
+
+.margin {
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.hide {
+    display: none;
+}
 /*-----------------------------------------------------------------MEDIA RULES*/
 
 
@@ -11,16 +28,16 @@ body{
 
 /*------------------------------------------------------------------NAVIGATION*/
 
-.logo{
+.logo {
     height: 150px;
 }
 
 
-.nav-pages{
+.nav-pages {
     background-image: linear-gradient(#194d33,#001a09,#194d33);
 }
 
-.nav-tab{
+.nav-tab {
     color: #f0ffff;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -34,7 +51,7 @@ body{
     font-weight: bold;
 }
 
-.nav-top{
+.nav-top {
     color: #194d33;
     -webkit-transition: all 0.5s;
     -moz-transition: all 0.5s;
@@ -45,6 +62,27 @@ body{
 .nav-top:hover {
     color: #001a09;
     font-weight: bold;
+}
+
+.nav-right {
+    float: left;
+    text-align: center;
+    padding: 14px 16px;
+    text-decoration: none;
+    font-size: 17px;
+}
+
+/*--------------------------------------------------------------REGISTER/LOGIN*/
+
+.jumbotron {
+    border: solid #194d33;
+    color: #194d33;
+    background-color: #e5ffec;
+    margin-top: 40px;
+    margin-left: 20px;
+    margin-right: 20px;
+    padding: 30px;
+    
 }
 
 /*------------------------------------------------------------------------HOME*/
@@ -78,16 +116,12 @@ body{
     cursor: pointer;
 }
 
-.shop-now {
+.btn-spacing {
     margin: 10px;
 }
 
-.padding-top {
-    padding-top: 30px;
-}
-
-.padding-btm {
-    padding-bottom: 20px;
+.footer-link {
+    padding: 20px;
 }
 
 .fab {
@@ -115,3 +149,125 @@ body{
     color: #ccffcc;
 }
 
+/*---------------------------------------------------FIRST AID TIP OF THE WEEK*/
+
+#firstAidTip {
+   border: 2px solid #000000; 
+   background-color: #fff9ff; 
+   border: 1px solid #000000; 
+   padding: 40px; 
+}
+
+
+
+
+/*------------------------------------------------------LEARNING FOR KIDS PAGE*/
+
+.quiz-btn {
+    margin-bottom: 40px;
+    padding: 10px;
+    background-color: #66c2ff;
+    -webkit-transition: background-color 0.5s;
+    -moz-transition: background-color 0.5s;
+    -o-transition: background-color 0.5s;
+    transition: background-color 0.5s;
+}
+
+.quiz-btn: hover {
+    background-color: #1aa3ff;
+}
+
+.box {
+    border-width: 2px;
+    border-color: #34aaaa;
+    height: 30px;
+    width: 75px;
+    
+}
+
+.kids-image {
+    margin-bottom: 10px;
+}
+
+.hidden {
+    display: none;
+}
+
+/*---------------------------------------------------------LEARNING FOR ADULTS*/
+    
+    
+    .answers {
+        margin-bottom: 20px;
+    }
+    
+    .shop-now {
+        padding: 15px;
+        margin: 40px 20px;
+    }
+    
+    .featured-card {
+        border: solid #194d33;
+    }
+/*-----------------------------------------------------------------------FAQs*/
+
+    #accordion {
+        margin-top: 40px; 
+        margin-bottom: 60px;
+    }
+    
+    .panel {
+        white-space: normal;
+    }
+
+/*----------------------------------------------------------------------FOOTER*/
+
+.links {
+    margin: 20px;
+}
+/*--------------------------------------------------------------------PRODUCTS*/
+    .badge {
+        padding-left: 9px;
+        padding-right: 9px;
+        -webkit-border-radius: 9px;
+        -moz-border-radius: 9px;
+        border-radius: 9px;
+    }
+    
+    .label-warning[href],
+    .badge-warning[href] {
+        background-color: #c67605;
+    }
+    
+    .product {
+        background-size: contain;
+        background-position: center center;
+        background-repeat: no-repeat;
+        width: 150px;
+        height: 150px;
+        margin: 0 auto;
+    }
+    
+    caption p {
+        word-wrap: break-word;
+    }
+    
+    
+    .panel-default {
+        border-color: transparent;
+        padding: 0 10px;
+    }
+    
+    .panel-body {
+        height: 100%;
+        border: 1px solid #194d33;
+        height: 450px;
+        padding: 10px;
+    }
+    
+    .product-description {
+        min-height: 40px;
+    }
+    
+    .product-image {
+        margin: 10px;
+    }
