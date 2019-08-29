@@ -39,25 +39,43 @@
             <a class="btn btn-info quiz-btn animated heartBeat" href="{% url 'learningforkidsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Kids test your knowledge">Kids Quiz</a>
           </div>
         
-          <!--Featured First Aid Learning Products for Kids-->
-          <div class="row">
-                <div class="mx-auto card-deck">
-                  {% for products in products %}
-                    <div class="card featured-card">
-                      <div class="card-body">
-                      <h5 class="card-title">{{ products.category }}</h5>
-                      <a href="">
-                        <img class="card-img-top" src="{{ MEDIA_URL }}{{ products.image }}" alt="KLFA Product">
-                      </a>
-                        <p class="card-text name">{{ products.name }}</p>
-                        <p class="card-text price"><small class="text-muted">£{{ products.price }}</small></p>
-                      </div>
-                    </div>
-                  {% endfor %}
+          <!--Learning For Kids Featured Products-->
+          <section id="featured-kids-content" class="container-fluid">
+            <div class="row">
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="category">
+                  <a href="" class="">
+                    <img class="featured-lfk img-fluid" src="{% static "images/kidscollection1.png" %}" alt="KLFA Kids Collection">
+                  </a>
+                  <h4 class="card-heading">First Aid Posters</h4>
+                  <p class="card-text">Ensure you are ready to provide help in any emergency situation.</p>
+                  <a href="" class="btn btn-success shop-now">Purchase First Aid Posters</a>
                 </div>
               </div>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="category">
+                  <a href="" class="">
+                    <img class="featured-lfk img-fluid" src="{% static "images/kidscollection2.jpg" %}" alt="KLFA Kids Collection">
+                  </a>
+                  <h4 class="card-heading">First Aid Stickers</h4>
+                  <p class="card-text">Ensure you know what to do in any emergency situation.</p>
+                  <a href="" class="btn btn-success shop-now">Purchase First Aid Stickers</a>
+                </div>
+              </div>
+              <div class="col-xs-12 col-sm-6 col-md-4">
+                <div class="category">
+                  <a href="" class="">
+                    <img class="featured-lfk img-fluid" src="{% static "images/kidscollection3.jpg" %}" alt="KLFA Kids Collection">
+                  </a>
+                  <h4 class="card-heading">First Aid Books</h4>
+                  <p class="card-text">Build your confidence and enhance your knowledge in delivering First Aid.</p>
+                  <a href="" class="btn btn-success shop-now">Purchase First Aid Books</a>
+                </div>
+              </div>
+            </div>
+          </section>
+        
         </div>
-        <a class="btn btn-success shop-now" href="{% url 'sale' %}">Shop Now</a>
       </div>
     </div>
 {% endblock %}

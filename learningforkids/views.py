@@ -1,5 +1,4 @@
 from django.shortcuts import render
-from .models import Kidsquestion
 
 
 # Learning for kids navigation link.
@@ -13,5 +12,4 @@ Redirects users to an interactive quiz aimed at kids, which has
 completion of quiz
 """
 def learningforkidsquiz(request):
-    kidsquestions = Kidsquestion.objects.all()
-    return render(request, "learningforkidsquiz.html", {"kidsquestions": kidsquestions})
+    return render(request, "learningforkidsquiz.html")
