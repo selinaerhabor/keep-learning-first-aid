@@ -32,34 +32,53 @@
   <div class="container-fluid bg">
     <div class="text-center">
       <div class="card-body">
+        
         <h1 class="mx-auto">Learning For Adults</h1>
         <hr>
         <p>Save Lives. First Aid is for everyone, everywhere.</p>
         
-        <!-- Button redirects users to Adults First Aid quiz -->
+        <!--Button redirects users to Adults First Aid quiz-->
         <div class="center">
           <a class="btn btn-info quiz-btn animated heartBeat" href="{% url 'learningforadultsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Adults test your knowledge">Begin Quiz</a>
         </div>
         
-        <!--Featured First Aid Learning Products for Adults-->
-        <div class="row">
-          <div class="mx-auto card-deck">
-            {% for products in products %}
-              <div class="card featured-card">
-                <div class="card-body">
-                <h5 class="card-title">{{ products.category }}</h5>
-                <a href="">
-                  <img class="card-img-top" src="{{ MEDIA_URL }}{{ products.image }}" alt="KLFA Product">
+        <!--Learning For Adults Featured Products-->
+        <section id="featured-content" class="container-fluid">
+          <div class="row">
+            <div class="col-xs-12 col-md-4">
+              <div class="category">
+                <a href="" class="">
+                  <img class="rounded img-fluid" src="{% static "images/firstaidkit.jpg" %}" alt="KLFA First Aid Kits">
                 </a>
-                  <p class="card-text name">{{ products.name }}</p>
-                  <p class="card-text price"><small class="text-muted">£{{ products.price }}</small></p>
-                </div>
+                <h4 class="card-heading">First Aid Kits</h4>
+                <p class="card-text">Ensure you are ready to provide help in any emergency situation.</p>
+                <a href="" class="btn btn-success shop-now">Purchase First Aid Kits</a>
               </div>
-            {% endfor %}
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <div class="category">
+                <a href="" class="">
+                  <img class="rounded img-fluid" src="{% static "images/book.jpg" %}" alt="KLFA Books">
+                </a>
+                <h4 class="card-heading">First Aid Books</h4>
+                <p class="card-text">Ensure you know what to do in any emergency situation.</p>
+                <a href="" class="btn btn-success shop-now">Purchase Books</a>
+              </div>
+            </div>
+            <div class="col-xs-12 col-md-4">
+              <div class="category">
+                <a href="" class="">
+                  <img class="rounded img-fluid" src="{% static "images/manikin.jpg" %}" alt="KLFA Manikins">
+                </a>
+                <h4 class="card-heading">First Aid Manikins</h4>
+                <p class="card-text">Build your confidence and enhance your knowledge in delivering First Aid.</p>
+                <a href="" class="btn btn-success shop-now">Purchase First Aid Manikins</a>
+              </div>
+            </div>
           </div>
-        </div>
+        </section>
+        
       </div>
-      <a class="btn btn-success shop-now" href="{% url 'sale' %}">Shop Now</a>
     </div>
   </div>
 {% endblock %}
