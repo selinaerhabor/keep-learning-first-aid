@@ -1,13 +1,11 @@
 # -*- coding: utf-8 -*-
 from __future__ import unicode_literals
 from django.shortcuts import render
-# from products.models import Product
 
 
-# Displays Featured products on Learning For Adults Page (4)
-# def learningforadults(request):
-#     products = Product.objects.filter(featured_page="LFA")
-#     return render(request, 'learningforadults.html', {"products": products})
+# Displays Featured products on Learning For Adults Page (3)
+def learningforadults(request):
+    return render(request, 'learningforadults.html')
 
 """
 Redirects users to an interactive quiz aimed at adults via 'Begin Test' 
