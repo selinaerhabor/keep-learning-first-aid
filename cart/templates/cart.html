@@ -1,0 +1,73 @@
+{% extends 'base.html' %}
+{% block page_title %}Cart | KLFA{% endblock %}
+{% load static %}
+{% block document %}
+
+  <header>
+    <nav class="nav-pages">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'faqs' %}">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'sale' %}">Products</a>
+        </li>
+      </ul>
+    </nav>
+    </header>
+    
+  <div class="container-fluid bg">
+    <div class="row">
+      <h1 class="mx-auto">Your Cart</h1>
+    </div>
+      <hr>
+      <div class="row">
+        {% for item in cart_items %}
+        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
+          <div class="card text-center">
+            <div class="panel-body">
+              <h3>{{ item.product.name }}</h3>
+              <a href="">
+                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+              </a>
+              <div class="caption">
+                <p class="product-description">{{ item.product.description }}</p>
+                <p>£{{ item.product.price }}</p>
+                <p>
+                  <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                    {% csrf_token %}
+                    <div class="form-group">
+                      <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                      <div class="input-group">
+                        <div class="input-group-addon">Qty</div>
+                        <input name="quantity" type="number" min="0" max="999" value="{{item.quantity}}" class="form-control">
+                      </div>
+                    </div>
+                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                  </form>
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        {% endfor %}
+      </div>
+    <hr>
+    <h5>Total</h5>
+    <p>£{{ total }}</p>
+    <a href="" class="btn btn-success" role="button">Continue to checkout</a>
+  </div>
+
+{% endblock %}
