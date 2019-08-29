@@ -29,9 +29,29 @@ def login(request):
 
 #For Register Tab
 def registration(request):
-    registration_form = UserRegistrationForm()
+    if request.user.is_authenticated:
+        return redirect(reverse('index'))
+        
+    if request.method == "POST":
+        registration_form = UserRegistrationForm(request.POST)
+        
+        if registration_form.is_valid():
+            registration_form.save()
+            
+            user = auth.authenticate(username=request.POST['username'],
+                                    password=request.POST['password1'])
+                                    
+            if user:
+                auth.login(user=user, request=request)
+                messages.success(request, "You have successfully registered")
+            else:
+                messages.error(request, 
+                "System could not register your account at this time. Please try again later.")
+                
+    else:
+        registration_form = UserRegistrationForm()
     return render(request, 'registration.html',
-    {"registration_form": registration_form})
+        {"registration_form": registration_form})
     
 #For Profile
 def profile(request):
