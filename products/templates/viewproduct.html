@@ -36,14 +36,14 @@
           
           <h3>£{{ products.price }}</h3>
           <hr>
-          <div class="col-xs-12 col-md-10 mx-auto">
+          <div class="col-xs-12 col-md-12 mx-auto">
             <a href="{{ MEDIA_URL }}{{ products.image }}" target="_blank">
               <img src="{{ MEDIA_URL }}{{ products.image }}" class="rounded-img float-left img-fluid" alt="KLFA Product">
             </a>
             <p><b>Category:</b> {{ products.category }}</p>
             <p><b>Status:</b> IN STOCK</p>
             <p><b>Description:</b> {{ products.description }}</p>
-            <div class="col-md-4 col-md-offset-4 float-right">
+            <div class="col-md-4 col-md-offset-4 float-right margin-bottom">
               <form method="POST" action="{% url 'add_to_cart' products.id %}">
                 {% csrf_token %}
                 <div class="input-group">

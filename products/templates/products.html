@@ -42,7 +42,7 @@
             
             <!--Shows a detailed view of product when user clicks on product card -->
             <a href="{% url 'view_product' product.id %}">
-              <div class="card text-center">
+              <div class="card text-center margin-bottom">
                 <div class="panel-body">
                   <div class="col">
                     <h3>{{ product.name }}</h3>
@@ -86,7 +86,7 @@
             {% for i in products.paginator.page_range %}
               {% if products == i %}
                 <li class="page-item page-active">
-                  <a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span>1</a>
+                  <b><a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span>1</a></b>
                 </li>
               {% else %}
                 <li class="page-item">

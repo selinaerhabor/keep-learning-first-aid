@@ -26,6 +26,7 @@ body {
 
 
 
+
 /*------------------------------------------------------------------NAVIGATION*/
 
 .logo {
@@ -35,6 +36,10 @@ body {
 
 .nav-pages {
     background-image: linear-gradient(#194d33,#001a09,#194d33);
+}
+
+.fa-bars {
+    color: #fff;
 }
 
 .nav-tab {
@@ -149,6 +154,16 @@ body {
     color: #ccffcc;
 }
 
+.enlarge-icon {
+    font-size: 30px;
+    padding-left: 10px;
+    text-decoration: none;
+}
+
+.big-icon{
+    font-size: 60px;
+}
+
 /*---------------------------------------------------FIRST AID TIP OF THE WEEK*/
 
 #firstAidTip {
@@ -189,6 +204,13 @@ body {
     margin-bottom: 10px;
 }
 
+.featured-lfk {
+    border: solid #194d33;
+    background-color: #fff;
+    margin-bottom: 20px;
+    height: 400px;
+}
+
 .hidden {
     display: none;
 }
@@ -201,13 +223,26 @@ body {
     }
     
     .shop-now {
-        padding: 15px;
-        margin: 40px 20px;
+        
+        margin-bottom: 40px;
     }
     
     .featured-card {
         border: solid #194d33;
     }
+    
+    .featured-lfa {
+        border: solid #194d33;
+        background-color: #fff;
+        padding: 10px;
+        margin-bottom: 20px;
+    }
+    
+    .extra-padding {
+        padding-top: 78px;
+        padding-bottom: 75px;
+    }
+    
 /*-----------------------------------------------------------------------FAQs*/
 
     #accordion {
@@ -258,11 +293,20 @@ body {
     }
     
     .panel-body {
-        height: 100%;
-        border: 1px solid #194d33;
         height: 450px;
+        border: 1px solid #194d33;
         padding: 10px;
     }
+    
+    .input-bar {
+        padding-bottom: 50px;
+    }
+    
+    .detailed-view {
+        text-decoration: none;
+    }
+    
+    
     
     .product-description {
         min-height: 40px;
@@ -270,4 +314,30 @@ body {
     
     .product-image {
         margin: 10px;
+    }
+    
+    .pagination {
+        color: #000;
+        font-size: 20px;
+        word-spacing: 5px;
+        text-decoration: none;
+    }
+    
+    .page-active {
+        background-color: #4a4a4a;
+    }
+    
+    .rounded-img {
+        border: solid #194d33;
+        margin-bottom: 50px;
+        margin-right: 15px;
+        
+    }
+    
+    .margin {
+        margin-top: 30px;
+    }
+    
+    .margin-bottom {
+        margin-bottom: 40px;
     }
