@@ -53,7 +53,8 @@ def registration(request):
     return render(request, 'registration.html',
         {"registration_form": registration_form})
     
-#For Profile
+#For User Profile
 def profile(request):
     return render(request, 'profile.html')
+    
     

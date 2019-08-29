@@ -4,6 +4,7 @@ from django.contrib.auth.forms import UserCreationForm
 from django.core.exceptions import ValidationError
 
 
+# Allows user to create an account
 class UserRegistrationForm(UserCreationForm):
 
     password1 = forms.CharField(
@@ -36,12 +37,11 @@ def clean_password2(self):
     
     return password2
         
-        
+# Allows user to login with their credentials (created via registration form)     
 class UserAccountForm(forms.Form):
     
     username = forms.CharField()
     password = forms.CharField(widget=forms.PasswordInput)
-    
 
 
 
