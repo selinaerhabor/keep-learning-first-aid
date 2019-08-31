@@ -32,6 +32,7 @@
         <div class="jumbotron text-center">
           <h4 class="mx-auto">Sign In</h4>
           <hr>
+          <p>If you do not have an account, please click <a href="{% url 'registration' %}">register</a></p>
           <form method ="POST">
             {% csrf_token %}
             {{ account_form.as_p }}
