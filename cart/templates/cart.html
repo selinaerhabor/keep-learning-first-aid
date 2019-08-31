@@ -30,44 +30,64 @@
     
   <div class="container-fluid bg">
     <div class="row">
-      <h1 class="mx-auto">Your Cart</h1>
+      <h1 class="mx-auto margin">Your Cart</h1>
     </div>
-      <hr>
-      <div class="row">
+    <hr>
+    <div class="row">
         {% for item in cart_items %}
-        <div class="col-xs-10 col-xs-offset-1 col-sm-offset-0 col-sm-6 col-md-4 display panel panel-display">
-          <div class="card text-center">
+        <div class="col-xs-12 col-sm-6 col-md-4">
+          <div class="card text-center margin-bottom">
             <div class="panel-body">
-              <h3>{{ item.product.name }}</h3>
+              <h3 class="text-truncate">{{ item.product.name }}</h3>
               <a href="">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')"></div>
+                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')" height="200"></div>
               </a>
               <div class="caption">
-                <p class="product-description">{{ item.product.description }}</p>
+                <ul>
+                  <p>{{ item.product.category }}</p>
+                </ul>
                 <p>£{{ item.product.price }}</p>
-                <p>
-                  <form class="form-inline" method="post" action="{% url 'adjust_cart' item.id %}">
+                  <form class="form-inline justify-content-center" method="post" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
                     <div class="form-group">
-                      <label for="exampleInputAmount" class="sr-only">New Qty</label>
+                      <label for="inputAmount" class="sr-only">New Qty</label>
                       <div class="input-group">
-                        <div class="input-group-addon">Qty</div>
-                        <input name="quantity" type="number" min="0" max="999" value="{{item.quantity}}" class="form-control">
-                      </div>
+                        <div class="input-group-addon">Qty:</div>
+                          <input name="quantity" type="number" class="form-control" min="0" max="999" value="{{item.quantity}}" placeholder="Qty" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                          <div class="input-group-append">
+                            <button type="submit" class="btn btn-primary">Amend</button>
+                          </div>
+                        </div>
                     </div>
-                    <button type="submit" class="btn btn-primary"><span class="glyphicon glyphicon-edit" aria-hidden="true"></span>Amend</button>
+                    <div class="form-group margin">
+                      <a href="" class="btn btn-danger remove_from_cart">Remove This Item</a>
+                    </div>
                   </form>
-                </p>
               </div>
             </div>
           </div>
         </div>
         {% endfor %}
       </div>
+    <div class="row">
+      <div class="col-12">
+        <div class="float-right">
+        <a href="" class="btn btn-light" role="button">Empty Your Cart</a>
+        </div>
+      </div>
+    </div>
     <hr>
-    <h5>Total</h5>
-    <p>£{{ total }}</p>
-    <a href="" class="btn btn-success" role="button">Continue to checkout</a>
+    <div class="row">
+      <div class="col-12">
+        <div class="float-left">
+          <h6>Total</h6>
+          <h4>£{{ total }}</h4>
+          </div>
+        <div class="float-right"> 
+          <a href="{% url 'checkout' %}" class="btn btn-success shop-now" role="button">Continue to checkout</a>
+        </div>
+      </div>
+    </div>
   </div>
 
 {% endblock %}
