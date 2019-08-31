@@ -1,9 +1,12 @@
-from django.shortcuts import render
+from django.shortcuts import render, get_object_or_404, redirect, reverse
+from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from products.models import Product
 
 
 # Learning for kids navigation link.
 def learningforkids(request):
     return render(request, 'learningforkids.html')
+    
 
 
 """

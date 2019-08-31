@@ -12,7 +12,7 @@
                     <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link nav-tab active" href="{% url 'learningforkids' %}">Learning for Kids</a>
+                    <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
@@ -41,6 +41,13 @@
                         <div id="kidsUserScore"></div>
                         <p id="kidsUserFeedback"></p>
                     </div>
+                </div>
+                
+                <!--Return to previous page button-->
+                <div class="row">
+                  <div class="col-xs-12 mx-auto">
+                    <a href="{% url 'learningforkids' %}" class="btn btn-info margin-bottom float-center">Return to Previous Page</a>
+                  </div>
                 </div>
             </div>
         </div>
