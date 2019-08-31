@@ -1,0 +1,122 @@
+{% extends 'base.html' %}
+{% block page_title %}Products | KLFA{% endblock %}
+{% load static %}
+{% block document %}
+    <!--Navigation Bar-->
+    <header>
+        <nav class="nav-pages">
+            <ul class="nav justify-content-center">
+                <li class="nav-item">
+                    <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-tab" href="{% url 'faqs' %}">FAQs</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link nav-tab active" href="{% url 'sale' %}">Products</a>
+                </li>
+            </ul>
+        </nav>
+    </header>
+    <section class="container-fluid bg">
+      <div class="row">
+        <div class="col-12">
+          {% if filter %}
+          <h1 class="text-center padding-top">Products: {{ filter }}</h1>
+          {% endif %}
+          <hr>
+          {% if page_number %}
+            <p class="text-center">Page: {{ page_number }}</p>
+          {% endif %}
+        </div>
+      </div>
+            
+      <!--Displays products on page (9 products per page)-->
+      <div class="row">
+        {% for product in products %}
+          <div class="col-xs-12 col-sm-6 col-md-4">
+            
+            <!--Shows a detailed view of product when user clicks on product card -->
+            <a href="{% url 'view_product' product.id %}" class="cardLink">
+              <div class="card text-center margin-bottom">
+                <div class="panel-body">
+                  <div class="col">
+                    <h3 class="text-truncate">{{ product.name }}</h3>
+                  </div>
+                  <div class="col">
+                    <img src="{{ MEDIA_URL }}{{ product.image }}" height="200" width="180" class="product-image rounded" alt="KLFA Product">
+                  </div>
+                  <div class="col">
+                    <p>£{{ product.price }}</p>
+                  </div>
+                  <div class="col input-bar">
+                    <form method="POST" action="{% url 'add_to_cart' product.id %}">
+                    {% csrf_token %}
+                    <div class="input-group">
+                      <input type="number" name="quantity" class="form-control" placeholder="Qty" size="3" min="0" max="999" value="{{item.quantity}}" aria-label="Quantity" aria-describedby="basic-addon2">
+                      <span class="input-group-btn">
+                        <button class="btn btn-success" type="submit">Add</button>
+                      </span>
+                    </div>
+                  </form>
+                  </div>
+                </div>
+            </div>
+            </a>
+          </div>
+        {% endfor %}
+      </div>
+      <div class="row">
+        <div class="col-xs-12 mx-auto">
+          <a href="{% url 'sale' %}" class="btn btn-info shop-now">Return to All Products</a>
+        </div>
+      </div>
+            
+      <!--Pagination-->      
+      <nav class="row justify-content-center" aria-label="productsPagination">
+        {% if products.has_other_pages %}
+          <ul class="pagination">
+            {% if products.has_previous %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{ products.previous_page_number }}" tabindex="-1"><<</a>
+              </li>
+            {% else %}
+              <li class="page-item disabled">
+                <a class="page-link" tabindex="-1"><<</a>
+              </li>
+            {% endif %}
+            {% for i in products.paginator.page_range %}
+              {% if products == i %}
+                <li class="page-item page-active">
+                  <b><a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span>1</a></b>
+                </li>
+              {% else %}
+                <li class="page-item">
+                  <a class="page-link" href="?page={{ i }}">{{ i }}</a>
+                </li>
+              {% endif %}
+            {% endfor %}
+            {% if products.has_next %}
+              <li class="page-item">
+                <a class="page-link" href="?page={{ products.next_page_number }}">>></a>
+              </li>
+            {% else %}
+              <li class="page-item disabled">
+                <a class="page-link">>></a>
+              </li>
+            {% endif %}
+          {% endif %}
+        </ul>
+      </nav>
+    </section>
+
+{% endblock %}
