@@ -17,6 +17,7 @@
     <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+    <script src="{% static 'js/custom.js' %}"></script>
     <!--Custom CSS-->
     <link rel="stylesheet" href="{% static 'css/style.css' %}">
     <!--Title-->
@@ -100,6 +101,13 @@
               My Account
             </a>
           </li>
+          <!--Logout-->
+          <li class="nav-item d-none d-sm-inline">
+            <a class="nav-link nav-top" href="{% url 'logout' %}">
+              <i class="fas fa-user-circle"></i>
+              Logout
+            </a>
+          </li>
           {% else %}
           <!--Registration/Sign In Button-->
           <li class="nav-item d-none d-sm-inline">
@@ -135,44 +143,40 @@
   </header>
   
   <!--MAIN BODY-->
-  {% block document %}
+  {% block document %}{% endblock %}
   
   <!--MODALS-->
   <!--Privacy Policy-->
-  <div class="modal fade" id="privacyPolicy" tabindex="-1" role="dialog" aria-labelledby="privacyPolicy" aria-hidden="true">
-    <div class="modal-dialog" role="document">
+  <div class="modal fade" id="privacyPolicy" tabindex="-1" role="dialog" aria-labelledby="modal-one" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
       <div class="modal-content">
         <div class="modal-header">
-          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-            <span aria-hidden="true">×</span>
-          </button>
-          <h4 class="modal-title" id="privacyPolicy">Our Privacy Policy:</h4>
+          <h4 class="modal-title" id="modal-one">Our Privacy Policy:</h4>
+          <a class="btn" class="close" data-dismiss="modal" aria-label="Close">
+            Close
+          </a>
         </div>
         <div class="modal-body">
           <p><small>Effective from January 23, 2018</small></p>
-          <div>
             <h4>1. By law you have the right to: </h4>
-            <ol> 
-              <ul>Request access to your personal information.  This enables you to receive a copy of the personal information we hold about you and to check that we are lawfully processing it.   </ul>
-               
-              <ul> Request correction of the personal information we hold about you.  This enables you to have any incomplete or inaccurate information we hold about you corrected.    </ul>     
-               
-              <ul> Request erasure of your personal information.  This enables you to ask us to delete or remove personal information where there is no good reason for us to continue processing it.  You also have the right to ask us to delete or remove your personal information where you have exercised your right to object to processing (see below). </ul>
-               
-              <ul> Object to processing of your personal information where we are relying on a legitimate interest (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground.  You also have the right to object where we are processing your personal information for direct marketing purposes. </ul>
-               
-              <ul> Request the restriction of processing of your personal information.  This enables you to ask us to suspend the processing of personal information about you, for example if you want us to establish its accuracy or the reason for process it. </ul>    
-               
-              <ul> Request the transfer of your personal information to another party. </ul>
-            </ol>
-            <p> If you want to review, verify, correct or request erasure of your personal information, object to the processing of 
+            <li>Request access to your personal information.  This enables you to receive a copy of the personal information we hold about you and to check that we are lawfully processing it.</li>
+             
+            <li> Request correction of the personal information we hold about you.  This enables you to have any incomplete or inaccurate information we hold about you corrected.</li>     
+             
+            <li> Request erasure of your personal information.  This enables you to ask us to delete or remove personal information where there is no good reason for us to continue processing it.  You also have the right to ask us to delete or remove your personal information where you have exercised your right to object to processing (see below). </li>
+             
+            <li> Object to processing of your personal information where we are relying on a legitimate interest (or those of a third party) and there is something about your particular situation which makes you want to object to processing on this ground.  You also have the right to object where we are processing your personal information for direct marketing purposes. </li>
+             
+            <li> Request the restriction of processing of your personal information.  This enables you to ask us to suspend the processing of personal information about you, for example if you want us to establish its accuracy or the reason for process it. </li>    
+             
+            <li> Request the transfer of your personal information to another party. </li>
+            <li> If you want to review, verify, correct or request erasure of your personal information, object to the processing of 
             your personal data, or request that we transfer a copy of your personal information to another party, please send a written 
             request to our Data Protection Officer by email- data-protection@klfa.uk or by post- marked for the attention of the Data 
-            Protection Officer at KLFA Group, 1-5 Wellister Road, United Kingdom. </p>
-            <p> We will ask you for information to confirm your identity and, where applicable, to help us search for your personal 
+            Protection Officer at KLFA Group, 1-5 Wellister Road, United Kingdom. </li>
+            <li> We will ask you for information to confirm your identity and, where applicable, to help us search for your personal 
             information.  Except in rare cases, we will respond to you within 30 days after we have received any request (including any 
-            identification documents requested).</p>
-          </div>
+            identification documents requested).</li>
           <div>
             <h4>2. We use your Information in the following ways:</h4>
             <p> (a) To ensure that content from the website is presented in the most effective manner for you and your computer;(b) to notify you about any changes to our service;
@@ -204,10 +208,60 @@
   </div>
   
   <!--Terms & Conditions (T & Cs)--> 
-  
-  
+  <div class="modal fade" id="termsConditions" tabindex="-1" role="dialog" aria-labelledby="modal-two" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-two">Terms & Conditions:</h3>
+          <a class="btn" class="close" data-dismiss="modal" aria-label="Close">
+            Close
+          </a>
+          </div>
+          <div class="modal-body">
+            <p><small>Effective from January 23, 2018</small></p>
+              <div>
+                <h4>1.1 Use of Website:</h4>
+                  You may not use the Site in any improper or unlawful manner or in breach of any legislation or license that applies to you.
+                <h4>1.2 Except as expressly permitted, you agree that when using the Site you will not:</h4>
+                  (a) publish, post, upload, store, distribute or disseminate any unlawful, defamatory, infringing, obscene, harmful, 
+                  confidential, libelous, hateful, or otherwise illegal material or information or anything which might constitute a 
+                  criminal or civil offence;(b) upload files or other data that contain software or other material which are the intellectual 
+                  property rights of any third party or which are protected by rights of privacy or publicity of any third party without having 
+                  received all necessary consents; or (c) upload files that contain viruses, corrupted files, or any other software or programs 
+                  that may interfere with or damage the operation of the Site or any other computer.
+                <h4>1.3 Agreement:</h4>
+                  You agree to comply with all reasonable instructions that we may give you from time to time regarding the use of the Site.
+                <h4>1.4 Responsibility:</h4> 
+                  You are responsible for obtaining (at your own cost) all necessary equipment and telecommunications services required 
+                  to access and use the Site. You are responsible for ensuring that no one uses your equipment to access the Site without your 
+                  permission. We will be entitled to assume that anyone who accesses the Site using your equipment has your permission to do so 
+                  and you will be liable for any Charges or any other costs, liabilities or damages that may be incurred by any such person.
+              </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
   <!--Contact Us-->
-  {% endblock %}
+  <div class="modal fade" id="contactUs" tabindex="-1" role="dialog" aria-labelledby="modal-three" aria-hidden="true">
+    <div class="modal-dialog modal-lg" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h3 class="modal-title" id="modal-three">Contact Us</h3>
+          <a class="btn" class="close" data-dismiss="modal" aria-label="Close">
+            Close
+          </a>
+        </div>
+        <div class="modal-body text-center">
+          <h4>In an emergency situation, call 999 immediately!</h4>
+          <h5>Need to talk to us about something else?</h5>
+          <p>Email: hello@klfa.uk</p>
+          <p>Tel: +44 (0) 32 16 78 89 012</p>
+        </div>
+      </div>
+    </div>
+  </div>
+
   
   <!--FOOTER-->
   <footer class="footerBackground mx-auto">
@@ -217,10 +271,10 @@
         <input type="email" name="email" class="mx-auto email-input" placeholder="Email" class="validate" required/>
         <button id="subscribe_submit">Submit</button>
         <div class="col-xs-12 links">
-          <span class="card-text footer-link"><a href="#privacyPolicy">Privacy Policy</a></span>
-          <span class="card-text footer-link d-none d-sm-inline"><a href="#">Terms & Conditions</a></span>
-          <span class="card-text footer-link d-inline d-sm-none"><a href="#">T & Cs</a></span>
-          <span class="card-text footer-link"><a href="#">Contact Us</a></span>
+          <span class="card-text footer-link"><a data-toggle="modal" href="#privacyPolicy">Privacy Policy</a></span>
+          <span class="card-text footer-link d-none d-sm-inline"><a data-toggle="modal" href="#termsConditions">Terms & Conditions</a></span>
+          <span class="card-text footer-link d-inline d-sm-none"><a href="#termsConditions">T & Cs</a></span>
+          <span class="card-text footer-link"><a data-toggle="modal" href="#contactUs">Contact Us</a></span>
         </div>
         <h6 class="card-title mx-auto"><b>Follow Us</b></h6>
         <a href="https://twitter.com/teamklfa" target="_blank"><i class="fab fa-twitter"></i></a>
