@@ -24,7 +24,7 @@ def sale(request):
 
 """
 Retrieves all products in the category Books and formats the results
-to only display ten product cards per page 
+to only display nine product cards per page 
 """
 def get_books(request):
     products = Product.objects.filter(category="Books")
@@ -40,7 +40,7 @@ def get_books(request):
     
 """
 Retrieves all products in the category Posters and formats the results
-to only display ten product cards per page 
+to only display nine product cards per page 
 """
 def get_posters(request):
     products = Product.objects.filter(category="Posters")
@@ -56,7 +56,7 @@ def get_posters(request):
     
 """
 Retrieves all products in the category Extras and formats the results
-to only display ten product cards per page 
+to only display nine product cards per page 
 """
 def get_extras(request):
     products = Product.objects.filter(category="Extras")
