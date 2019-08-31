@@ -11,7 +11,6 @@ class Product(models.Model):
     CDS_DVDS = 'CDs & DVDs'
     MANIKINS = 'Manikins'
     POSTERS = 'Posters'
-    COLLECTION = 'Kids Collection'
     EXTRAS = 'Extras'
     
     category_choices = (
@@ -22,11 +21,10 @@ class Product(models.Model):
         (CDS_DVDS,"CDs & DVDs"),
         (MANIKINS,"Manikins"),
         (POSTERS,"Posters"),
-        (COLLECTION,"Kids Collection"),
         (EXTRAS,"Extras"),
     )
     
-    # Dropdown values for Featured field in Products Model
+    # Dropdown values for Featured field in Home Model
     NONE = 'N'
     HOME = 'H'
     LEARNINGFORKIDS = 'LFK'
@@ -35,8 +33,16 @@ class Product(models.Model):
     featured_choices = (
         (NONE, "No"),
         (HOME, "Home"),
-        (LEARNINGFORKIDS, "Learning For Kids"),
+        (LEARNINGFORKIDS, "Learning For Kids"), 
         (LEARNINGFORADULTS, "Learning For Adults"),
+    )
+    
+    INSTOCK = 'In Stock'
+    OUTOFSTOCK = 'Out of Stock'
+    
+    status_choices = (
+        (INSTOCK, "In Stock"),
+        (OUTOFSTOCK, "Out of Stock"),
     )
     
     id = models.CharField(max_length=20, default='', primary_key='True')
@@ -45,7 +51,8 @@ class Product(models.Model):
     description = models.TextField()
     price = models.DecimalField(max_digits=6, decimal_places=2)
     image = models.ImageField(upload_to='images')
-    featured_page = models.CharField(max_length=3, choices=featured_choices, default='')
+    featured_page = models.CharField(max_length=3, choices=featured_choices, default='N')
+    status = models.CharField(max_length=20, choices=status_choices, default='In Stock')
 
     def __str__(self):
         return "{0}-{1}-{2}-{3}".format(self.category, self.name, self.id, self.featured_page)
