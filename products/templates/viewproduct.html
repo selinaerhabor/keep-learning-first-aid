@@ -37,7 +37,7 @@
           <h3>£{{ products.price }}</h3>
           <hr>
             <div class="float-center">
-              <a href="{{ MEDIA_URL }}{{ products.image }}" target="_blank">
+              <a href="{{ MEDIA_URL }}{{ products.image }}" target="_blank" class="img-fluid">
                 <img src="{{ MEDIA_URL }}{{ products.image }}" class="rounded-img float-left img-fluid" alt="KLFA Product">
               </a>
               <p><b>Category:</b> {{ products.category }}</p>
@@ -54,6 +54,14 @@
                   </div>
                 </form>
               </div>
+            </div>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-xs-12 col-md-12 ">
+          <a class="btn btn-info shop-now float-center" href="{% url 'sale' %}">Return to Products</a>
+        </div>
+      </div>
             </div>
           </div>
         </div>
