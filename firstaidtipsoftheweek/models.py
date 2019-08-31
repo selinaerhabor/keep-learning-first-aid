@@ -11,4 +11,4 @@ class Firstaidtip(models.Model):
     published_date = models.DateTimeField(blank = True, null = True, default = timezone.now)
     
     def __str__(self):
-        return self.title
+        return "{0}-{1}".format(self.post_id, self.title)
