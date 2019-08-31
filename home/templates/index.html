@@ -30,7 +30,7 @@
   </header>
   
   <!--Carousel-->
-  <div class="container-fluid bg" style="background-color: #e5ffec;">
+  <div class="container-fluid bg">
     <div class="row">
       <div class="col-xs-12">
         <div class="bg-light">
@@ -42,24 +42,24 @@
             </ol>
             <div class="carousel-inner">
               <div class="carousel-item active">
-                <img src="{% static 'images/slide-background.jpg' %}" class="slide-image img-fluid" alt="Slide 1 - First Aid Equipment Illustration">
-                <div class="carousel-caption d-none d-md-block">
+                <img src="{% static 'images/slide-background.jpg' %}" class="slide-image img-fluid" alt="Slide 1 - Adults Stats">
+                <div class="carousel-caption d-none d-md-inline">
                   <h5 class="slide-caption"><strong>Research shows that just 5% of adults have the skills and confidence to provide first aid in emergency situations.</strong></h5>
                   <p class="slide-caption">(British Red Cross, 2018)</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{% static 'images/slide-background.jpg' %}" class="slide-image img-fluid" alt="Slide 2 - Welcome">
-                <div class="carousel-caption d-none d-md-block">
+                <img src="{% static 'images/cover_firstaidkits.jpg' %}" class="slide-image img-fluid" alt="Slide 2 - Welcome Slide">
+                <div class="carousel-caption d-none d-md-inline">
                   <h5 class="slide-caption"><strong>Welcome to Keep Learning First Aid Online</strong></h5>
                   <p class="slide-caption">We are providers of First Aid learning and training material. Offering a range of products from CPR Manikins to First Aid Manual books for all ages in order to equip people with the skills and confidence to provide first aid in emergency situations.</p>
                 </div>
               </div>
               <div class="carousel-item">
-                <img src="{% static 'images/slide-background.jpg' %}" class="slide-image img-fluid slide3" alt="Slide 3 - Learning with Manikins">
+                <img src="{% static 'images/cover_firstaidtraining.jpg' %}" class="slide-image img-fluid slide3" alt="Slide 3 - Learning with Manikins">
                 <div class="carousel-caption d-none d-md-block">
                   <h5 class="slide-caption"><strong>Practise First Aid with Manikins</strong></h5>
-                  <button>BUY NOW</button>
+                  <a class="btn btn-success">BUY NOW</a>
                 </div>
               </div>
             </div>
@@ -82,44 +82,23 @@
     <div class="row justify-content-center">
       <div class="col-xs-12">
         <div class="card-body text-center">
-          <h3>Best Selling This Week</h3>
+          <h3 class="padding-bottom">Best Selling This Week</h3>
             <div class="row">
-              <div class="col-12 card-deck">
-                <div class="card">
-                  <img class="card-img-top" src="..." alt="KLFA Product">
-                  <div class="card-body">
-                    <h5 class="card-title">Half Body Mannequin</h5>
-                    <p class="card-text"> £33.90</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
+              {% for product in products %}
+                <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3">
+                  <a href="{% url 'view_product' product.id %}" class="cardLink">
+                    <div class="card bs-outline">
+                      <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ product.image }}" alt="KLFA Product">
+                      <div class="card-body">
+                        <h5 class="card-title text-truncate">{{ product.name }}</h5>
+                        <p class="card-text">£{{ product.price }}</p>
+                      </div>
+                    </div>
+                  </a>
                 </div>
-                <div class="card">
-                  <img class="card-img-top" src="..." alt="KLFA Product">
-                  <div class="card-body">
-                    <h5 class="card-title">Introduction to First Aid Book</h5>
-                    <p class="card-text">£5.99</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="..." alt="KLFA Product">
-                  <div class="card-body">
-                    <h5 class="card-title">Learn to Administer CPR DVD</h5>
-                    <p class="card-text">£3.99</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>
-                <div class="card">
-                  <img class="card-img-top" src="..." alt="KLFA Product">
-                  <div class="card-body">
-                    <h5 class="card-title">Baby Mannequin</h5>
-                    <p class="card-text"> £25.99</p>
-                    <p class="card-text"><small class="text-muted">Last updated 3 mins ago</small></p>
-                  </div>
-                </div>  
-              </div>
+              {% endfor %} 
             </div>
-            <button type="button" class="btn btn-success btn-spacing">Shop Now</button>
+          </div>
         </div>
       </div>
     </div>

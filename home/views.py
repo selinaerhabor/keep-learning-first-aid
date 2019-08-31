@@ -1,8 +1,11 @@
 from django.shortcuts import render
+from products.models import Product
 
-# Create your views here.
+# Displays Homepage
 def home(request):
-    return render(request, 'index.html')
+    products = Product.objects.filter(featured_page="H")
+    return render(request, 'index.html', {"products": products})
     
+# Displays FAQs page
 def faqs(request):
     return render(request, 'faqs.html')
