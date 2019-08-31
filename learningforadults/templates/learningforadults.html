@@ -46,33 +46,34 @@
         <section id="featured-content" class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-md-4">
-              <div class="category">
-                <a href="" class="">
+                <a href="{% url 'get_firstaidkits' %}">
                   <img class="featured-lfa img-fluid" src="{% static "images/firstaidkit.jpg" %}" alt="KLFA First Aid Kits">
                 </a>
+              <div class="category">
                 <h4 class="card-heading">First Aid Kits</h4>
                 <p class="card-text">Ensure you are ready to provide help in any emergency situation.</p>
-                <a href="" class="btn btn-success shop-now">Purchase First Aid Kits</a>
+                <a href="{% url 'get_firstaidkits' %}" class="btn btn-success shop-now">Purchase First Aid Kits</a>
               </div>
             </div>
             <div class="col-xs-12 col-md-4">
-              <div class="category">
-                <a href="" class="">
-                  <img class="featured-lfa img-fluid" src="{% static "images/book.jpg" %}" alt="KLFA Books">
+            
+                <a href="{% url 'get_courses' %}">
+                  <img class="featured-lfa img-fluid" src="{% static "images/courses.jpg" %}" alt="KLFA Courses">
                 </a>
-                <h4 class="card-heading">First Aid Books</h4>
+              <div class="category">
+                <h4 class="card-heading">First Aid Courses</h4>
                 <p class="card-text">Ensure you know what to do in any emergency situation.</p>
-                <a href="" class="btn btn-success shop-now">Purchase Books</a>
+                <a href="{% url 'get_courses' %}" class="btn btn-success shop-now">Purchase Courses</a>
               </div>
             </div>
             <div class="col-xs-12 col-md-4">
-              <div class="category">
-                <a href="" class="">
-                  <img class="featured-lfa img-fluid" src="{% static "images/manikin.jpg" %}" alt="KLFA Manikins">
+                <a href="{% url 'get_manikins' %}">
+                  <img class="featured-lfa small-padding img-fluid" src="{% static "images/manikin.jpg" %}" alt="KLFA Manikins">
                 </a>
+              <div class="category">
                 <h4 class="card-heading">First Aid Manikins</h4>
                 <p class="card-text">Build your confidence and enhance your knowledge in delivering First Aid.</p>
-                <a href="" class="btn btn-success shop-now">Purchase First Aid Manikins</a>
+                <a href="{% url 'get_manikins' %}" class="btn btn-success shop-now">Purchase First Aid Manikins</a>
               </div>
             </div>
           </div>
