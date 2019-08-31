@@ -2,6 +2,7 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
+from django.db.models import Count
 from .models import Product
 
 """
@@ -10,26 +11,131 @@ purchase on the website
 """
 def sale(request):
     
-    products = Product.objects.all().order_by('category')
+    products = Product.objects.all().order_by('name')
     page = request.GET.get('page', 1)
-    
-    paginator = Paginator(products, 10)
+    paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
     except PageNotAnInteger:
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    
-        
     return render(request, "products.html", {"products": products})
+
+"""
+Retrieves all products in the category Books and formats the results
+to only display ten product cards per page 
+"""
+def get_books(request):
+    products = Product.objects.filter(category="Books")
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 9)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    return render(request, "filteredproducts.html", {"products": products})
+    
+"""
+Retrieves all products in the category Posters and formats the results
+to only display ten product cards per page 
+"""
+def get_posters(request):
+    products = Product.objects.filter(category="Posters")
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 9)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    return render(request, "filteredproducts.html", {"products": products})
+    
+"""
+Retrieves all products in the category Extras and formats the results
+to only display ten product cards per page 
+"""
+def get_extras(request):
+    products = Product.objects.filter(category="Extras")
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 9)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    return render(request, "filteredproducts.html", {"products": products})
+    
+def get_courses(request):
+    products = Product.objects.filter(category="Courses")
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 9)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    return render(request, "filteredproducts.html", {"products": products})
+
+def get_ebooks(request):
+    products = Product.objects.filter(category="E-Books")
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 9)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    return render(request, "filteredproducts.html", {"products": products})
+    
+def get_firstaidkits(request):
+    products = Product.objects.filter(category="First Aid Kits")
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 9)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    return render(request, "filteredproducts.html", {"products": products})
+    
+def get_cds(request):
+    products = Product.objects.filter(category="CDs & DVDs")
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 9)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    return render(request, "filteredproducts.html", {"products": products})
+    
+def get_manikins(request):
+    products = Product.objects.filter(category="Manikins")
+    page = request.GET.get('page', 1)
+    paginator = Paginator(products, 9)
+    try:
+        products = paginator.page(page)
+    except PageNotAnInteger:
+        products = paginator.page(1)
+    except EmptyPage:
+        products = paginator.page(paginator.num_pages)
+    return render(request, "filteredproducts.html", {"products": products})
     
 
+
+"""
+This view displays the full details of a product to the user
+"""
 def view_product(request, id):
-    """
-    This view displays the full details of a product to the user
-    """
     products = get_object_or_404(Product, pk=id)
     return render(request, "viewproduct.html", {"products": products})
-
   
