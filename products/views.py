@@ -2,7 +2,6 @@
 from __future__ import unicode_literals
 from django.shortcuts import render, get_object_or_404, redirect, reverse
 from django.core.paginator import Paginator, EmptyPage, PageNotAnInteger
-from django.db.models import Count
 from .models import Product
 
 """
@@ -13,6 +12,7 @@ def sale(request):
     
     products = Product.objects.all().order_by('name')
     page = request.GET.get('page', 1)
+    page_number = page
     paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
@@ -20,7 +20,7 @@ def sale(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "products.html", {"products": products})
+    return render(request, "products.html", {"products": products, "page_number": page_number})
 
 """
 Retrieves all products in the category Books and formats the results
@@ -28,7 +28,9 @@ to only display nine product cards per page
 """
 def get_books(request):
     products = Product.objects.filter(category="Books")
+    filter = "First Aid Books"
     page = request.GET.get('page', 1)
+    page_number = page
     paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
@@ -36,7 +38,7 @@ def get_books(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "filteredproducts.html", {"products": products})
+    return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 """
 Retrieves all products in the category Posters and formats the results
@@ -44,7 +46,9 @@ to only display nine product cards per page
 """
 def get_posters(request):
     products = Product.objects.filter(category="Posters")
+    filter = "First Aid Posters"
     page = request.GET.get('page', 1)
+    page_number = page
     paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
@@ -52,7 +56,7 @@ def get_posters(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "filteredproducts.html", {"products": products})
+    return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 """
 Retrieves all products in the category Extras and formats the results
@@ -60,7 +64,9 @@ to only display nine product cards per page
 """
 def get_extras(request):
     products = Product.objects.filter(category="Extras")
+    filter = "Extras"
     page = request.GET.get('page', 1)
+    page_number = page
     paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
@@ -68,11 +74,13 @@ def get_extras(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "filteredproducts.html", {"products": products})
+    return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 def get_courses(request):
     products = Product.objects.filter(category="Courses")
+    filter = "First Aid Courses"
     page = request.GET.get('page', 1)
+    page_number = page
     paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
@@ -80,11 +88,13 @@ def get_courses(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "filteredproducts.html", {"products": products})
+    return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
 
 def get_ebooks(request):
     products = Product.objects.filter(category="E-Books")
+    filter = "E-Books"
     page = request.GET.get('page', 1)
+    page_number = page
     paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
@@ -92,11 +102,13 @@ def get_ebooks(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "filteredproducts.html", {"products": products})
+    return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 def get_firstaidkits(request):
     products = Product.objects.filter(category="First Aid Kits")
+    filter = "First Aid Kits"
     page = request.GET.get('page', 1)
+    page_number = page
     paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
@@ -104,11 +116,13 @@ def get_firstaidkits(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "filteredproducts.html", {"products": products})
+    return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 def get_cds(request):
     products = Product.objects.filter(category="CDs & DVDs")
+    filter = "CDs & DVDs"
     page = request.GET.get('page', 1)
+    page_number = page
     paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
@@ -116,11 +130,13 @@ def get_cds(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "filteredproducts.html", {"products": products})
+    return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 def get_manikins(request):
     products = Product.objects.filter(category="Manikins")
+    filter = "First Aid Manikins"
     page = request.GET.get('page', 1)
+    page_number = page
     paginator = Paginator(products, 9)
     try:
         products = paginator.page(page)
@@ -128,7 +144,7 @@ def get_manikins(request):
         products = paginator.page(1)
     except EmptyPage:
         products = paginator.page(paginator.num_pages)
-    return render(request, "filteredproducts.html", {"products": products})
+    return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 
 

@@ -31,14 +31,15 @@
     <!--Renders Detailed Product View-->
     <div class="container-fluid bg">
       <div class="row">
-        <div class="col-xs-12 col-md-12 text-center">
+        <div class="col-xs-12 text-center">
+          <div class="col-md-10 mx-auto">
           <h2 class="padding-top">{{ products.name }}</h2>
           
           <h3>£{{ products.price }}</h3>
           <hr>
             <div class="float-center">
               <a href="{{ MEDIA_URL }}{{ products.image }}" target="_blank" class="img-fluid">
-                <img src="{{ MEDIA_URL }}{{ products.image }}" class="rounded-img float-left img-fluid" alt="KLFA Product">
+                <img src="{{ MEDIA_URL }}{{ products.image }}" height="400" width="380" class="rounded-img float-left img-fluid" alt="KLFA Product">
               </a>
               <p><b>Category:</b> {{ products.category }}</p>
               <p><b>Status:</b> IN STOCK</p>
@@ -55,10 +56,11 @@
                 </form>
               </div>
             </div>
+          </div>
         </div>
       </div>
       <div class="row">
-        <div class="col-xs-12 col-md-12 ">
+        <div class="col-xs-12 mx-auto">
           <a class="btn btn-info shop-now float-center" href="{% url 'sale' %}">Return to Products</a>
         </div>
       </div>

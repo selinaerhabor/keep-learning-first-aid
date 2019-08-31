@@ -32,23 +32,26 @@
         <div class="col-12">
           <h1 class="text-center padding-top">Products</h1>
           <hr>
+          {% if page_number %}
+            <p class="text-center">Page: {{ page_number }}</p>
+          {% endif %}
         </div>
       </div>
             
-      <!--Displays products on page (10 products pper page)-->
+      <!--Displays products on page (9 products per page)-->
       <div class="row">
         {% for product in products %}
           <div class="col-xs-12 col-sm-6 col-md-4">
             
             <!--Shows a detailed view of product when user clicks on product card -->
-            <a href="{% url 'view_product' product.id %}">
+            <a href="{% url 'view_product' product.id %}" class="cardLink">
               <div class="card text-center margin-bottom">
                 <div class="panel-body">
                   <div class="col">
-                    <h3>{{ product.name }}</h3>
+                    <h3 class="text-truncate">{{ product.name }}</h3>
                   </div>
                   <div class="col">
-                    <img src="{{ MEDIA_URL }}{{ product.image }}" height="180" class="product-image rounded" alt="KLFA Product">
+                    <img src="{{ MEDIA_URL }}{{ product.image }}" height="200" width="190" class="product-image rounded" alt="KLFA Product">
                   </div>
                   <div class="col">
                     <p>£{{ product.price }}</p>
@@ -57,15 +60,16 @@
                     <form method="POST" action="{% url 'add_to_cart' product.id %}">
                     {% csrf_token %}
                     <div class="input-group">
-                      <input name="quantity" type="number" min="0" max="999" class="form-control" placeholder="Quantity">
+                      <input type="number" name="quantity" class="form-control" placeholder="Qty" size="3" min="0" max="999" value="{{item.quantity}}" aria-label="Quantity" aria-describedby="basic-addon2">
                       <span class="input-group-btn">
-                          <button class="btn btn-success" type="submit">Add</button>
+                        <button class="btn btn-success" type="submit">Add</button>
                       </span>
                     </div>
                   </form>
                   </div>
                 </div>
-            </div>
+              </div>
+            </a>
           </div>
         {% endfor %}
       </div>
@@ -85,7 +89,7 @@
             {% endif %}
             {% for i in products.paginator.page_range %}
               {% if products == i %}
-                <li class="page-item page-active">
+                <li class="page-item active">
                   <b><a class="page-link"><span>{{ i }} <span class="sr-only">(current)</span></span>1</a></b>
                 </li>
               {% else %}
