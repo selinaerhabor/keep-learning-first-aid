@@ -22,7 +22,9 @@ body {
 }
 /*-----------------------------------------------------------------MEDIA RULES*/
 
-
+@media screen (min-width: 768px) and (max-width: 825px){
+    
+}
 
 
 
@@ -204,11 +206,11 @@ body {
     margin-bottom: 10px;
 }
 
-.featured-lfk {
+.featured {
     border: solid #194d33;
     background-color: #fff;
     margin-bottom: 20px;
-    height: 400px;
+    height: 350px;
 }
 
 .hidden {
@@ -234,8 +236,18 @@ body {
     .featured-lfa {
         border: solid #194d33;
         background-color: #fff;
-        padding: 10px;
         margin-bottom: 20px;
+        height: 350px;
+    }
+    
+    .small-padding {
+        padding: 10px;
+    }
+    
+    .category {
+        height: 200px;
+        margin-bottom: 50px;
+        word-break: normal;
     }
     
     .extra-padding {
@@ -294,8 +306,16 @@ body {
     
     .panel-body {
         height: 450px;
-        border: 1px solid #194d33;
+        border: 2px solid #194d33;
         padding: 10px;
+    }
+    
+    .panel-body-cart {
+        width: 250px;
+        border: 2px solid #194d33;
+        padding: 20px;
+        background-color: #fff;
+        margin-left: 20px;
     }
     
     .input-bar {
@@ -340,4 +360,35 @@ body {
     
     .margin-bottom {
         margin-bottom: 40px;
+    }
+    
+    .remove_form_cart {
+        margin: 20px;
+    }
+    
+    .cardLink {
+        color: #194d33;
+    }
+    
+    .cardLink:hover {
+        color: #194d33;
+        background-color: #e5ffec;
+        text-decoration: none;
+        
+    }
+    
+    .panel-body:hover {
+        -webkit-transition: box-shadow 0.2s;
+        -moz-transition: box-shadow 0.2s;
+        -o-transition: box-shadow 0.2s;
+        transition: box-shadow ease 0.2s;
+        box-shadow: 10px 10px 5px grey;
+        cursor: pointer;
+    }
+    
+    /*-----------------------------------------------------------FAQS*/
+    
+    .accordion-card {
+        background-color: #00ace6; 
+        color: #fff;
     }
