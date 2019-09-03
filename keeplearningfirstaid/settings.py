@@ -28,7 +28,7 @@ SECRET_KEY = os.environ.get('SECRET_KEY')
 DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
-                'https://keeplearningfirstaid.herokuapp.com/',
+                'keeplearningfirstaid.herokuapp.com',
                 os.environ.get('HOSTNAME')]
 
 
