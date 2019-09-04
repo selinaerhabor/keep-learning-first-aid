@@ -35,6 +35,13 @@
             height: 260px;
         }
     }
+    
+    @media screen and (min-width: 968px) {
+        .carousel-item {
+            height: 400px;
+            width: 1400px;
+        }
+    }
 
 
 
@@ -211,7 +218,7 @@
     
     .modal-content {
         border: solid #194d33;
-        background-color: #CEFFC7;
+        background-color: #ceffc7;
     }
     
     .modal-header {
@@ -433,12 +440,18 @@
     }
     
     .panel-body:hover {
-        -webkit-transition: box-shadow 0.2s;
-        -moz-transition: box-shadow 0.2s;
-        -o-transition: box-shadow 0.2s;
-        transition: box-shadow ease 0.2s;
+        -webkit-transition: box-shadow 0.5s;
+        -moz-transition: box-shadow 0.5s;
+        -o-transition: box-shadow 0.5s;
+        transition: box-shadow ease-in-out 0.5s;
         box-shadow: 5px 10px 10px 3px #888888;
         cursor: pointer;
+    }
+    
+/*----------------------------------------------------------------------Order*/
+    thead {
+        background-color: #194d33;
+        color: #fff;
     }
     
     
