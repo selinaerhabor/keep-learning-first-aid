@@ -1,221 +1,276 @@
-body {
-    overflow-x: hidden;
-    font-family: 'Poppins';
-}
-
-/*Web page background colour*/
-.bg {
-    background-color: #e5ffec;
-}
-
-.padding-top {
-    padding-top: 20px;
-}
-
-.margin {
-    margin-top: 20px;
-    margin-bottom: 20px;
-}
-
-.hide {
-    display: none;
-}
-/*-----------------------------------------------------------------MEDIA RULES*/
-
-@media screen (min-width: 768px) and (max-width: 825px){
+/*-----------------------------------------------------------GENERAL SETTINGS*/    
+    body {
+        overflow-x: hidden;
+        font-family: 'Poppins';
+    }
     
-}
+    /*Web page background colour*/
+    .bg {
+        background-color: #e5ffec;
+    }
+    
+    .padding-top {
+        padding-top: 20px;
+    }
+    
+    .margin {
+        margin-top: 20px;
+        margin-bottom: 20px;
+    }
+    
+    .hide {
+        display: none;
+    }
+    /*-----------------------------------------------------------------MEDIA RULES*/
+    
+    @media screen and (max-width: 575px){
+        .bs-outline {
+            border: solid #194d33;
+            background-color: #fff;
+            margin: 20px;
+            width: 300px;
+            padding: 20px;
+        }
+        .card-img-top {
+            height: 260px;
+        }
+    }
 
 
 
 
 /*------------------------------------------------------------------NAVIGATION*/
 
-.logo {
-    height: 150px;
-}
-
-
-.nav-pages {
-    background-image: linear-gradient(#194d33,#001a09,#194d33);
-}
-
-.fa-bars {
-    color: #fff;
-}
-
-.nav-tab {
-    color: #f0ffff;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.nav-tab:hover {
-    background-image: linear-gradient(#b3ffb3,#ccffcc,#b3ffb3);
-    color: #194d33;
-    font-weight: bold;
-}
-
-.nav-top {
-    color: #194d33;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.nav-top:hover {
-    color: #001a09;
-    font-weight: bold;
-}
-
-.nav-right {
-    float: left;
-    text-align: center;
-    padding: 14px 16px;
-    text-decoration: none;
-    font-size: 17px;
-}
+    .logo {
+        height: 150px;
+    }
+    
+    
+    .nav-pages {
+        background-image: linear-gradient(#194d33,#001a09,#194d33);
+    }
+    
+    .fa-bars {
+        color: #fff;
+    }
+    
+    .nav-tab {
+        color: #f0ffff;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    
+    .nav-tab:hover {
+        background-image: linear-gradient(#b3ffb3,#ccffcc,#b3ffb3);
+        color: #194d33;
+        font-weight: bold;
+    }
+    
+    .nav-top {
+        color: #194d33;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    
+    .nav-top:hover {
+        color: #001a09;
+        font-weight: bold;
+    }
+    
+    .nav-right {
+        float: left;
+        text-align: center;
+        padding: 14px 16px;
+        text-decoration: none;
+        font-size: 17px;
+    }
+    
+    .btn:focus, .btn:active:focus, .btn.active:focus {
+        box-shadow: none;
+    }
+    
+    
+    .links {
+        margin: 20px;
+    }
+    
+    .footer-link {
+        color: #fff;
+    }
+    
+    .footer-link:hover {
+        color: #fff;
+        text-decoration: none;
+    }
 
 /*--------------------------------------------------------------REGISTER/LOGIN*/
 
-.jumbotron {
-    border: solid #194d33;
-    color: #194d33;
-    background-color: #e5ffec;
-    margin-top: 40px;
-    margin-left: 20px;
-    margin-right: 20px;
-    padding: 30px;
-    
-}
+    .jumbotron {
+        border: solid #194d33;
+        color: #194d33;
+        background-color: #e5ffec;
+        margin-top: 40px;
+        margin-left: 20px;
+        margin-right: 20px;
+        padding: 30px;
+        
+    }
 
 /*------------------------------------------------------------------------HOME*/
 
-.carousel-item {
-    width: 100%;
-    align-items: center;
-    height: 400px;
-}
-
-.slide-image {
-    opacity: 0.3;
-}
-
-.slide-caption {
-    color: #001a09;
-}
-
-.close {
-    font-size: 15px;
-    position: absolute;
-    top: -10px;
-    right: -10px;
-}
-
-.active {
-    font-weight: bold;
-}
-
-#subscribe_submit{
-    cursor: pointer;
-}
-
-.btn-spacing {
-    margin: 10px;
-}
-
-.footer-link {
-    padding: 20px;
-}
-
-.fab {
-    color: #000;
-    padding: 5px;
-    font-size: 30px;
-    cursor: pointer;
-    -webkit-transition: all 0.5s;
-    -moz-transition: all 0.5s;
-    -o-transition: all 0.5s;
-    transition: all 0.5s;
-}
-
-.fab:hover {
-    color: #ccffcc;
-    font-size: 32px;
-}
-
-.footerBackground {
-    background-color: #194d33;
-    color: #ffffff;
-}
-
-.card-footer {
-    color: #ccffcc;
-}
-
-.enlarge-icon {
-    font-size: 30px;
-    padding-left: 10px;
-    text-decoration: none;
-}
-
-.big-icon{
-    font-size: 60px;
-}
+    .carousel-item {
+        height: 400px;
+        width: 1400px;
+    }
+    
+    .carousel-inner {
+        width: 100%;
+        height: 100%;
+        position: relative;
+        background-color: white;
+    }
+    
+    .slide-image {
+        opacity: 0.3;
+        width: 100%;
+    }
+    
+    .slide-caption {
+        color: #001a09;
+    }
+    
+    .close {
+        font-size: 15px;
+        position: absolute;
+        top: -10px;
+        right: -10px;
+    }
+    
+    .active {
+        font-weight: bold;
+    }
+    
+    #subscribe_submit{
+        cursor: pointer;
+    }
+    
+    .btn-spacing {
+        margin: 10px;
+    }
+    
+    .footer-link {
+        padding: 20px;
+    }
+    
+    .fab {
+        color: #000;
+        padding: 5px;
+        font-size: 30px;
+        cursor: pointer;
+        -webkit-transition: all 0.5s;
+        -moz-transition: all 0.5s;
+        -o-transition: all 0.5s;
+        transition: all 0.5s;
+    }
+    
+    .fab:hover {
+        color: #ccffcc;
+        font-size: 32px;
+    }
+    
+    .footerBackground {
+        background-color: #194d33;
+        color: #ffffff;
+    }
+    
+    .card-footer {
+        color: #ccffcc;
+    }
+    
+    .enlarge-icon {
+        font-size: 30px;
+        padding-left: 10px;
+        text-decoration: none;
+    }
+    
+    .big-icon{
+        font-size: 60px;
+    }
+    
+    .bs-outline {
+        border: solid #194d33;
+        background-color: #fff;
+        margin-bottom: 20px;
+        height: 400px;
+        padding: 20px;
+    }
+    
+    .modal-content {
+        border: solid #194d33;
+        background-color: #CEFFC7;
+    }
+    
+    .modal-header {
+        border-bottom: solid #194d33;
+        text-transform: uppercase;
+    }
+    
+    
 
 /*---------------------------------------------------FIRST AID TIP OF THE WEEK*/
 
-#firstAidTip {
-   border: 2px solid #000000; 
-   background-color: #fff9ff; 
-   border: 1px solid #000000; 
-   padding: 40px; 
-}
+    #firstAidTip {
+       border: 2px solid #000000; 
+       background-color: #fff9ff; 
+       border: 1px solid #000000; 
+       padding: 40px; 
+    }
 
 
 
 
 /*------------------------------------------------------LEARNING FOR KIDS PAGE*/
 
-.quiz-btn {
-    margin-bottom: 40px;
-    padding: 10px;
-    background-color: #66c2ff;
-    -webkit-transition: background-color 0.5s;
-    -moz-transition: background-color 0.5s;
-    -o-transition: background-color 0.5s;
-    transition: background-color 0.5s;
-}
-
-.quiz-btn: hover {
-    background-color: #1aa3ff;
-}
-
-.box {
-    border-width: 2px;
-    border-color: #34aaaa;
-    height: 30px;
-    width: 75px;
+    .quiz-btn {
+        margin-bottom: 40px;
+        padding: 10px;
+        background-color: #66c2ff;
+        -webkit-transition: background-color 0.5s;
+        -moz-transition: background-color 0.5s;
+        -o-transition: background-color 0.5s;
+        transition: background-color 0.5s;
+    }
     
-}
-
-.kids-image {
-    margin-bottom: 10px;
-}
-
-.featured {
-    border: solid #194d33;
-    background-color: #fff;
-    margin-bottom: 20px;
-    height: 350px;
-}
-
-.hidden {
-    display: none;
-}
+    .quiz-btn: hover {
+        background-color: #1aa3ff;
+    }
+    
+    .box {
+        border-width: 2px;
+        border-color: #34aaaa;
+        height: 30px;
+        width: 75px;
+        
+    }
+    
+    .kids-image {
+        margin-bottom: 10px;
+    }
+    
+    .featured {
+        border: solid #194d33;
+        background-color: #fff;
+        margin-bottom: 20px;
+        height: 350px;
+    }
+    
+    .hidden {
+        display: none;
+    }
 
 /*---------------------------------------------------------LEARNING FOR ADULTS*/
     
@@ -265,12 +320,12 @@ body {
     .panel {
         white-space: normal;
     }
+    
+    .accordion-card {
+        background-color: #00ace6; 
+        color: #fff;
+    }
 
-/*----------------------------------------------------------------------FOOTER*/
-
-.links {
-    margin: 20px;
-}
 /*--------------------------------------------------------------------PRODUCTS*/
     .badge {
         padding-left: 9px;
@@ -382,13 +437,8 @@ body {
         -moz-transition: box-shadow 0.2s;
         -o-transition: box-shadow 0.2s;
         transition: box-shadow ease 0.2s;
-        box-shadow: 10px 10px 5px grey;
+        box-shadow: 5px 10px 10px 3px #888888;
         cursor: pointer;
     }
     
-    /*-----------------------------------------------------------FAQS*/
     
-    .accordion-card {
-        background-color: #00ace6; 
-        color: #fff;
-    }
