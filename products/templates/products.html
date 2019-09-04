@@ -55,7 +55,7 @@
                   </div>
                   <div class="col">
                     {% if product.category == "Courses" %}
-                      <img src="{% static 'images/logo.jpg' %}" height="200" width="190" class="product-image rounded" alt="KLFA Product">
+                      <img src="{% static 'images/cover_courses.jpg' %}" height="200" width="190" class="product-image rounded" alt="KLFA Product">
                     {% else %}
                       <img src="{{ MEDIA_URL }}{{ product.image }}" height="200" width="190" class="product-image rounded" alt="KLFA Product">
                     {% endif %}
