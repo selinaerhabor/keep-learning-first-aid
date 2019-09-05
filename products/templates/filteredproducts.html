@@ -31,9 +31,11 @@
       <div class="row">
         <div class="col-12">
           {% if filter %}
-          <h1 class="text-center padding-top">Products: {{ filter }}</h1>
+            <h1 class="text-center padding-top">Products: {{ filter }}</h1>
+          {% else %}
+            <h1 class="text-center padding-top">Products</h1>
           {% endif %}
-          <hr>
+            <hr>
           {% if page_number %}
             <p class="text-center">Page: {{ page_number }}</p>
           {% endif %}
@@ -53,7 +55,11 @@
                     <h3 class="text-truncate">{{ product.name }}</h3>
                   </div>
                   <div class="col">
-                    <img src="{{ MEDIA_URL }}{{ product.image }}" height="200" width="180" class="product-image rounded" alt="KLFA Product">
+                    {% if product.category == "Courses" %}
+                      <img src="{% static 'images/cover_courses.jpg' %}" height="200" width="190" class="product-image rounded" alt="KLFA Product">
+                    {% else %}
+                      <img src="{{ MEDIA_URL }}{{ product.image }}" height="200" width="190" class="product-image rounded" alt="KLFA Product">
+                    {% endif %}
                   </div>
                   <div class="col">
                     <p>£{{ product.price }}</p>
