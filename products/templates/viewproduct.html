@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
-{% block page_title %}{{ products.name }} | Keep Learning First Aid{% endblock %}
 {% load static %}
+{% block page_title %}{{ products.name }} | Keep Learning First Aid{% endblock %}
 {% block document %}
   <!--Page Navigation Bar-->
   <header>
@@ -28,44 +28,41 @@
     </nav>
   </header>
   
-    <!--Renders Detailed Product View-->
-    <div class="container-fluid bg">
-      <div class="row">
-        <div class="col-xs-12 text-center">
-          <div class="col-md-10 mx-auto">
-          <h2 class="padding-top">{{ products.name }}</h2>
-          
-          <h3>£{{ products.price }}</h3>
-          <hr>
-            <div class="float-center">
-              <a href="{{ MEDIA_URL }}{{ products.image }}" target="_blank" class="img-fluid">
-                <img src="{{ MEDIA_URL }}{{ products.image }}" height="400" width="380" class="rounded-img float-left img-fluid" alt="KLFA Product">
-              </a>
-              <p><b>Category:</b> {{ products.category }}</p>
-              <p><b>Status:</b> IN STOCK</p>
-              <p><b>Description:</b> {{ products.description }}</p>
-              <div class="col-md-4 col-md-offset-4 float-right margin-bottom">
-                <form method="POST" action="{% url 'add_to_cart' products.id %}">
-                  {% csrf_token %}
-                  <div class="input-group">
-                    <input name="quantity" type="number" min="0" max="999" class="form-control" placeholder="Quantity">
-                    <span class="input-group-btn">
-                      <button class="btn btn-success" type="submit">Add</button>
-                    </span>
-                  </div>
-                </form>
-              </div>
+  <!--Renders Detailed Product View-->
+  <div class="container-fluid bg">
+    <div class="row">
+      <div class="col-xs-12 text-center">
+        <div class="col-md-10 mx-auto">
+        <h2 class="padding-top">{{ products.name }}</h2>
+        <h3>£{{ products.price }}</h3>
+        <hr>
+          <div class="float-center">
+            <a href="{{ MEDIA_URL }}{{ products.image }}" target="_blank" class="img-fluid">
+              <img src="{{ MEDIA_URL }}{{ products.image }}" height="400" width="380" class="rounded-img float-left img-fluid" alt="KLFA Product">
+            </a>
+            <p><b>Category:</b> {{ products.category }}</p>
+            <p><b>Status:</b> IN STOCK</p>
+            <p><b>Description:</b> {{ products.description }}</p>
+            <div class="col-md-4 col-md-offset-4 float-right margin-bottom">
+              <form method="POST" action="{% url 'add_to_cart' products.id %}">
+                {% csrf_token %}
+                <div class="input-group">
+                  <input type="number" name="quantity" class="form-control" placeholder="Qty" size="3" min="0" max="999" value="1" aria-label="Quantity" aria-describedby="basic-addon2">
+                  <span class="input-group-btn">
+                    <button class="btn btn-success" type="submit">Add</button>
+                  </span>
+                </div>
+              </form>
             </div>
           </div>
         </div>
       </div>
-      <div class="row">
-        <div class="col-xs-12 mx-auto">
-          <a class="btn btn-info shop-now float-center" href="{% url 'sale' %}">Return to Products</a>
-        </div>
+    </div>
+    <div class="row">
+      <div class="col-xs-12 mx-auto">
+        <a class="btn btn-info shop-now float-center" href="{% url 'sale' %}">Return to Products</a>
       </div>
-            </div>
-          </div>
-        </div>
-      </div>
+    </div>
+  </div>
+    
 {% endblock %}
