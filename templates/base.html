@@ -24,7 +24,6 @@
     <title>{% block page_title %}{% endblock %}</title>
   </head>
   <body>
-  
   <!--HEADER NAVIGATION BAR-->
   <header>
     <nav class="navbar navbar-expand-lg">
@@ -111,27 +110,36 @@
           </li>
           {% endif %}
           <!--Controls display of Search Bar when toggle search button is pressed-->
-            <li class="collapse multi-collapse" id="displaySearchBar">
+            <li class="collapse" id="displaySearchBar" aria-hidden="true">
               <form action="{% url 'search' %}" method="GET">
-                <input type="text" name="q"/>
-                <button class="submit">Search</button>
+                <div class="input-group">
+                  <input type="text" name="q" placeholder="Search..">
+                  <div class="input-group-append">
+                    <button class="submit">Search</button>
+                  </div>
+                </div>
               </form>
             </li>
           <!--Search Button-->
           <li class="nav-item d-none d-sm-inline">
-            <a class="nav-link nav-top" href="#displaySearchBar" data-toggle="collapse" href="#displaySearchBar" role="button" aria-expanded="false" aria-controls="displaySearchBar">
+            <a class="nav-link nav-top" href="#displaySearchBar" data-toggle="collapse" href="#displaySearchBar" role="button" aria-expanded="true" aria-controls="displaySearchBar">
               <i class="fas fa-search"></i>
               Search
             </a>
           </li>
           <!--Cart Button-->
           <li class="nav-item d-none d-sm-inline">
-            <a class="nav-link nav-top" href="{% url 'view_cart' %}">
-              <i class="fas fa-shopping-cart"></i>
-                <span>Cart</span>
+            
+              
               {% if product_count > 0 %}
+                <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="You have items ready for checkout!">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
                 <label class="badge badge-success">{{ product_count }}</label>
               {% else %}
+                <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="No items have been added yet">
+                <i class="fas fa-shopping-cart"></i>
+                <span>Cart</span>
                 <label class="badge badge-success">0</label>
               {% endif %}
             </a>
@@ -261,7 +269,6 @@
     </div>
   </div>
 
-  
   <!--FOOTER-->
   <footer class="footerBackground mx-auto">
     <div class="text-center">
