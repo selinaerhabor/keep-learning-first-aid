@@ -55,7 +55,7 @@
                         <label for="inputAmount" class="sr-only">New Qty</label>
                         <div class="input-group">
                           <div class="input-group-addon">Qty:</div>
-                          <input name="quantity" type="number" class="form-control" min="0" max="999" value="{{item.quantity}}" placeholder="Qty" aria-label="quantity" aria-describedby="basic-addon2">
+                          <input name="quantity" type="number" class="form-control" min="0" max="999" value="{{ item.quantity }}" placeholder="Qty" aria-label="quantity" aria-describedby="basic-addon2">
                           <div class="input-group-append">
                             <button type="submit" class="btn btn-primary">Amend</button>
                           </div>
@@ -68,8 +68,10 @@
         </div>
       {% empty %}
         <div class="col-xs-12 mx-auto">
-          <h4>Your shopping cart is empty</h4>
-          <a class="btn btn-info" href="{% url 'sale' %}">Continue shopping</a>
+          <h4 class="text-center">- Your shopping cart is empty -</h4>
+        </div>
+        <div class="col-xs-12 mx-auto">
+          <a class="btn btn-info text-center" href="{% url 'sale' %}">Continue shopping</a>
         </div>
       {% endfor %}
     </div>
@@ -93,7 +95,7 @@
           {% if cart_items %}
             <a href="{% url 'checkout' %}" class="btn btn-success shop-now" role="button">Continue to checkout</a>
           {% else %}
-            <a class="btn btn-success shop-now disabled" role="button" disabled>Continue to checkout</a>
+            <a class="btn btn-success shop-now disabled" role="button">Continue to checkout</a>
           {% endif %}
         </div>
       </div>
