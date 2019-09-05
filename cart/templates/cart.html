@@ -34,45 +34,51 @@
     </div>
     <hr>
     <div class="row">
-        {% for item in cart_items %}
+      {% for item in cart_items %}
         <div class="col-xs-12 col-sm-6 col-md-4">
           <div class="card text-center margin-bottom">
             <div class="panel-body">
               <h3 class="text-truncate">{{ item.product.name }}</h3>
-              <a href="">
-                <div class="product" style="background-image: url('{{ MEDIA_URL }}{{ item.product.image }}')" height="200"></div>
-              </a>
+              <p>Category: {{ item.product.category }}</p>
+              <div class="col">
+                {% if item.product.category == "Courses" %}
+                  <img src="{% static 'images/cover_courses.jpg' %}" height="200" width="190" class="product-image rounded" alt="KLFA Course">
+                {% else %}
+                  <img src="{{ MEDIA_URL }}{{ item.product.image }}" height="200" width="190" class="product-image rounded" alt="KLFA Product">
+                {% endif %}
+              </div>
               <div class="caption">
-                <ul>
-                  <p>{{ item.product.category }}</p>
-                </ul>
                 <p>£{{ item.product.price }}</p>
                   <form class="form-inline justify-content-center" method="post" action="{% url 'adjust_cart' item.id %}">
                     {% csrf_token %}
-                    <div class="form-group">
-                      <label for="inputAmount" class="sr-only">New Qty</label>
-                      <div class="input-group">
-                        <div class="input-group-addon">Qty:</div>
-                          <input name="quantity" type="number" class="form-control" min="0" max="999" value="{{item.quantity}}" placeholder="Qty" aria-label="Recipient's username" aria-describedby="basic-addon2">
+                      <div class="form-group">
+                        <label for="inputAmount" class="sr-only">New Qty</label>
+                        <div class="input-group">
+                          <div class="input-group-addon">Qty:</div>
+                          <input name="quantity" type="number" class="form-control" min="0" max="999" value="{{item.quantity}}" placeholder="Qty" aria-label="quantity" aria-describedby="basic-addon2">
                           <div class="input-group-append">
                             <button type="submit" class="btn btn-primary">Amend</button>
                           </div>
                         </div>
-                    </div>
-                    <div class="form-group margin">
-                      <a href="" class="btn btn-danger remove_from_cart">Remove This Item</a>
-                    </div>
+                      </div>
                   </form>
               </div>
             </div>
           </div>
         </div>
-        {% endfor %}
-      </div>
+      {% empty %}
+        <div class="col-xs-12 mx-auto">
+          <h4>Your shopping cart is empty</h4>
+          <a class="btn btn-info" href="{% url 'sale' %}">Continue shopping</a>
+        </div>
+      {% endfor %}
+    </div>
     <div class="row">
       <div class="col-12">
         <div class="float-right">
-        <a href="" class="btn btn-light" role="button">Empty Your Cart</a>
+          {% if cart_items %}
+            <a href="{% url 'empty_cart' %}" class="btn btn-danger" role="button">Empty Your Cart</a>
+          {% endif %}
         </div>
       </div>
     </div>
@@ -82,9 +88,13 @@
         <div class="float-left">
           <h6>Total</h6>
           <h4>£{{ total }}</h4>
-          </div>
+        </div>
         <div class="float-right"> 
-          <a href="{% url 'checkout' %}" class="btn btn-success shop-now" role="button">Continue to checkout</a>
+          {% if cart_items %}
+            <a href="{% url 'checkout' %}" class="btn btn-success shop-now" role="button">Continue to checkout</a>
+          {% else %}
+            <a class="btn btn-success shop-now disabled" role="button" disabled>Continue to checkout</a>
+          {% endif %}
         </div>
       </div>
     </div>
