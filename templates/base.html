@@ -26,51 +26,74 @@
   <body>
   <!--HEADER NAVIGATION BAR-->
   <header>
-    <nav class="navbar navbar-expand-lg">
       <div class="row">
         <div class="col-xs-12">
-          <a class="navbar-brand" href="{% url 'home' %}">
+          <a class="navbar-brand nav-link" href="{% url 'home' %}">
             <img class="logo" src="{% static 'images/logo.jpg' %}" alt="KLFA Logo">
           </a>
-          <ul class="nav justify-content-center mx-auto ">
-            {% if user.is_authenticated %}
-            <!--My Account - Smaller screen view-->
-            <li class="nav-item d-inline d-sm-none">
-              <a class="nav-link nav-top" href="{% url 'profile' %}">
-                <i class="fas fa-user-circle enlarge-icon"></i>
-              </a>
-            </li>
-            {% else %}
-            <!--Registration/Sign In Button - Smaller screen view-->
-            <li class="nav-item d-inline d-sm-none">
-              <a class="nav-link nav-top" href="{% url 'registration' %}">
-                <i class="fas fa-user-circle"></i>
-              </a>
-            </li>
-            {% endif %}
-            <!--Search Button - Smaller screen view-->
-            <li class="nav-item d-inline d-sm-none">
-              <a class="nav-link nav-top" href="#displaySearchBar" data-toggle="collapse" href="#displaySearchBar" role="button" aria-expanded="false" aria-controls="displaySearchBar">
-                <i class="fas fa-search enlarge-icon"></i>
-              </a>
-            </li>
-            <!--Cart Button - Smaller screen view-->
-            <li class="nav-item d-inline d-sm-none">
-              <a class="nav-link nav-top" href="{% url 'view_cart' %}">
-                <i class="fas fa-shopping-cart enlarge-icon"></i>
-              {% if product_count > 0 %}
-                <label class="badge badge-success">{{ product_count }}</label>
+          <nav class="navbar navbar-expand-lg nav-pages">
+          <!--Collapsible Navigation Bar (visible only on xs screens)-->
+          <div class="col-xs-12 col-md-12 mx-auto d-block d-sm-none">
+            <div class="collapse" id="navbarToggle">
+              {% if user.is_authenticated %}
+                <!--My Account-->
+                <a class="nav-link nav-top" href="{% url 'profile' %}">
+                  <i class="fas fa-user-circle"></i>
+                  My Account
+                </a>
+                <!--Logout-->
+                <a class="nav-link nav-top" href="{% url 'logout' %}">
+                  <i class="fas fa-user-circle"></i>
+                  Logout
+                </a>
               {% else %}
-                <label class="badge badge-success">0</label>
+                <!--Registration/Sign In Button-->
+                <a class="nav-link nav-top" href="{% url 'registration' %}">
+                  <i class="fas fa-user-circle"></i>
+                  Register/Log In
+                </a>
               {% endif %}
+              <!--Cart Button-->
+              {% if product_count > 0 %}
+                <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="You have items ready for checkout!">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span>Cart</span>
+                  <label class="badge badge-success">{{ product_count }}</label>
+                </a>
+              {% else %}
+                <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="No items have been added yet">
+                  <i class="fas fa-shopping-cart"></i>
+                  <span>Cart</span>
+                  <label class="badge badge-success">0</label>
+                </a>
+              {% endif %}
+              <!--Controls display of Search Bar when toggle search button is pressed-->
+              <a class="nav-link nav-top d-block d-sm-none" id="displaySearchBar">
+                <form action="{% url 'search' %}" method="GET">
+                  <div class="input-group">
+                    <input type="text" name="q" placeholder="Search..">
+                    <div class="input-group-append">
+                      <button class="submit">Search</button>
+                    </div>
+                  </div>
+                </form>
               </a>
-            </li>
-          </ul>
+              <hr class="nav-link nav-top">
+              <a class="nav-link nav-top" href="{% url 'home' %}">Home</a>
+              <a class="nav-link nav-top" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
+              <a class="nav-link nav-top" href="{% url 'learningforkids' %}">Learning for Kids</a>
+              <a class="nav-link nav-top" href="{% url 'learningforadults' %}">Learning for Adults</a>
+              <a class="nav-link nav-top" href="{% url 'faqs' %}">FAQs</a>
+              <a class="nav-link nav-top" href="{% url 'sale' %}">Products</a>
+            </div>
+          </div>
+          <nav class="navbar navbar-light">
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggle" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class="navbar-toggler-icon"></span>
+            </button>
+          </nav>
         </div>
       </div>
-      <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#nav" aria-controls="nav" aria-expanded="false" aria-label="Toggle navigation">
-        <span class="navbar-toggler-icon"></span>
-      </button>
       {% if messages %}
         <div class="col-m4" id="navbarNav">
           <div class="alert alert-warning alert-dismissible fade show" role="alert">
@@ -83,6 +106,7 @@
           </div>
         </div>
       {% endif %}
+      <!--Larger Screen Navigation-->
       <div class="collapse navbar-collapse d-flex justify-content-end" id="nav">
         <ul class="nav justify-content-end">
           {% if user.is_authenticated %}
@@ -110,16 +134,16 @@
           </li>
           {% endif %}
           <!--Controls display of Search Bar when toggle search button is pressed-->
-            <li class="collapse" id="displaySearchBar" aria-hidden="true">
-              <form action="{% url 'search' %}" method="GET">
-                <div class="input-group">
-                  <input type="text" name="q" placeholder="Search..">
-                  <div class="input-group-append">
-                    <button class="submit">Search</button>
-                  </div>
+          <a class="multi-collapse d-none d-sm-inline" id="displaySearchBar" aria-hidden="true">
+            <form action="{% url 'search' %}" method="GET">
+              <div class="input-group">
+                <input type="text" name="q" placeholder="Search..">
+                <div class="input-group-append">
+                  <button class="submit">Search</button>
                 </div>
-              </form>
-            </li>
+              </div>
+            </form>
+          </a>
           <!--Search Button-->
           <li class="nav-item d-none d-sm-inline">
             <a class="nav-link nav-top" href="#displaySearchBar" data-toggle="collapse" href="#displaySearchBar" role="button" aria-expanded="true" aria-controls="displaySearchBar">
@@ -129,23 +153,21 @@
           </li>
           <!--Cart Button-->
           <li class="nav-item d-none d-sm-inline">
-            
-              
-              {% if product_count > 0 %}
-                <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="You have items ready for checkout!">
-                <i class="fas fa-shopping-cart"></i>
-                <span>Cart</span>
-                <label class="badge badge-success">{{ product_count }}</label>
-              {% else %}
-                <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="No items have been added yet">
-                <i class="fas fa-shopping-cart"></i>
-                <span>Cart</span>
-                <label class="badge badge-success">0</label>
-              {% endif %}
-            </a>
+            {% if product_count > 0 %}
+              <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="You have items ready for checkout!">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Cart</span>
+              <label class="badge badge-success">{{ product_count }}</label>
+              </a>
+            {% else %}
+              <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="No items have been added yet">
+              <i class="fas fa-shopping-cart"></i>
+              <span>Cart</span>
+              <label class="badge badge-success">0</label>
+              </a>
+            {% endif %}
           </li>
         </ul>
-        
       </div>
     </nav>
   </header>

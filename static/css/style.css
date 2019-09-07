@@ -96,6 +96,11 @@
         font-size: 17px;
     }
     
+    .navbar-toggler {
+        color: #fff;
+        outline: hidden;
+    }
+    
     .btn:focus, .btn:active:focus, .btn.active:focus {
         box-shadow: none;
     }
@@ -161,7 +166,7 @@
         font-weight: bold;
     }
     
-    #subscribe_submit{
+    #subscribe_submit {
         cursor: pointer;
     }
     
@@ -171,6 +176,7 @@
     
     .footer-link {
         padding: 20px;
+        color: #fff;
     }
     
     .fab {
@@ -398,17 +404,6 @@
         margin: 10px;
     }
     
-    .pagination {
-        color: #000;
-        font-size: 20px;
-        word-spacing: 5px;
-        text-decoration: none;
-    }
-    
-    .page-active {
-        background-color: #4a4a4a;
-    }
-    
     .rounded-img {
         border: solid #194d33;
         margin-bottom: 50px;
@@ -424,9 +419,6 @@
         margin-bottom: 40px;
     }
     
-    .remove_form_cart {
-        margin: 20px;
-    }
     
     .cardLink {
         color: #194d33;
@@ -447,7 +439,7 @@
         box-shadow: 5px 10px 10px 3px #888888;
         cursor: pointer;
     }
-    
+
 /*----------------------------------------------------------------------Order*/
     thead {
         background-color: #194d33;
