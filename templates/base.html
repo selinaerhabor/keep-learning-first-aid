@@ -29,83 +29,95 @@
       <div class="container-fluid">
         <div class="row">
           <div class="col-12">
-            <nav class="navbar navbar-expand-lg navbar-light">
-        <!--Website Logo-->
-        <a class="navbar-brand" href="{% url 'home' %}">
-          <img class="logo" src="{% static 'images/logo.jpg' %}" alt="KLFA Logo">
-        </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
-          <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarSupportedContent">
-          <ul class="navbar-nav mr-auto">
-            <li class="nav-item d-block d-sm-none">
-              <a class="nav-link" href="{% url 'home' %}">Home</a>
-            </li>
-            <li class="nav-item d-block d-sm-none">
-              <a class="nav-link" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
-            </li>
-            <li class="nav-item d-block d-sm-none">
-              <a class="nav-link" href="{% url 'learningforkids' %}">Learning for Kids</a>
-            </li>
-            <li class="nav-item d-block d-sm-none">
-              <a class="nav-link" href="{% url 'learningforadults' %}">Learning for Adults</a>
-            </li>
-            <li class="nav-item d-block d-sm-none">
-              <a class="nav-link" href="{% url 'faqs' %}">FAQs</a>
-            </li>
-            <li class="nav-item d-block d-sm-none">
-              <a class="nav-link" href="{% url 'sale' %}">Products</a>
-            </li>
-            <hr class="nav-item d-block d-sm-none">
-            </li>
-            {% if user.is_authenticated %}
-              <li class="nav-item dropdown">
-                <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" href="{% url 'profile' %}">
-                  <i class="fas fa-user-circle"></i>
-                  {{ user }}
-                </a>
-                <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                  <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
-                </div>
-              </li>
-            {% else %}
-              <li class="nav-item dropdown">
-                <!--Registration/Sign In Button-->
-                <a class="nav-link nav-top nav-button" href="{% url 'registration' %}">
-                  <i class="fas fa-user-circle"></i>
-                  Register/Log In
-                </a>
-              </li>
-            {% endif %}
-              <!--Cart Button-->
-              <li class="nav-item">
-                {% if product_count > 0 %}
-                  <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="You have items ready for checkout!">
-                  <i class="fas fa-shopping-cart"></i>
-                  <span>Cart</span>
-                  <label class="badge badge-success">{{ product_count }}</label>
-                  </a>
-                {% else %}
-                  <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="No items have been added yet">
-                  <i class="fas fa-shopping-cart"></i>
-                  <span>Cart</span>
-                  <label class="badge badge-success">0</label>
-                  </a>
-                {% endif %}
-              </li>
-          </ul>
-          <!--Search Bar-->
-          <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="GET"
-            <div class="input-group">
-              <input type="text" class="searchBar" size="12" name="q" placeholder=" Search...">
-              <div class="input-group-append">
-                <button class="submit"><i class="fas fa-search"></i> Search</button>
+            <nav class="navbar navbar-expand-lg navbar-light navbar-default">
+              
+              <!--WEBSITE ICON-->
+              <a class="navbar-brand" href="{% url 'home' %}">
+                <img class="logo" src="{% static 'images/logo.jpg' %}" alt="KLFA Logo">
+              </a>
+              
+              <!--NAVIGATION TOGGLE BUTTON-->
+              <a class="navbar-toggler btn" data-toggle="collapse" href="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+              </a>
+              
+              <!--NAVIGATION LINKS AND PAGES-->
+              <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav mr-auto">
+                  
+                  <!--LINKS WHICH ONLY APPEAR ON XS SCREEN SIZE-->
+                  <li class="nav-item d-block d-md-none">
+                    <a class="nav-link" href="{% url 'home' %}">Home</a>
+                  </li>
+                  <li class="nav-item d-block d-md-none">
+                    <a class="nav-link" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
+                  </li>
+                  <li class="nav-item d-block d-md-none">
+                    <a class="nav-link" href="{% url 'learningforkids' %}">Learning for Kids</a>
+                  </li>
+                  <li class="nav-item d-block d-md-none">
+                    <a class="nav-link" href="{% url 'learningforadults' %}">Learning for Adults</a>
+                  </li>
+                  <li class="nav-item d-block d-md-none">
+                    <a class="nav-link" href="{% url 'faqs' %}">FAQs</a>
+                  </li>
+                  <li class="nav-item d-block d-md-none">
+                    <a class="nav-link" href="{% url 'sale' %}">Products</a>
+                  </li>
+                  
+                  <!--LINKS THAT APPEAR ON ALL SCREEN SIZES-->
+                  <!--Shows Username if user is logged in otherwise shows register/sign in button to allow user login/registration-->
+                  {% if user.is_authenticated %}
+                    <li class="nav-item dropdown">
+                      <a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                        <i class="fas fa-user-circle"></i>
+                        {{ user }}
+                      </a>
+                      <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                        <a class="dropdown-item" href="{% url 'profile' %}">Profile</a>
+                        <a class="dropdown-item" href="{% url 'logout' %}">Logout</a>
+                      </div>
+                    </li>
+                  {% else %}
+                    <!--Registration/Sign In Button-->
+                    <li class="nav-item dropdown">
+                      <a class="nav-link nav-top nav-button" href="{% url 'login' %}">
+                        <i class="fas fa-user-circle"></i>
+                        Register/Log In
+                      </a>
+                    </li>
+                  {% endif %}
+                  
+                  <!--Cart Button-->
+                  <li class="nav-item">
+                    {% if product_count > 0 %}
+                      <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="You have items ready for checkout!">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Cart</span>
+                        <label class="badge badge-success">{{ product_count }}</label>
+                      </a>
+                    {% else %}
+                      <a class="nav-link nav-top" href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="No items have been added yet">
+                        <i class="fas fa-shopping-cart"></i>
+                        <span>Cart</span>
+                        <label class="badge badge-success">0</label>
+                      </a>
+                    {% endif %}
+                  </li>
+                </ul>
+                
+                <!--Search Bar-->
+                <form class="form-inline my-2 my-lg-0" action="{% url 'search' %}" method="GET">
+                  <div class="input-group">
+                    <input type="text" class="searchBar" size="12" name="q" placeholder=" Search...">
+                    <div class="input-group-append">
+                      <button class="submit"><i class="fas fa-search"></i> Search</button>
+                    </div>
+                  </div>
+                </form>
+                
               </div>
-            </div>
-          </form>
-        </div>
-      </nav>
+            </nav>
           </div>
         </div>
       </div>
@@ -234,7 +246,7 @@
     <footer class="footerBackground mx-auto">
       <div class="text-center">
         <div class="card-body">
-          <h5 class="card-title">Subscribe to our newsletter to receive the best deals on our learning products!</h5>
+          <h5 class="card-title">Subscribe to our newsletter to know the latest on our learning products!</h5>
           <form action="" method="GET">
             <input type="email" name="email" class="mx-auto email-input" placeholder="Email" class="validate" required/>
             <button id="subscribe_submit">Submit</button>
