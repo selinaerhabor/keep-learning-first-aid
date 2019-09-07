@@ -2,6 +2,6 @@ from django.conf.urls import url
 from learningforadults.views import learningforadults, learningforadultsquiz
 
 urlpatterns = [
-    url(r'^learningforadults/$', learningforadults, name="learningforadults"),
-    url(r'^learningforadultsquiz/$', learningforadultsquiz, name="learningforadultsquiz")
+    url(r'^adults/$', learningforadults, name="learningforadults"),
+    url(r'^adults_quiz/$', learningforadultsquiz, name="learningforadultsquiz")
 ]
