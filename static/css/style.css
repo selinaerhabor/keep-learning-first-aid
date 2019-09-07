@@ -96,15 +96,26 @@
         font-size: 17px;
     }
     
+    .nav-button {
+        padding-top: -5px;
+    }
+    
     .navbar-toggler {
-        color: #fff;
-        outline: hidden;
+        border: solid #194d33;
+    }
+    
+    .navbar-toggler:focus {
+        outline: none;
+        box-shadow: none;
     }
     
     .btn:focus, .btn:active:focus, .btn.active:focus {
         box-shadow: none;
     }
     
+    .searchBar {
+        color: #194d33;
+    }
     
     .links {
         margin: 20px;
