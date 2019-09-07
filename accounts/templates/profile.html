@@ -2,7 +2,7 @@
 {% block page_title %}{{ user }}'s Profile{% endblock %} 
 {% block page_heading %}{{ user }}'s Profile{% endblock %} 
 {% block document %}
-  <header>
+  <header class="d-none d-sm-block">
     <nav class="nav-pages">
       <ul class="nav justify-content-center">
         <li class="nav-item">
@@ -32,9 +32,9 @@
         <div class="jumbotron text-center">
           <h4>My Account</h4>
           <hr>
-          <p>Not {{ user.username }}? <a href="{% url 'login' %}">Sign In</a></p>
+          <p>Not {{ user }}? <a href="{% url 'login' %}">Sign In</a></p>
           <div class="text-center">
-            <p class="big-icon"><i class="fas fa-user-circle"></i> {{ user.username }}</p>
+            <p class="big-icon"><i class="fas fa-user-circle"></i> {{ user }}</p>
             <p><b>Email:</b> {{ user.email }}</p>
             <p>
               <a href="{% url 'view_cart' %}" data-toggle="tooltip" data-placement="bottom" title="View Your Cart">

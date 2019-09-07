@@ -2,16 +2,16 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block head_js %}
-    <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
-    <script type="text/javascript">
-        //<![CDATA[
-            Stripe.publishableKey = '{{ publishable }}';
-        //]]>
-    </script>
-    <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
+  <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
+  <script type="text/javascript">
+    //<![CDATA[
+        Stripe.publishableKey = '{{ publishable }}';
+    //]]>
+  </script>
+  <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 {% block document %}
-  <header>
+  <header class="d-none d-sm-block">
     <nav class="nav-pages">
       <ul class="nav justify-content-center">
         <li class="nav-item">
@@ -42,30 +42,30 @@
         <hr>
         <div class="row">
           <div class="col-xs-12 col-md-8 mx-auto">
-          <table class="table table-bordered">
-            <thead>
-              <tr>
-                <th>Category</th>
-                <th>Product Name</th>
-                <th>Qty</th>
-                <th>Price (£)</th>
-              </tr>
-            </thead>
-            <tbody>
-            {% for item in cart_items %}
-              <tr>
-                <td>{{ item.product.category }}</td>
-                <td>{{ item.product.name }}</td>
-                <td>{{ item.quantity }}</td>
-                {% if item.quantity > 1 %}
-                  <td>{{ item.product.price }} x {{item.quantity}}</td>
-                {% else %}
-                  <td>{{ item.product.price }}</td>
-                {% endif %}
-              </tr>
-            {% endfor %}
-            </tbody>
-          </table>
+            <table class="table table-bordered">
+              <thead>
+                <tr>
+                  <th>Type</th>
+                  <th>Item</th>
+                  <th>Qty</th>
+                  <th>Price (£)</th>
+                </tr>
+              </thead>
+              <tbody>
+                {% for item in cart_items %}
+                  <tr>
+                    <td>{{ item.product.category }}</td>
+                    <td>{{ item.product.name }}</td>
+                    <td>{{ item.quantity }}</td>
+                    {% if item.quantity > 1 %}
+                      <td>{{ item.product.price }} x {{item.quantity}}</td>
+                    {% else %}
+                      <td>{{ item.product.price }}</td>
+                    {% endif %}
+                  </tr>
+                {% endfor %}
+              </tbody>
+            </table>
           </div>
         </div>
         <div class="row">
@@ -78,7 +78,7 @@
           </div>
         </div>
         <hr>
-        <form role="form" method="post" id="payment-form" action="{% url 'checkout' %}">
+        <form role="form" method="POST" id="payment-form" action="{% url 'checkout' %}">
           <legend class="text-center">Payment Details</legend>
           <div id="credit-card-errors" style="display: none;">
             <div id="alert-message block-message error" id="stripe-error-message"></div>
