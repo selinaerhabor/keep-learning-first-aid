@@ -41,7 +41,25 @@
           {% endif %}
         </div>
       </div>
-            
+      <div class="row">
+        <div class="col-xs-12 mx-auto">
+          <div class="filter">
+              <a class="nav-link dropdown-toggle" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                Choose Category
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdown1">
+                <a class="dropdown-item" href="{% url 'sale' %}">Show All</a>
+                <a class="dropdown-item" href="{% url 'get_books' %}">Books</a>
+                <a class="dropdown-item" href="{% url 'get_posters' %}">Posters</a>
+                <a class="dropdown-item" href="{% url 'get_cds' %}">CDs & DVDs</a>
+                <a class="dropdown-item" href="{% url 'get_manikins' %}">Manikins</a>
+                <a class="dropdown-item" href="{% url 'get_courses' %}">Courses</a>
+                <a class="dropdown-item" href="{% url 'get_firstaidkits' %}">First Aid Kits</a>
+                <a class="dropdown-item" href="{% url 'get_extras' %}">Extras</a>
+              </div>
+          </div>
+        </div>
+      </div>
       <!--Displays products on page (9 products per page)-->
       <div class="row">
         {% for product in products %}
@@ -80,11 +98,6 @@
             </a>
           </div>
         {% endfor %}
-      </div>
-      <div class="row">
-        <div class="col-xs-12 mx-auto">
-          <a href="{% url 'sale' %}" class="btn btn-info shop-now">Return to All Products</a>
-        </div>
       </div>
             
       <!--Pagination-->      

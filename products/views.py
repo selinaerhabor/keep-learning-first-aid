@@ -9,7 +9,6 @@ View to show First Aid Learning Materials and Equipment available for
 purchase on the website
 """
 def sale(request):
-    
     products = Product.objects.all().order_by('name')
     page = request.GET.get('page', 1)
     page_number = page
@@ -154,4 +153,5 @@ This view displays the full details of a product to the user
 def view_product(request, id):
     products = get_object_or_404(Product, pk=id)
     return render(request, "viewproduct.html", {"products": products})
+  
   
