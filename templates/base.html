@@ -36,6 +36,19 @@
                 <img class="logo" src="{% static 'images/logo.jpg' %}" alt="KLFA Logo">
               </a>
               
+              {% if messages %}
+                <div class="col-s2" id="navbarNav">
+                  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                      <span aria-hidden="true">&times;</span>
+                    </button>
+                    {% for message in messages %}
+                      {{ message }}
+                    {% endfor %}
+                  </div>
+                </div>
+              {% endif %}
+              
               <!--NAVIGATION TOGGLE BUTTON-->
               <a class="navbar-toggler btn" data-toggle="collapse" href="#navbarSupportedContent">
                 <span class="navbar-toggler-icon"></span>
