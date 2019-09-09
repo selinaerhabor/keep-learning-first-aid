@@ -21,7 +21,7 @@
     .hide {
         display: none;
     }
-    /*-----------------------------------------------------------------MEDIA RULES*/
+    /*-------------------------------------------------------------MEDIA RULES*/
     
     @media screen and (max-width: 575px){
         .bs-outline {
@@ -34,9 +34,35 @@
         .card-img-top {
             height: 260px;
         }
+        .carousel-control-prev, .carousel-control-next {
+            margin-top: 280px;
+        }
+        
     }
     
-    @media screen and (min-width: 968px) {
+    
+    @media only screen and (min-width: 968px) and (max-width: 1000px) {
+        .carousel-item {
+            height: 400px;
+            width: 1000px;
+        }
+    }
+    
+    @media only screen and (min-width: 1001px) and (max-width: 1115px) {
+        .carousel-item {
+            height: 400px;
+            width: 1100px;
+        }
+    }
+    
+    @media only screen and (min-width: 1116px) and (max-width: 1199px) {
+        .carousel-item {
+            height: 400px;
+            width: 1200px;
+        }
+    }
+    
+    @media only screen and (min-width: 1200px) {
         .carousel-item {
             height: 400px;
             width: 1400px;
@@ -54,7 +80,7 @@
     
     
     .nav-pages {
-        background-image: linear-gradient(#194d33,#001a09,#194d33);
+        background-image: linear-gradient(#194d33, #001a09, #194d33);
     }
     
     .fa-bars {
@@ -96,21 +122,14 @@
         font-size: 17px;
     }
     
-    .nav-button {
-        padding-top: -5px;
-    }
-    
-    .navbar-toggler {
-        border: solid #194d33;
-    }
-    
     .navbar-toggler:focus {
         outline: none;
         box-shadow: none;
     }
     
-    .btn:focus, .btn:active:focus, .btn.active:focus {
+    .btn:active, .btn:focus {
         box-shadow: none;
+        outline: none;
     }
     
     .searchBar {
@@ -144,23 +163,34 @@
     }
 
 /*------------------------------------------------------------------------HOME*/
-
     .carousel-item {
         height: 400px;
-        width: 1400px;
+        border: #001a09;
+    }
+    
+    .slide-image {
+        height: 400px;
+    }
+    
+    .carousel-control-prev, .carousel-control-next {
+        margin-left: 50px;
+        margin-right: 50px;
+    }
+    
+    .carousel-control-prev-icon, .carousel-control-next-icon {
+        background-color: #194d33;
     }
     
     .carousel-inner {
-        width: 100%;
-        height: 100%;
         position: relative;
         background-color: white;
     }
     
     .slide-image {
-        opacity: 0.3;
+        opacity: 0.5;
         width: 100%;
     }
+    
     
     .slide-caption {
         color: #001a09;
@@ -371,6 +401,13 @@
         width: 150px;
         height: 150px;
         margin: 0 auto;
+    }
+    
+    .filter {
+        border: solid #194d33;
+        border-radius: 5px;
+        padding: 5px;
+        margin-bottom: 15px;
     }
     
     caption p {
