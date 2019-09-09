@@ -29,7 +29,7 @@ DEBUG = True
 
 ALLOWED_HOSTS = [os.environ.get('C9_HOSTNAME'),
                 '0640aa05cfb6469bb38873f59dc178dc.vfs.cloud9.us-east-1.amazonaws.com',
-                'keeplearningfirstaid.herokuapp.com',
+                'https://keeplearningfirstaid.herokuapp.com',
                 os.environ.get('HOSTNAME')]
 
 
