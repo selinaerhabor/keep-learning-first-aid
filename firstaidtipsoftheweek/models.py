@@ -9,6 +9,6 @@ class Firstaidtip(models.Model):
     title = models.CharField(max_length=200, default='')
     tip = models.TextField()
     published_date = models.DateTimeField(blank = True, null = True, default = timezone.now)
-    
+      
     def __str__(self):
         return "{0}-{1}".format(self.post_id, self.title)
