@@ -14,22 +14,18 @@ class Order(models.Model):
         ("MISS", "Miss"),
     )
     title = models.CharField(max_length=50, choices=title_choices, blank=False)
-    
     first_name = models.CharField(max_length=20, blank=False)
     last_name = models.CharField(max_length=30, blank=False)
-    email = models.CharField(max_length=60, blank=False)
+    phone_number = models.CharField(max_length=40, blank=False)
     country = models.CharField(max_length=40, blank=False)
-    house_number = models.CharField(max_length=40, blank=False)
-    address_line1 = models.CharField(max_length=40, blank=False)
-    address_line2 = models.CharField(max_length=40, blank=True)
+    address_line_1 = models.CharField(max_length=40, blank=False)
+    address_line_2 = models.CharField(max_length=40, blank=True)
     town_or_city = models.CharField(max_length=40, blank=False)
     county = models.CharField(max_length=40, blank=True)
     postcode = models.CharField(max_length=20, blank=False)
-    phone_number = models.CharField(max_length=40, blank=False)
-    date = models.DateField()
 
     def __str__(self):
-        return "{0}-{1}-{2}{3}".format(self.id, self.date, self.first_name, self.last_name)
+        return "{0}-{1}-{2}".format(self.country, self.first_name, self.last_name)
 
 
 class OrderLineItem(models.Model):
@@ -38,5 +34,4 @@ class OrderLineItem(models.Model):
     quantity = models.IntegerField(blank=False)
 
     def __str__(self):
-        return "{0} {1} @ {2}".format(
-            self.quantity, self.product.name, self.product.price)
+        return "{0}-{1}-{2}".format(self.quantity, self.product.name, self.product.price)

@@ -2,6 +2,7 @@
 {% load static %}
 {% load crispy_forms_tags %}
 {% block head_js %}
+  <script type="text/javascript" src="/javascripts/jquery-3.1.1.min.js"></script>
   <script type="text/javascript" src="https://js.stripe.com/v2/"></script>
   <script type="text/javascript">
     //<![CDATA[
@@ -11,7 +12,7 @@
   <script type="text/javascript" src="{% static 'js/stripe.js' %}"></script>
 {% endblock %}
 {% block document %}
-  <header class="d-none d-sm-block">
+  <header class="d-none d-md-block">
     <nav class="nav-pages">
       <ul class="nav justify-content-center">
         <li class="nav-item">
