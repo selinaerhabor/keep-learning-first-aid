@@ -1,0 +1,40 @@
+{% extends 'base.html' %}
+{% block page_title %}Thanks for subscribing | KLFA{% endblock %}
+{% load static %}
+{% block document %}
+  <header class="d-none d-md-block">
+    <nav class="nav-pages">
+      <ul class="nav justify-content-center">
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'home' %}">Home</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'firstaidtipsoftheweek' %}">First Aid Tip of the Week</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforkids' %}">Learning for Kids</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'learningforadults' %}">Learning for Adults</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'faqs' %}">FAQs</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link nav-tab" href="{% url 'sale' %}">Products</a>
+        </li>
+      </ul>
+    </nav>
+  </header>
+  <div class="container-fluid bg">
+    <div class="row">
+      <div class="col-xs-12 mx-auto text-center" style="margin: 20px;">
+        <h1>Thanks for subscribing!</h1>
+        <hr>
+        <h3>Do check out our products...</h3>
+        <h6>New learning products will be introduced in the next coming months.</h6>
+        <a class="btn btn-info" href="{% url 'home' %}">Return to Home</a>
+      </div>
+    </div>
+  </div>
+{% endblock %}

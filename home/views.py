@@ -9,3 +9,7 @@ def home(request):
 # Displays FAQs page
 def faqs(request):
     return render(request, 'faqs.html')
+    
+# Displays Thanks for subscribing page
+def thanks(request):
+    return render(request, 'thanks.html')
