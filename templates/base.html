@@ -260,15 +260,19 @@
       <div class="text-center">
         <div class="card-body">
           <h5 class="card-title">Subscribe to our newsletter to know the latest on our learning products!</h5>
-          <form action="{% url 'thanks' %}" method="GET">
-            <input type="email" name="email" class="mx-auto email-input" placeholder="Email" class="validate" required/>
-            <button id="subscribe_submit">Submit</button>
+          <form action="{% url 'thanks' %}" method="GET" class="subscribe_form">
+            <div class="input-group justify-content-center">
+            <input type="email" name="email" class="email-input" placeholder=" Email..." class="validate" required/>
+            <div class="input-group-append">
+              <button id="subscribe_submit" class="btn btn-success">Submit</button>
+            </div>
+            </div>
           </form>
           <div class="col-xs-12 links">
-            <span class="card-text footer-link"><a data-toggle="modal" href="#privacyPolicy">Privacy Policy</a></span>
-            <span class="card-text footer-link d-none d-sm-inline"><a data-toggle="modal" href="#termsConditions">Terms & Conditions</a></span>
-            <span class="card-text footer-link d-inline d-sm-none"><a data-toggle="modal" href="#termsConditions">T & Cs</a></span>
-            <span class="card-text footer-link"><a data-toggle="modal" href="#contactUs">Contact Us</a></span>
+            <span><a class="footer-link" data-toggle="modal" href="#privacyPolicy">Privacy Policy</a></span>
+            <span class="d-none d-sm-inline"><a class="footer-link" data-toggle="modal" href="#termsConditions">Terms & Conditions</a></span>
+            <span class="d-inline d-sm-none"><a class="footer-link" data-toggle="modal" href="#termsConditions">T & Cs</a></span>
+            <span><a class="footer-link" data-toggle="modal" href="#contactUs">Contact Us</a></span>
           </div>
           <h6 class="card-title mx-auto"><b>Follow Us</b></h6>
           <a href="https://twitter.com/teamklfa" target="_blank"><i class="fab fa-twitter"></i></a>

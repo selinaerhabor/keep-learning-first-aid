@@ -35,7 +35,7 @@
             height: 260px;
         }
         .carousel-control-prev, .carousel-control-next {
-            margin-top: 280px;
+            margin-top: 300px;
         }
         
     }
@@ -144,6 +144,7 @@
     
     .links {
         margin: 20px;
+        margin-bottom: 20px;
     }
     
     .footer-link {
@@ -193,7 +194,7 @@
     }
     
     .slide-image {
-        opacity: 0.5;
+        opacity: 0.4;
         width: 100%;
     }
     
@@ -215,6 +216,11 @@
     
     #subscribe_submit {
         cursor: pointer;
+        text-shadow: none;
+    }
+    
+    .subscribe_form {
+        margin-bottom: 20px;
     }
     
     .btn-spacing {
@@ -223,7 +229,13 @@
     
     .footer-link {
         padding: 20px;
-        color: #fff;
+        color: #10ab87;
+    }
+    
+    .footer-link:hover {
+        padding: 20px;
+        color: #ccffcc;
+        text-decoration: none;
     }
     
     .fab {
