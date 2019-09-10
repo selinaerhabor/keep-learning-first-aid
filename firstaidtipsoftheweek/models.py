@@ -12,4 +12,4 @@ class Firstaidtip(models.Model):
     enddate = models.DateField(null = True)
       
     def __str__(self):
-        return "{0}-{1}-{2}-{3}".format(self.post_id, self.title, self.startdate, self.enddate)
+        return "{0}-{1}-{2}".format(self.post_id, self.title, self.startdate)

@@ -5,7 +5,7 @@ import datetime
 # First Aid Tip of the Week
 def firstaidtipsoftheweek(request):
     today = datetime.date.today()
-    firstaidtips = Firstaidtip.objects.filter(startdate__lte = today, enddate__gte = today)
+    firstaidtips = Firstaidtip.objects.filter(startdate__lte = today, enddate__gt = today)
     return render(request, "firstaidtipoftheweek.html", {"firstaidtips": firstaidtips})
     
     
