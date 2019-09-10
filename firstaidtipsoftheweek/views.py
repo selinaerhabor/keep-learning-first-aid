@@ -1,9 +1,11 @@
 from django.shortcuts import render
 from .models import Firstaidtip
-from datetime import datetime, timedelta
-from django.utils import timezone
+import datetime
 
 # First Aid Tip of the Week
 def firstaidtipsoftheweek(request):
-    firstaidtips = Firstaidtip.objects.filter(post_id="1")
+    today = datetime.date.today()
+    firstaidtips = Firstaidtip.objects.filter(startdate__lte = today, enddate__gte = today)
     return render(request, "firstaidtipoftheweek.html", {"firstaidtips": firstaidtips})
+    
+    
