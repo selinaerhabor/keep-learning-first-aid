@@ -85,7 +85,7 @@
             <div class="row">
               {% for product in products %}
                 <div class="col-xs-12 col-sm-6 col-md-4 col-lg-3" style="margin-bottom: 50px;">
-                  <a href="{% url 'view_product' product.id %}" class="cardLink">
+                  <a href="{% url 'view_product' product.id %}" target="_blank" class="cardLink">
                     <div class="card bs-outline">
                       <img class="card-img-top img-fluid" src="{{ MEDIA_URL }}{{ product.image }}" alt="KLFA Product">
                       <div class="card-body">
