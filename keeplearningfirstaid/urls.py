@@ -15,7 +15,7 @@ Including another URLconf
 """
 from django.conf.urls import url, include
 from django.contrib import admin
-from home import urls
+from home.views import home, faqs, thanks
 from firstaidtipsoftheweek import urls
 from learningforkids import urls
 from learningforadults import urls
@@ -30,7 +30,9 @@ from .settings import MEDIA_ROOT
 
 urlpatterns = [
     url(r'^admin/', admin.site.urls),
-    url(r'^home/', include('home.urls')),
+    url(r'^$', home, name="home"),
+    url(r'^faqs/$', faqs, name="faqs"),
+    url(r'^thanks/$', thanks, name="thanks"),
     url(r'^accounts/', include('accounts.urls')),
     url(r'^firstaidtipoftheweek/', include('firstaidtipsoftheweek.urls')),
     url(r'^learningforkids/', include('learningforkids.urls')),
