@@ -36,14 +36,14 @@
 
           <!-- Button redirects users to Kids First Aid quiz -->
           <div class="center">
-            <a class="btn btn-info quiz-btn animated heartBeat" href="{% url 'learningforkidsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Kids test your knowledge">Kids Quiz</a>
+            <a class="btn btn-info quiz-btn animated heartBeat" href="{% url 'learningforkidsquiz' %}" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Kids test your knowledge">Kids Quiz</a>
           </div>
         
           <!--Learning For Kids Featured Products-->
           <section id="featured-kids-content" class="container-fluid">
             <div class="row">
               <div class="col-xs-12 col-sm-6 col-md-4">
-                  <a href="{% url 'get_posters' %}">
+                  <a href="{% url 'get_posters' %}" target="_blank">
                     <img class="featured img-fluid" src="{% static "images/kidscollection1.png" %}" alt="KLFA Kids Collection">
                   </a>
                 <div class="category">
@@ -53,7 +53,7 @@
                 </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4">
-                  <a href="{% url 'get_extras' %}">
+                  <a href="{% url 'get_extras' %}" target="_blank">
                     <img class="featured img-fluid" src="{% static "images/kidscollection2.jpg" %}" alt="KLFA Kids Collection">
                   </a>
                 <div class="category">
@@ -63,7 +63,7 @@
                 </div>
               </div>
               <div class="col-xs-12 col-sm-6 col-md-4">
-                  <a href="{% url 'get_books' %}">
+                  <a href="{% url 'get_books' %}" target="_blank">
                     <img class="featured img-fluid" src="{% static "images/kidscollection3.jpg" %}" alt="KLFA Kids Collection">
                   </a>
                 <div class="category">

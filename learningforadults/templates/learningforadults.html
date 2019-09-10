@@ -39,14 +39,14 @@
         
         <!--Button redirects users to Adults First Aid quiz-->
         <div class="center">
-          <a class="btn btn-info quiz-btn animated heartBeat" href="{% url 'learningforadultsquiz' %}" data-toggle="tooltip" data-placement="bottom" title="Adults test your knowledge">Begin Quiz</a>
+          <a class="btn btn-info quiz-btn animated heartBeat" href="{% url 'learningforadultsquiz' %}" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Adults test your knowledge">Begin Quiz</a>
         </div>
         
         <!--Learning For Adults Featured Products-->
         <section id="featured-content" class="container-fluid">
           <div class="row">
             <div class="col-xs-12 col-md-4">
-                <a href="{% url 'get_firstaidkits' %}">
+                <a href="{% url 'get_firstaidkits' %}" target="_blank">
                   <img class="featured img-fluid" src="{% static "images/firstaidkit.jpg" %}" alt="KLFA First Aid Kits">
                 </a>
               <div class="category">
@@ -57,7 +57,7 @@
             </div>
             <div class="col-xs-12 col-md-4">
             
-                <a href="{% url 'get_courses' %}">
+                <a href="{% url 'get_courses' %}" target="_blank">
                   <img class="featured img-fluid" src="{% static "images/courses.jpg" %}" alt="KLFA Courses">
                 </a>
               <div class="category">
@@ -67,7 +67,7 @@
               </div>
             </div>
             <div class="col-xs-12 col-md-4">
-                <a href="{% url 'get_manikins' %}">
+                <a href="{% url 'get_manikins' %}" target="_blank">
                   <img class="featured small-padding img-fluid" src="{% static "images/manikin.jpg" %}" alt="KLFA Manikins">
                 </a>
               <div class="category">
