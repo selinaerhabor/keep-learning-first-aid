@@ -181,16 +181,13 @@ $(document).ready(function(){
                 for(letter in kidsQuestions[i].kidsAnswerChoices){
     
                     kidsAnswerChoices.push(
-                        '<div>' + '<input type="radio" name="kidsQuestion'+i+'" value="'+letter+'">'+ ' ' + letter + ': '
-                        + kidsQuestions[i].kidsAnswerChoices[letter] + '</div>'
+                        '<div>' + '<input type="radio" name="kidsQuestion'+i+'" value="'+letter+'">'+ ' ' + letter + ': ' + kidsQuestions[i].kidsAnswerChoices[letter] + '</div>'
                     );
                 }
     
                 // Loads questions with their answer choices and solutions(but hidden)
                 kidsQuizLoad.push(
-                    '<h4 class="padding-top">' + kidsQuestions[i].kidsQuestion + '</h4>' + '<img src="' + kidsQuestions[i].image + '" height=150 alt="quiz image">' 
-                    + '<div class="kidsAnswerChoices">' + kidsAnswerChoices.join('') + '</div>' + '<div class="kidsSolution hide">' 
-                    + kidsQuestions[i].kidsSolution + '</div>'
+                    '<h4 class="padding-top">' + kidsQuestions[i].kidsQuestion + '</h4>' + '<img src="' + kidsQuestions[i].image + '" height=150 alt="quiz image">' + '<div class="kidsAnswerChoices">' + kidsAnswerChoices.join('') + '</div>' + '<div class="kidsSolution hide">' + kidsQuestions[i].kidsSolution + '</div>'
                 );
             }
     

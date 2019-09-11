@@ -234,15 +234,13 @@ $(document).ready(function(){
                 for(letter in questions[i].answerChoices) {
     
                     answerChoices.push(
-                        '<div>' + '<input type="radio" name="question'+i+'" value="'+letter+'">'+ ' ' + letter + ': '
-                        + questions[i].answerChoices[letter] + '</div>'
+                        '<div>' + '<input type="radio" name="question'+i+'" value="'+letter+'">'+ ' ' + letter + ': ' + questions[i].answerChoices[letter] + '</div>'
                     );
                 }
                 
                     
                     quizLoad.push(
-                    '<h4 class="padding-top">' + questions[i].question + '</h4>' + '<div class="answerChoices">' 
-                    + answerChoices.join('') + '</div>' + '<div class="solution hide">' + questions[i].solution + '</div>'
+                    '<h4 class="padding-top">' + questions[i].question + '</h4>' + '<div class="answerChoices">' + answerChoices.join('') + '</div>' + '<div class="solution hide">' + questions[i].solution + '</div>'
                     );
                 
          
