@@ -457,6 +457,10 @@ For the homepage, the best-selling products shop now link has been removed. Each
 There are no longer first aid tips of the week as potential users raised concerns of the information being too overwhelming. Instead one first aid tip will appear each week to build people’s confidence in administering first aid making it easier for users to absorb the information and be encouraged to keep up to date with the weekly posts.
 
 ## 6. Credits
+
+This project was inspired from a personal experience regarding a close relative who had a fall. I was required to perform emergency first aid before the
+paramedics arrived. I have since invested in my first aid knowledge through learning resources and word of mouth.
+
 ## 6.1 Content/Media:
 **Sources**:
 * Bootstrap 4.0 Documentation - https://getbootstrap.com/docs/4.0/getting-started/introduction/
