@@ -1,6 +1,6 @@
 # Keep Learning First Aid – First Aid Learning Equipment and Resources Website
 
-### **Only 5% of adults have the skills and confidence to provide first aid in emergency situations.**
+### **Only 5% of adults have the skills and confidence to provide first aid in emergency situations.** (Source: British Red Cross, 2018)
 Keep Learning First Aid aim to be UK’s number one first aid learning equipment and resources provider. The website displays First Aid tip of the week, multiple-choice quizzes for children and for adults, first aid learning materials and products for both kids and adults which can be purchased and collection of some frequently asked questions. The products available on the website for purchase include First Aid Books, E-books, Manikins, Posters, DVDs/ CDs and Extras. The aim of the website is to make learning first aid easy and interesting for all ages and make first aid learning resources readily available in order to combat the lack of skills and confidence in providing first aid in emergency situations.
 Keep Learning First Aid Website can be accessed [here].
 
