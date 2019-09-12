@@ -160,11 +160,11 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % 'keeplearningfirstaid'
 STATICFILES_LOCATION = 'static'
 STATICFILES_STORAGE = 'custom_storages.StaticStorage'
 
-STATIC_URL = '/static/'
-# STATICFILES_DIRS = [
-#     os.path.join(BASE_DIR, 'static')
-#     ]
-STATIC_ROOT = os.path.join(BASE_DIR, '/static/')
+STATIC_URL = os.environ.get('STATIC_URL')
+STATICFILES_DIRS = [
+    os.path.join(BASE_DIR, 'static')
+    ]
+STATIC_ROOT = os.path.join(BASE_DIR, 'STATIC_URL')
 
 MEDIAFILES_LOCATION = 'media'
 DEFAULT_FILE_STORAGE = 'custom_storages.MediaStorage'
