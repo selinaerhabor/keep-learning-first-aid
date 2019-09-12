@@ -195,7 +195,7 @@ Another feature to implement is completing functionality to allow users to reset
 *	[Font Awesome] - Used for displaying the social logos and vector icons present on the website.
 *	[Django] – Used for creating apps, superuser and configuring settings to control the web application’s urls and content. Also used for testing. The Django Crispy Forms package assists in rendering forms in a very neat and organised manner to make them easier for the user to understand and complete.
 *	[Travis CI] – Used to build and test software project from web application code hosted at GitHub.
-* [BrowserShots] - For checking browser compatibility and cross platform browser testing.
+* [Browsershots] - For checking browser compatibility and cross platform browser testing.
 *	[W3C HTML Validator] - Used to check that no errors were present in the HTML code before final deployment.
 *	[W3C CSS Validator] - Used to check that no errors were present in the CSS code before final deployment.
 *	[JSHint] - Used to check code quality of JavaScript code.
@@ -239,21 +239,63 @@ This section discusses the testing process for key features of the KLFA website 
 * Two First Aid Tips appeared on the page. 
 * Changed one First Aid Tip to a different week range and only one first aid tip is appearing on the page for the selected start date and end date above.
 
-**Creating a Recipe for public viewing (Username only)**
+**Cart**
 
-* Clicked the ‘Add a Recipe’ tab
-* Filled in all recipe details
-* Left the ‘Make recipe public’ switch checked (on) 
-* Returned to home page [index.html]
-* Clicked on the cuisine type, I created my recipe for
-* Newly created recipe appearing on results
+* Clicked the Cart Icon in navigation bar
+* Redirected to the view cart page
+* Message 'Your Cart is empty' displayed and continue to checkout button disabled
+* Clicked continue shopping added an item to cart
+* Clicked on the cart symbol again, item appears in cart, empty cart button appears and checkout button enabled
+* Clicked empty cart and item has now been removed from cart, cart is now empty.
+
+**Order Checkout**
+
+* Placed an item in the cart
+* Clicked the continue to checkout button 
+* Redirected to the Order Checkout page with item details in table
+* Total price of items to be purchased stated below the table with an Amend Cart button on the side
+* Completed Order form my details 
+* Completed Payment details form
+* Clicked Submit and payment successful
 
 
-**Score commentary:**
-* This test demonstrated whether the game can correctly select the corresponding audio file from a buzzer ID. For this test, I declared 
-the buzzer IDs, four example audio files in an array and a sound player variable which uses the index of an array to map it to each buzzer. 
-This test checked that the game correctly selects a buzzer's matching audio file so the right buzzer sound plays upon selection.
+**Products**
 
+* Clicked the Products Tab on the lower navigation bar
+* Redirected to the products page
+* Used dropdown filter and selected each category
+* Correctly directed to a filtered view of each category with title adjusting to filtered title
+* On the dropdown filter there is a Show All option to return to the full list of products
+* All filtered view categories are organised by lowest price first
+* Pagination at bottom of page is working well, page number displayed at top of the page is in sync
+
+**FAQs**
+
+* Clicked the FAQs Tab on the lower navigation bar
+* Redirected to the FAQs page with one FAQ card expanded to user
+* Clicked on the FAQ card and it toggles between hide and show collapse style
+* All other FAQs on the page follow the same format
+
+
+**Score commentary**
+
+* Clicked Kids Quiz, clicked submit button
+* Score feedback has selected the correct commentary for score of 0
+Oh dear, but don't worry we have got great learning material that can help boost your knowledge on First Aid.
+* Clicked 5 correct answers, clicked submit button
+* Score feedback has selected the correct commentary for score of 5
+Not bad, you have some understanding of First Aid. Consider buying some of our books and CDs to perfect your knowledge!
+* Clicked all correct answers
+* Score feedback has selected correct commentary
+Wow! You really know your stuff. Using First Aid Manikins are a great way to put your First Aid knowledge into practise and grow your understanding!
+ 
+
+**Search**
+
+* Typed 'books' in search bar at the top of the page
+* Products filtered list of books returned below
+* Typed 'li' in search bar
+* No results returned, return to home page button displayed along with products dropdown filter
 
 
 
@@ -357,29 +399,30 @@ For deploying the Keep Learning First Aid (KLFA) Website to Heroku:
 * Set the app-name and the region to your respective region. 
 * Next, click on Settings > Reveal Config Vars. Set the C9 HOSTNAME, DATABASE URL, DISABLE_COLLECTSTATIC, HOSTNAME and SECRET_KEY config vars in Heroku:
 
-```sh
+
 KEY | VALUE
-| --- |---|
+--- | --- 
 **C9 HOSTNAME** | <your-id>.vfs.cloud9.<your-region>.amazonaws.com
 **DATABASE_URL**  | postgres://xxxxxxxxxxxxxxx:xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx@<app-instance>-XX-XXX-X-XX.<app-region>.compute.amazonaws.com:XXXX/XXXXXXXXX
 **DISABLE_COLLECTSTATIC ** | 1
 **HOSTNAME ** | <app-name>.herokuapp.com
 **SECRET_KEY** | <secret key goes here>
-```
+
 Type in the command below to log into your Heroku account via AWS Cloud9 terminal
 ```sh
 $ heroku login
 ```
-*Type in your Heroku credentials
-*If changes are made to the cloned version of code, make a git commit and push changes to GitHub using the by typing the below commands in your AWS Cloud9 terminal:
+* Type in your Heroku credentials
+* If changes are made to the cloned version of code, make a git commit and push changes to GitHub using the by typing the below commands in your AWS Cloud9 terminal:
 ```sh
 $ git add .
 $ git commit -am "type reason for changes to your code here"
 $ git push
 ```
-*After changes have been pushed to GitHub, type in command ` git push heroku master` to push the updated code to Heroku.
-*Verify whether application has been correctly built by clicking on More > View Logs. 
-*Application should now be up and running at https://app-name.herokuapp.com/
+* After changes have been pushed to GitHub, type in command ` git push heroku master` to push the updated code to Heroku.
+* Verify whether application has been correctly built by clicking on More > View Logs. 
+* Application should now be up and running at https://app-name.herokuapp.com/
+
 ## 5.2 Running the code locally:
 The repository for this website can be cloned using the command below in AWS Cloud 9 workspace terminal:
 
@@ -387,7 +430,7 @@ The repository for this website can be cloned using the command below in AWS Clo
 $ git clone https://github.com/selinaerhabor/keep-learning-first-aid.git
 $ pip install -r requirements.txt
 ```
-*Type in the command `python3 manage.py runserver 0.0.0.0:8080` in AWS Cloud9 terminal and click on the link that appears after running the command to load the Keep Learning First Aid Website in a new tab.
+* Type in the command `python3 manage.py runserver 0.0.0.0:8080` in AWS Cloud9 terminal and click on the link that appears after running the command to load the Keep Learning First Aid Website in a new tab.
 
 ## 5.3 Discussion on the differences between the development code and the deployed Code Version:
 
@@ -420,15 +463,16 @@ I would like to thank my mentor Aaron and all the tutors at Code Institute for t
 [here]: <https://keeplearningfirstaid.herokuapp.com/>
 [HTML]: <https://html.com/> 
 [CSS]: <https://https://en.wikipedia.org/wiki/Cascading_Style_Sheets> 
-[AWS Cloud9]: <https://aws.amazon.com/cloud9/>
-[Browsershots.org]: <http://browsershots.org/>
+[AWS Cloud 9]: <https://aws.amazon.com/cloud9/>
+[Browsershots]: <http://browsershots.org/>
 [Bootstrap 4.0]: <https://getbootstrap.com/docs/4.0/getting-started/introduction/>
 [Font Awesome]: <https://fontawesome.com/icons?d=gallery>
 [Django]: <https://www.djangoproject.com/>
-[Travis CI] <https://travis-ci.org/>
+[Travis CI]: <https://travis-ci.org/>
 [JQuery]: <https://jquery.com/download/>
 [W3C HTML Validator]: <https://validator.w3.org/>
 [W3C CSS Validator]: <http://jigsaw.w3.org/css-validator/>
-[Jasmine Test Results Page]: < >
-[Initial Ideas - Wireframes]: < >
+[Jasmine Test Results Page]: <>
+[Initial Ideas - Wireframes]: <>
 [JSHint]: <https://jshint.com/>
+[Jasmine Testing]: <https://en.wikipedia.org/wiki/Jasmine_(JavaScript_testing_framework)>
