@@ -1,65 +1,74 @@
-# Keep Learning First Aid
+# Keep Learning First Aid – First Aid Learning Equipment and Resources Website
 
 [![Build Status](https://travis-ci.org/selinaerhabor/keep-learning-first-aid.svg?branch=master)](https://travis-ci.org/selinaerhabor/keep-learning-first-aid)
 
-# Full Stack Frameworks Project: Keep Learning First Aid – First Aid Learning Equipment and Resources Website
-**Only 5% of adults have the skills and confidence to provide first aid in emergency situations.**
-Keep Learning First Aid aim to be UK’s number one first aid learning equipment and resources provider. The website displays First Aid tip of the week, multiple-choice quizzes for children and for adults, first aid learning materials and products for both kids and adults which can be purchased and collection of some frequently asked questions. The products available on the website for purchase include First Aid Books, E-books, Manikins, Posters, DVDs/ CDs and Extras. The aim of the website is to make learning first aid easy and interesting for all ages and making first aid learning resources readily available in order to combat the lack of skills and confidence in providing first aid in emergency situations.
+### **Only 5% of adults have the skills and confidence to provide first aid in emergency situations.**
+Keep Learning First Aid aim to be UK’s number one first aid learning equipment and resources provider. The website displays First Aid tip of the week, multiple-choice quizzes for children and for adults, first aid learning materials and products for both kids and adults which can be purchased and collection of some frequently asked questions. The products available on the website for purchase include First Aid Books, E-books, Manikins, Posters, DVDs/ CDs and Extras. The aim of the website is to make learning first aid easy and interesting for all ages and make first aid learning resources readily available in order to combat the lack of skills and confidence in providing first aid in emergency situations.
 Keep Learning First Aid Website can be accessed [here].
 
 ## List of Contents
 1. [**User Experience Design (UX)**](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#1-user-experience-design-ux)
       
     1.1	[User Stories](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#11-user-stories)
-    1.2	[Database Layout](https://github.com/selinaerhabor/keep-learning-first-aid /blob/master/README.md#11-user-stories)
-    1.2.1 [Collections](https://github.com/selinaerhabor/ keep-learning-first-aid /blob/master/README.md#11-user-stories)
+    
+    1.2 [Django App Structure](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#11-user-stories)
+    
+    1.2.1 [Collections](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#11-user-stories)
 
 
 2. [**Features**](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#2-features)
       
-      2.1 [Existing Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#21-existing-features)
+    2.1 [Existing Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#21-existing-features)
 
-      2.1.1 [Create (**C**RUD) Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
+    2.1.1 [Home Page and Standard Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
 
-2.1.2 [Read (C**R**UD) Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
+    2.1.2 [First Aid Tip of the Week](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
 
-2.1.3 [Update (CR**U**D) Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
+    2.1.3 [Learning for Kids](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
 
-2.1.4 [Delete (CRU**D**) Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
+    2.1.4 [Learning for Adults](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
       
-      2.2 [Layout and Overall Aesthetics](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#22-potential-features-to-implement-in-the-future)
-
-2.3 [Potential Features to Implement](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#23-potential-features-to-implement-in-the-future)
+    2.1.5 [FAQs](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#22-potential-features-to-implement-in-the-future)
+    
+    2.1.6 [Products]()
+    
+    2.1.7 [Login/Register]()
+    
+    2.1.8 [Cart]()
+    
+    2.1.9 [Order Checkout]()
+    
+    2.2 [Potential Features to Implement](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#23-potential-features-to-implement-in-the-future)
 
 3. [**Technologies used**](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#3-technologies-used)
 
 4. [**Testing**](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#4-testing)
       
-      4.1 [Process of Testing Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#41-process-of-testing-features)
+    4.1 [Process of Testing Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#41-process-of-testing-features)
 
-      4.2 [HTML and CSS Validation](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#42-html-and-css-validation-results)
-      
-      4.3 [Jasmine Test Results](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#43-jasmine-tests-results)
-      
-      4.4 [Device Screen Size and Browser Compatibility Test Results](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#44-device-screen-size-and-browser-compatibility-test-results)
-      
-      4.5 [Responses from users who visited the web application]()
-      
-      4.6 [Interesting bugs or problems discovered during testing](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#46-interesting-bugs-or-problems-discovered-during-testing)
+    4.2 [HTML and CSS Validation](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#42-html-and-css-validation-results)
+    
+    4.3 [Jasmine Test Results](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#43-jasmine-tests-results)
+    
+    4.4 [Device Screen Size and Browser Compatibility Test Results](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#44-device-screen-size-and-browser-compatibility-test-results)
+    
+    4.5 [Responses from users who visited the web application]()
+    
+    4.6 [Interesting bugs or problems discovered during testing](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#46-interesting-bugs-or-problems-discovered-during-testing)
 
 5. [**Deployment**](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#5-deployment)
       
-      5.1 [Deployment Process](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#51-deployment-process)
+    5.1 [Deployment Process](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#51-deployment-process)
 
-      5.2 [Running the code locally](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#52--running-the-code-locally)
-      
-      5.3 [Discussion on the differences between the development code and the deployed Code Version](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#53-discussion-on-the-differences-between-the-development-code-and-the-deployed-code-version)
+    5.2 [Running the code locally](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#52--running-the-code-locally)
+    
+    5.3 [Discussion on the differences between the development code and the deployed Code Version](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#53-discussion-on-the-differences-between-the-development-code-and-the-deployed-code-version)
 
 6. [**Credits**](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#6-credits)
       
-      6.1 [Content/Media](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#61-contentmedia)
+    6.1 [Content/Media](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#61-contentmedia)
 
-      6.2 [Acknowledgements](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#62-acknowledgements)
+    6.2 [Acknowledgements](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#62-acknowledgements)
 
 
 ## 1. User Experience Design (UX)
@@ -164,9 +173,9 @@ When the cart is empty, the ‘Your cart is empty’ message will display on the
 
 However, when there are items in the cart, the products and quantity you added to your cart will be displayed in card form. The Empty Your Cart and Continue to Checkout buttons are enabled 
 
-### 2.1.9 Checkout
+### 2.1.9 Order Checkout
 
-The Checkout form reads the items displayed in a cart into a table which calculates the total price of all items and their quantities in order to present to the user a final price for purchase. Users will then have to complete the form below to make payment. The forms include information for users to fill in their contact details (name, telephone and address) and their payment information (card number, CVV - 3 digits at the back, card expiry month and year). In order to enhance presentation of forms mentioned Django Crispy Forms package has been used (added in Installed Apps in settings.py file).
+The Order Checkout form reads the items displayed in a cart into a table which calculates the total price of all items and their quantities in order to present to the user a final price for purchase. Users will then have to complete the form below to make payment. The forms include information for users to fill in their contact details (name, telephone and address) and their payment information (card number, CVV - 3 digits at the back, card expiry month and year). In order to enhance presentation of forms mentioned Django Crispy Forms package has been used (added in Installed Apps in settings.py file).
 
 
 ## 2.2 Potential Features to implement in the future: 
@@ -178,7 +187,7 @@ Another feature to implement is completing functionality to allow users to reset
 
 
 ## 3. Technologies Used
-*  	[AWS Cloud 9] - The Integrated Development Environment (IDE) used for building the website.
+* [AWS Cloud 9] - The Integrated Development Environment (IDE) used for building the website.
 *	[HTML] - Used for the structure and format of the entire website.
 *	[CSS] - For styling the website and maintaining its responsiveness across various screen sizes.
 *	[Bootstrap 4.0] - Used for grid form and assistance in styling.
@@ -186,7 +195,7 @@ Another feature to implement is completing functionality to allow users to reset
 *	[Font Awesome] - Used for displaying the social logos and vector icons present on the website.
 *	[Django] – Used for creating apps, superuser and configuring settings to control the web application’s urls and content. Also used for testing. The Django Crispy Forms package assists in rendering forms in a very neat and organised manner to make them easier for the user to understand and complete.
 *	[Travis CI] – Used to build and test software project from web application code hosted at GitHub.
-*                [BrowserShots] - For checking browser compatibility and cross platform browser testing.
+* [BrowserShots] - For checking browser compatibility and cross platform browser testing.
 *	[W3C HTML Validator] - Used to check that no errors were present in the HTML code before final deployment.
 *	[W3C CSS Validator] - Used to check that no errors were present in the CSS code before final deployment.
 *	[JSHint] - Used to check code quality of JavaScript code.
@@ -408,7 +417,7 @@ I would like to thank my mentor Aaron and all the tutors at Code Institute for t
 [Return to top](https://github.com/selinaerhabor/keep-learning-first-aid#keep-learning-first-aid)
 
 [//]: # (Below are the reference links used in the body of the README file)
-[here]: <https://keeplearningfirstaid.herokuapp.com/ 
+[here]: <https://keeplearningfirstaid.herokuapp.com/>
 [HTML]: <https://html.com/> 
 [CSS]: <https://https://en.wikipedia.org/wiki/Cascading_Style_Sheets> 
 [AWS Cloud9]: <https://aws.amazon.com/cloud9/>
