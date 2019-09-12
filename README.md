@@ -129,7 +129,7 @@ Keep Learning First Aid website combines professionalism and user-friendliness t
 * **Website Icon** - uses the Keep Learning First Aid brand logo as this image is unique enough to symbolise the tab/window of the website. 
 * **Collapsed Navigation Bar (Mobile view)** - available on extra small and small screens, displays username, cart, search bar and the different pages on the website to make it easy to navigate through the web app.
 * **Footer** - Available on all screen sizes, includes a mock email subscription form to sign up to Keep Learning First Aid newsletter. Underneath input box, there are privacy policy, terms & conditions and contact us links to provide users with some information on data protection in accordance with addressing recent changes to General Data Protection Regulation (GDPR).
-
+* **Colour Scheme** - Includes Green, White and Blue which are bright colours that work well with each other. The combination of these colours on the page provides a neat and clean layout as intended.
 
 ### 2.1.2 First Aid Tip of the Week
 The First Aid Tip of the Week displays featured first aid topic every week. The card uses animation to gain the user’s interest and focus once they click on the First Aid Tip of the Week tab. By default the first aid tip of the week is loaded in the card displayed on the page, but the user can access past First Aid Tips of the week in case they are not up-to-date with the latest post. This gives users the opportunity to actually absorb the information provided on the page and hopes to encourage users to remain in tune with the posts.
@@ -325,7 +325,7 @@ Screenshot of the [Jasmine Test Results Page] and the script for the main JavaSc
 
 
 ## 4.4 Device Screen Size and Browser Compatibility Test Results:
-The website has been tested on various browsers including Firefox and Google Chrome at the various screen sizes using [Browsershots].
+The website has been tested on various browsers including Firefox, Opera and Google Chrome at the various screen sizes using [Browsershots].
 * The below screen size tests were carried out assessing performance of all pages of the website using Google Chrome 74.0 (Windows):
 
 Device | Screen Size (Width x Height) | Keep Learning First Aid
@@ -343,14 +343,14 @@ Sony Bravia Television 4K |5280 width (55")|✓ |
 
 
 * Below are the test results of the website deployed on GitHub pages when tested on Browsershots.org on various browsers. 
-Key screenshots of the Browser Test results can be found in the `tests` folder.
+Key screenshots of the Browser Test results can be found in the `browser-tests` under the `tests` folder.
 * Key: ✓ - Application loads successfully
 
 Operating System | Browser | Keep Learning First Aid
 ---- | ---- | ---- | 
-Linux | Chrome 71.0 | ✓ |
-Linux | Firefox 3.0 |  ✓ |
-Windows | Firefox 64.0 | ✓  | 
+Windows | Chrome 73.0 | ✓ |
+Windows | Opera 58.0 |  ✓ |
+Linux | Firefox 61.0 | ✓  | 
 
 Overall, the results of the tests documented in this chapter and feedback from users suggests that the application works very well across key operating system browsers and various screen sizes with the application layout and structure adjusting responsively. The Keep Learning First Aid Website Application should therefore be reliable and easy to use. 
 
