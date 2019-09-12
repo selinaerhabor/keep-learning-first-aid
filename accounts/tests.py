@@ -2,7 +2,7 @@ from django.test import TestCase
 from accounts.forms import UserAccountForm, UserRegistrationForm
 
 # Testing Registration Form works as intended
-class RegistrationFormTest(TestCase):
+class TestRegistrationForm(TestCase):
     
     def registration_form_denied_for_password_mismatch(self):
         register_form = UserRegistrationForm({
@@ -27,7 +27,7 @@ class RegistrationFormTest(TestCase):
         
         
 # Testing Login Form works as intended
-class LoginFormTest(TestCase):
+class TestLoginForm(TestCase):
     
     def login_form_requires_password(self):
         login_form = UserAccountForm({
