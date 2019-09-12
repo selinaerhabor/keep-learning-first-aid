@@ -26,7 +26,7 @@ Retrieves all products in the category Books and formats the results
 to only display nine product cards per page 
 """
 def get_books(request):
-    products = Product.objects.filter(category="Books")
+    products = Product.objects.filter(category="Books").order_by('price')
     filter = "First Aid Books"
     page = request.GET.get('page', 1)
     page_number = page
@@ -44,7 +44,7 @@ Retrieves all products in the category Posters and formats the results
 to only display nine product cards per page 
 """
 def get_posters(request):
-    products = Product.objects.filter(category="Posters")
+    products = Product.objects.filter(category="Posters").order_by('price')
     filter = "First Aid Posters"
     page = request.GET.get('page', 1)
     page_number = page
@@ -62,7 +62,7 @@ Retrieves all products in the category Extras and formats the results
 to only display nine product cards per page 
 """
 def get_extras(request):
-    products = Product.objects.filter(category="Extras")
+    products = Product.objects.filter(category="Extras").order_by('price')
     filter = "Extras"
     page = request.GET.get('page', 1)
     page_number = page
@@ -76,7 +76,7 @@ def get_extras(request):
     return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 def get_courses(request):
-    products = Product.objects.filter(category="Courses")
+    products = Product.objects.filter(category="Courses").order_by('price')
     filter = "First Aid Courses"
     page = request.GET.get('page', 1)
     page_number = page
@@ -90,7 +90,7 @@ def get_courses(request):
     return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
 
 def get_ebooks(request):
-    products = Product.objects.filter(category="E-Books")
+    products = Product.objects.filter(category="E-Books").order_by('price')
     filter = "E-Books"
     page = request.GET.get('page', 1)
     page_number = page
@@ -104,7 +104,7 @@ def get_ebooks(request):
     return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 def get_firstaidkits(request):
-    products = Product.objects.filter(category="First Aid Kits")
+    products = Product.objects.filter(category="First Aid Kits").order_by('price')
     filter = "First Aid Kits"
     page = request.GET.get('page', 1)
     page_number = page
@@ -118,7 +118,7 @@ def get_firstaidkits(request):
     return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 def get_cds(request):
-    products = Product.objects.filter(category="CDs & DVDs")
+    products = Product.objects.filter(category="CDs & DVDs").order_by('price')
     filter = "CDs & DVDs"
     page = request.GET.get('page', 1)
     page_number = page
@@ -132,7 +132,7 @@ def get_cds(request):
     return render(request, "filteredproducts.html", {"products": products, "filter": filter, "page_number": page_number})
     
 def get_manikins(request):
-    products = Product.objects.filter(category="Manikins")
+    products = Product.objects.filter(category="Manikins").order_by('price')
     filter = "First Aid Manikins"
     page = request.GET.get('page', 1)
     page_number = page
