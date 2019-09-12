@@ -13,32 +13,30 @@ Keep Learning First Aid Website can be accessed [here].
     
     1.2 [Django App Structure](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#11-user-stories)
     
-    1.2.1 [Collections](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#11-user-stories)
-
 
 2. [**Features**](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#2-features)
       
     2.1 [Existing Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#21-existing-features)
 
-    2.1.1 [Home Page and Standard Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
+    2.1.1 [Home Page and Standard Features](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#211-home-page-and-standard-features)
 
-    2.1.2 [First Aid Tip of the Week](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
+    2.1.2 [First Aid Tip of the Week](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#212-first-aid-tip-of-the-week)
 
-    2.1.3 [Learning for Kids](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
+    2.1.3 [Learning for Kids](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#213-learning-for-kids)
 
-    2.1.4 [Learning for Adults](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#)
+    2.1.4 [Learning for Adults](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#214-learning-for-adults)
       
-    2.1.5 [FAQs](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#22-potential-features-to-implement-in-the-future)
+    2.1.5 [FAQs](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#215-faqs)
     
-    2.1.6 [Products]()
+    2.1.6 [Products](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#216-products)
     
-    2.1.7 [Login/Register]()
+    2.1.7 [Login/Register](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#217-loginregister)
     
-    2.1.8 [Cart]()
+    2.1.8 [Cart](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#218-cart)
     
-    2.1.9 [Order Checkout]()
+    2.1.9 [Order Checkout](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#219-order-checkout)
     
-    2.2 [Potential Features to Implement](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#23-potential-features-to-implement-in-the-future)
+    2.2 [Potential Features to Implement](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#22-potential-features-to-implement-in-the-future)
 
 3. [**Technologies used**](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#3-technologies-used)
 
@@ -52,7 +50,7 @@ Keep Learning First Aid Website can be accessed [here].
     
     4.4 [Device Screen Size and Browser Compatibility Test Results](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#44-device-screen-size-and-browser-compatibility-test-results)
     
-    4.5 [Responses from users who visited the web application]()
+    4.5 [Responses from users who visited the web application](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#45-responses-from-users-who-visited-the-keep-learning-first-aid-website-application)
     
     4.6 [Interesting bugs or problems discovered during testing](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#46-interesting-bugs-or-problems-discovered-during-testing)
 
@@ -60,7 +58,7 @@ Keep Learning First Aid Website can be accessed [here].
       
     5.1 [Deployment Process](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#51-deployment-process)
 
-    5.2 [Running the code locally](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#52--running-the-code-locally)
+    5.2 [Running the code locally](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#52-running-the-code-locally)
     
     5.3 [Discussion on the differences between the development code and the deployed Code Version](https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/README.md#53-discussion-on-the-differences-between-the-development-code-and-the-deployed-code-version)
 
@@ -120,6 +118,7 @@ There are 10 apps in total as follows:-
 * **Products** – this app provides display of all products currently available with pagination, users can view products by specific category and users can also view products individually to find out more information
 * **Search** – this app allows the user to make a search via search input bar at the top of the page and feeds users results from that search
 
+For screenshots of First Aid Tips of the Week and Products data see database-screenshots folder
 
 ## 2. Features
 Keep Learning First Aid website combines professionalism and user-friendliness to provide a website which showcases the products and services offered by the First Aid learning and training provider. The overall aesthetics for the web application are clean and consistent from the website navigation layout to the interactive multiple choice quiz the user stories have been taken into account when building the website’s features and components. I have chosen green and white as the main colour code to match the key colours in first aid and give the website a neat layout.
@@ -303,17 +302,21 @@ Wow! You really know your stuff. Using First Aid Manikins are a great way to put
 The HTML and CSS code for the Keep Learning First Aid website has been tested using official validators.
 
 **HTML code**
-* OneTwoCook Online Cookbook has [passed](https://github.com/selinaerhabor/keep-learning-first-aid/tree/master/tests/browser-tests/result-html-validator.png) with no errors returned.
+* No major application errors returned for HTML code for Keep Learning First Aid Web application.
 
 **CSS Code**
-* Keep Lear has [passed](https://github.com/selinaerhabor/keep-learning-first-aid/tree/master/tests/browser-tests/result-css-validator.png) with no errors returned. 
+* No major application errors returned for CSS code for Keep Learning First Aid Web application.
 
 
 ## 4.3 Jasmine Tests Results: 
 The Jasmine tests were carried out for the JS Quiz that is available on both the Learning for Kids and Learning For Adults pages. As both quizzes are built on similar structure in JavaScript, I decided to use the Kids Quiz format for testing which contains images besides each question.
 
 **Loading Questions and Variables:** 
-* This test demonstrated whether questions from the kidsQuiz function were correctly being called and loaded. For this test, I declared an example array of questions and the respective question’s image url, answer choices, correct answer and solution and used Jasmine matchers to ensure the correct variables were being selected.
+* This test demonstrated whether questions from the kidsQuiz function were correctly being called and loaded. For this test, I declared an 
+example array of questions and the respective question’s image url, answer choices, correct answer and solution and used Jasmine matchers to 
+ensure the correct variables were being selected.
+
+An example of a check used during testing used is below:
 `expect(kidsQuiz[0].kidsCorrectAnswer).toEqual("C");`
 
 
@@ -322,7 +325,7 @@ Screenshot of the [Jasmine Test Results Page] and the script for the main JavaSc
 
 
 ## 4.4 Device Screen Size and Browser Compatibility Test Results:
-The website has been tested on various browsers including Safari, Firefox and Google Chrome at the various screen sizes using [Browsershots.org]. This allowed me to test the web application on Linux, Windows and Mac operating systems.
+The website has been tested on various browsers including Firefox and Google Chrome at the various screen sizes using [Browsershots].
 * The below screen size tests were carried out assessing performance of all pages of the website using Google Chrome 74.0 (Windows):
 
 Device | Screen Size (Width x Height) | Keep Learning First Aid
@@ -347,10 +350,7 @@ Operating System | Browser | Keep Learning First Aid
 ---- | ---- | ---- | 
 Linux | Chrome 71.0 | ✓ |
 Linux | Firefox 3.0 |  ✓ |
-Linux | Firefox 61.0 | ✓ | 
 Windows | Firefox 64.0 | ✓  | 
-Mac | Chrome 48.0 | ✓ | 
-Mac | Safari 9.1 |  ✓ |
 
 Overall, the results of the tests documented in this chapter and feedback from users suggests that the application works very well across key operating system browsers and various screen sizes with the application layout and structure adjusting responsively. The Keep Learning First Aid Website Application should therefore be reliable and easy to use. 
 
@@ -392,7 +392,9 @@ Initially, for the quizzes checkboxes were to be used, but checkboxes were allow
 ## 5. Deployment
 ## 5.1 Deployment Process:
 For deploying the Keep Learning First Aid (KLFA) Website to Heroku:
-* Firstly, type into AWS Cloud9 terminal the command `pip freeze > requirements.txt` to create a requirements.txt file. 
+* Ensure git has been initialised `git init`
+* Use `git remote add` command with github repository url in order to push code to GitHub
+* Type into AWS Cloud 9 terminal the command `pip freeze > requirements.txt` to create a requirements.txt file. 
 * Then, type into AWS Cloud9 terminal the command `echo web: python app.py > Procfile` to create a Procfile. 
 * Use commands - `git add` and then `git commit` to apply the changes to the application, then use `git push` to push the project to GitHub.
 * Create a new app where this application will be deployed on the Heroku website by clicking on the button called "New" in your Heroku dashboard. 
@@ -408,18 +410,16 @@ KEY | VALUE
 **HOSTNAME ** | <app-name>.herokuapp.com
 **SECRET_KEY** | <secret key goes here>
 
-Type in the command below to log into your Heroku account via AWS Cloud9 terminal
+* Run python3 manage.py makemigrations and python3 manage.py migrate.
+* Create a Procfile and add web: gunicorn tracker.wsgi:application
+* import env should be commented out and set DEBUG = False in settings.py file in Django project.
+* Type in the command below to log into your Heroku account via AWS Cloud9 terminal
 ```sh
 $ heroku login
 ```
 * Type in your Heroku credentials
-* If changes are made to the cloned version of code, make a git commit and push changes to GitHub using the by typing the below commands in your AWS Cloud9 terminal:
-```sh
-$ git add .
-$ git commit -am "type reason for changes to your code here"
-$ git push
-```
 * After changes have been pushed to GitHub, type in command ` git push heroku master` to push the updated code to Heroku.
+* Add the Herokuapp link to ALLOWED_HOSTS in settings.py.
 * Verify whether application has been correctly built by clicking on More > View Logs. 
 * Application should now be up and running at https://app-name.herokuapp.com/
 
@@ -428,7 +428,14 @@ The repository for this website can be cloned using the command below in AWS Clo
 
 ```sh
 $ git clone https://github.com/selinaerhabor/keep-learning-first-aid.git
-$ pip install -r requirements.txt
+```
+* Install requirements using command `pip install -r requirements.txt`
+* 
+* If changes are made to the cloned version of code, make a git commit and push changes to GitHub using the by typing the below commands in your AWS Cloud9 terminal:
+```sh
+$ git add .
+$ git commit -am "type reason for changes to your code here"
+$ git push
 ```
 * Type in the command `python3 manage.py runserver 0.0.0.0:8080` in AWS Cloud9 terminal and click on the link that appears after running the command to load the Keep Learning First Aid Website in a new tab.
 
@@ -457,7 +464,7 @@ There are no longer first aid tips of the week as potential users raised concern
 
 I would like to thank my mentor Aaron and all the tutors at Code Institute for taking time to explain good coding practices in building Django projects, tackling bugs during deployment and ensuring good presentation of code with python code meeting PEP 8 standards. 
 
-[Return to top](https://github.com/selinaerhabor/keep-learning-first-aid#keep-learning-first-aid)
+[Return to top](https://github.com/selinaerhabor/keep-learning-first-aid#keep-learning-first-aid--first-aid-learning-equipment-and-resources-website)
 
 [//]: # (Below are the reference links used in the body of the README file)
 [here]: <https://keeplearningfirstaid.herokuapp.com/>
@@ -472,7 +479,7 @@ I would like to thank my mentor Aaron and all the tutors at Code Institute for t
 [JQuery]: <https://jquery.com/download/>
 [W3C HTML Validator]: <https://validator.w3.org/>
 [W3C CSS Validator]: <http://jigsaw.w3.org/css-validator/>
-[Jasmine Test Results Page]: <>
-[Initial Ideas - Wireframes]: <>
+[Jasmine Test Results Page]: <https://github.com/selinaerhabor/keep-learning-first-aid/blob/master/tests/Jasmine%20Test%20Results.jpg>
+[Initial Ideas - Wireframes]: <https://github.com/selinaerhabor/keep-learning-first-aid/tree/master/wireframes>
 [JSHint]: <https://jshint.com/>
 [Jasmine Testing]: <https://en.wikipedia.org/wiki/Jasmine_(JavaScript_testing_framework)>
