@@ -1,7 +1,5 @@
 # Keep Learning First Aid – First Aid Learning Equipment and Resources Website
 
-[![Build Status](https://travis-ci.org/selinaerhabor/keep-learning-first-aid.svg?branch=master)](https://travis-ci.org/selinaerhabor/keep-learning-first-aid)
-
 ### **Only 5% of adults have the skills and confidence to provide first aid in emergency situations.**
 Keep Learning First Aid aim to be UK’s number one first aid learning equipment and resources provider. The website displays First Aid tip of the week, multiple-choice quizzes for children and for adults, first aid learning materials and products for both kids and adults which can be purchased and collection of some frequently asked questions. The products available on the website for purchase include First Aid Books, E-books, Manikins, Posters, DVDs/ CDs and Extras. The aim of the website is to make learning first aid easy and interesting for all ages and make first aid learning resources readily available in order to combat the lack of skills and confidence in providing first aid in emergency situations.
 Keep Learning First Aid Website can be accessed [here].
@@ -70,6 +68,7 @@ Keep Learning First Aid Website can be accessed [here].
 
 
 ## 1. User Experience Design (UX)
+![Website Home](/tests/website-home.jpg)
 
 Keep Learning First Aid website aims to explain to users the importance of First Aid in our lives and to those around us. The website includes First Aid Tips with a new one appearing every week, first aid quizzes for both children and adults to test their knowledge and a wide range of useful learning resources and first aid items for all ages on the products page which can be purchased. The contents of this website aim to deliver an interactive user experience and inspire people to invest more in learning first aid. 
 
@@ -103,7 +102,10 @@ I collected opinions from what users would like in the first aid learning provid
 The wireframes were based on meeting the project's requirements and inspired from the user stories listed above. Wireframes focused on each of the main pages of the website from the home page to the products page. These are available in this folder: [Initial Ideas - Wireframes].
 
 ## 1.2 Django App Structure
-For the Keep Learning First Aid (KLFA) website, the web application is connected to a Postgres database. The Postgres database stores information on users who create an account, first aid tips of the week, products and order information. AWS S3 Storage Bucket has been used for media and static data storages.
+For the Keep Learning First Aid (KLFA) website, the web application is connected to a Postgres database. 
+The Postgres database stores information on users who create an account, first aid tips of the week, products and order information. 
+This object-relational database management system has been chosen for this Django project because of its scalability, low cost and ease for deployment on heroku to make the web application live.
+AWS S3 Storage Bucket has been used for media and static data storages.
 
 
 There are 10 apps in total as follows:-
@@ -129,7 +131,8 @@ Keep Learning First Aid website combines professionalism and user-friendliness t
 * **Website Icon** - uses the Keep Learning First Aid brand logo as this image is unique enough to symbolise the tab/window of the website. 
 * **Collapsed Navigation Bar (Mobile view)** - available on extra small and small screens, displays username, cart, search bar and the different pages on the website to make it easy to navigate through the web app.
 * **Footer** - Available on all screen sizes, includes a mock email subscription form to sign up to Keep Learning First Aid newsletter. Underneath input box, there are privacy policy, terms & conditions and contact us links to provide users with some information on data protection in accordance with addressing recent changes to General Data Protection Regulation (GDPR).
-* **Colour Scheme** - Includes Green, White and Blue which are bright colours that work well with each other. The combination of these colours on the page provides a neat and clean layout as intended.
+* **Colour Scheme** - Includes green, white and blue which are bright colours that work well with each other under the right levels of brightness. A light blue background has been 
+* chosen to contrast appropriately with text and image content to make content legible for visitors to the website. The combination of these colours on the page provides a neat and clean layout as intended.
 
 ### 2.1.2 First Aid Tip of the Week
 The First Aid Tip of the Week displays featured first aid topic every week. The card uses animation to gain the user’s interest and focus once they click on the First Aid Tip of the Week tab. By default the first aid tip of the week is loaded in the card displayed on the page, but the user can access past First Aid Tips of the week in case they are not up-to-date with the latest post. This gives users the opportunity to actually absorb the information provided on the page and hopes to encourage users to remain in tune with the posts.
