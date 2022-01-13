@@ -4,7 +4,7 @@ django-crispy-forms==1.7.2
 django-forms-bootstrap==3.1.0
 django-storages==1.7.1
 Django==1.11.20
-Pillow==4.3.0
+Pillow==9.0.0
 chardet==2.2.1
 colorama==0.2.5
 psycopg2-binary==2.8.3
